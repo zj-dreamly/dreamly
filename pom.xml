@@ -6,7 +6,7 @@
 
     <packaging>pom</packaging>
 
-    <groupId>cn.zj.dreamly</groupId>
+    <groupId>com.github.zj-dreamly</groupId>
     <artifactId>dreamly-tool</artifactId>
     <version>0.0.1</version>
     <name>dreamly-tool</name>
@@ -27,6 +27,7 @@
     </properties>
 
     <modules>
+        <module>dreamly-core-tool</module>
     </modules>
 
     <dependencies>
