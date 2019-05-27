@@ -28,6 +28,7 @@
 
     <modules>
         <module>dreamly-core-tool</module>
+        <module>dreamly-core-swagger</module>
     </modules>
 
     <dependencies>

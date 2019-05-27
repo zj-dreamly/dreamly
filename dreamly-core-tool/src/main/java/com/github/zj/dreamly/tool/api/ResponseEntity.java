@@ -3,13 +3,13 @@ package com.github.zj.dreamly.tool.api;
 import cn.hutool.core.util.ObjectUtil;
 import cn.hutool.http.HttpStatus;
 import com.github.zj.dreamly.tool.constant.DreamlyConstant;
-import com.sun.istack.internal.Nullable;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import org.springframework.lang.Nullable;
 
 import java.io.Serializable;
 import java.util.Optional;
@@ -66,7 +66,7 @@ public class ResponseEntity<T> implements Serializable {
 	 * @param result Result
 	 * @return 是否成功
 	 */
-	public static boolean isSuccess(@Nullable ResponseEntity<?> result) {
+	private static boolean isSuccess(@Nullable ResponseEntity<?> result) {
 		return Optional.ofNullable(result)
 			.map(x -> ObjectUtil.equal(SystemResultCode.SUCCESS.code, x.code))
 			.orElse(Boolean.FALSE);

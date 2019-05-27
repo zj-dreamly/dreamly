@@ -24,7 +24,7 @@ public class SystemConstant {
 	/**
 	 * 外网地址
 	 */
-	private String domain = "http://localhost:8888";
+	private String domain = "http://localhost:1111";
 
 	/**
 	 * 上传下载路径(物理路径)
