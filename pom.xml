@@ -26,6 +26,21 @@
         <spring.platform.version>Cairo-RELEASE</spring.platform.version>
     </properties>
 
+    <parent>
+        <groupId>org.sonatype.oss</groupId>
+        <artifactId>oss-parent</artifactId>
+        <version>7</version>
+    </parent>
+
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+
     <modules>
         <module>dreamly-core-tool</module>
         <module>dreamly-core-swagger</module>
