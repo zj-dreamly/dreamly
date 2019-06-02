@@ -11,7 +11,7 @@
 
     <artifactId>dreamly-core-tool</artifactId>
     <name>${project.artifactId}</name>
-    <version>0.0.1</version>
+    <version>${parent.version}</version>
     <packaging>jar</packaging>
 
 

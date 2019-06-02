@@ -43,7 +43,9 @@
 
     <modules>
         <module>dreamly-core-tool</module>
-        <module>dreamly-core-swagger</module>
+        <module>dreamly-core-simple-security</module>
+        <module>dreamly-starter-swagger</module>
+
     </modules>
 
     <dependencies>
