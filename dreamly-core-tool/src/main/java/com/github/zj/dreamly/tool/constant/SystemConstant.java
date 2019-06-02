@@ -1,6 +1,5 @@
 package com.github.zj.dreamly.tool.constant;
 
-
 import lombok.Data;
 
 /**

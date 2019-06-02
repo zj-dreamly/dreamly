@@ -1,6 +1,7 @@
 package com.github.zj.dreamly.tool.api;
 
 import cn.hutool.http.HttpStatus;
+import com.github.zj.dreamly.tool.api.IResultCode;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 

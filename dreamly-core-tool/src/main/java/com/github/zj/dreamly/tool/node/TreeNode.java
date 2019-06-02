@@ -1,7 +1,8 @@
-package com.github.zj.dreamly.tool.node;
+package com.github.zj.dreamly.simple.security.tool.node;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
+import com.github.zj.dreamly.tool.node.BaseNode;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 

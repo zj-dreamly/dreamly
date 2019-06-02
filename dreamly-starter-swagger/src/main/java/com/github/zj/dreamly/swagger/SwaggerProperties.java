@@ -1,4 +1,4 @@
-package com.github.zj.dreamly.swagger.config;
+package com.github.zj.dreamly.swagger;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

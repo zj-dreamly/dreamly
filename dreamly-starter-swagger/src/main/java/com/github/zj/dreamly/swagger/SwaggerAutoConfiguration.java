@@ -1,7 +1,7 @@
-package com.github.zj.dreamly.swagger.config;
-
+package com.github.zj.dreamly.swagger;
 
 import com.github.xiaoymin.swaggerbootstrapui.annotations.EnableSwaggerBootstrapUI;
+import com.github.zj.dreamly.swagger.SwaggerProperties;
 import com.google.common.base.Predicate;
 import com.google.common.base.Predicates;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
