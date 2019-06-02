@@ -15,7 +15,7 @@ import java.util.Map;
  */
 @Slf4j
 @RequiredArgsConstructor
-@SuppressWarnings("WeakerAccess")
+@SuppressWarnings("all")
 public class JwtOperator {
     public static final String USER_ID = "id";
     public static final String USERNAME = "username";

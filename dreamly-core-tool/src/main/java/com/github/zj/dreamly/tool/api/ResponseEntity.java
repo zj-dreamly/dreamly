@@ -24,6 +24,7 @@ import java.util.Optional;
 @ToString
 @ApiModel(description = "返回信息")
 @NoArgsConstructor
+@SuppressWarnings("all")
 public class ResponseEntity<T> implements Serializable {
 
 	private static final long serialVersionUID = 1L;

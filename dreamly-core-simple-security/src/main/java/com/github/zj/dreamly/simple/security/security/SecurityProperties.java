@@ -17,6 +17,7 @@ import java.util.List;
 @ConfigurationProperties(prefix = "simple.security")
 @Getter
 @Setter
+@SuppressWarnings("all")
 public class SecurityProperties {
     private Jwt jwt = new Jwt();
     private List<Spec> specList = new ArrayList<>();
@@ -27,7 +28,7 @@ public class SecurityProperties {
         /**
          * secret
          */
-        private String secret = "yml-com.github.zj.dreamly.security-yml-com.github.zj.dreamly.security-yml-com.github.zj.dreamly.security-yml-com.github.zj.dreamly.security-yml-com.github.zj.dreamly.security-yml-com.github.zj.dreamly.security-yml-com.github.zj.dreamly.security-yml-com.github.zj.dreamly.security-yml-com.github.zj.dreamly.security";
+        private String secret = "yml-security-yml-security-yml-security-yml-security-yml-security-yml-security-yml-security-yml-security-yml-security";
 
         /**
          * token的有效时间(秒)，默认2周

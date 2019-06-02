@@ -15,6 +15,7 @@ import lombok.NoArgsConstructor;
 @ApiModel(description = "认证信息")
 @AllArgsConstructor
 @NoArgsConstructor
+@SuppressWarnings("all")
 public class AuthInfo {
 	@ApiModelProperty(value = "用户id")
 	private Long id;

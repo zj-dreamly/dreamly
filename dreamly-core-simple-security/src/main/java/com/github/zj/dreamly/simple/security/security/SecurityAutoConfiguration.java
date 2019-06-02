@@ -21,6 +21,7 @@ import java.util.List;
 @Data
 @Configuration
 @Import(SecurityConfiguration.class)
+@SuppressWarnings("all")
 public class SecurityAutoConfiguration implements WebMvcConfigurer {
     private List<Spec> specList;
     private PreAuthorizeExpressionRoot preAuthorizeExpressionRoot;

@@ -5,6 +5,7 @@ package com.github.zj.dreamly.simple.security.enums;
  *
  * @author 苍海之南
  */
+@SuppressWarnings("all")
 public enum HttpMethod {
     /**
      * 请求方法
