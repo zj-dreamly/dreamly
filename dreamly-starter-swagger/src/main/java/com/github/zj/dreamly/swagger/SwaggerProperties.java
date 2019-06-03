@@ -55,7 +55,7 @@ public class SwaggerProperties {
 	/**
 	 * host信息
 	 **/
-	private String host = "http://github.com/zj-dreamly";
+	private String host = "";
 	/**
 	 * 联系人信息
 	 */
