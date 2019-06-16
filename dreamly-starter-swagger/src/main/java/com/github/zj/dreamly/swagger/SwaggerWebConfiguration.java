@@ -10,6 +10,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
  * @author 苍海之南
  */
 @Configuration
+@SuppressWarnings("all")
 public class SwaggerWebConfiguration implements WebMvcConfigurer {
 
 	@Override

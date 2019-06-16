@@ -14,6 +14,7 @@ import java.util.List;
  */
 @Data
 @ConfigurationProperties("swagger")
+@SuppressWarnings("all")
 public class SwaggerProperties {
 	/**
 	 * swagger会解析的包路径

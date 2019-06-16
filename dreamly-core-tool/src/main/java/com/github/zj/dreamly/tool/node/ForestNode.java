@@ -10,6 +10,7 @@ import lombok.EqualsAndHashCode;
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
+@SuppressWarnings("all")
 public class ForestNode extends BaseNode {
 
 	/**

@@ -11,9 +11,6 @@ import java.lang.annotation.*;
 @Documented
 public @interface PreAuthorize {
     /**
-     * 待验证的Spring-EL表达式
-     * 参考：https://docs.spring.io/spring/docs/5.1.6.RELEASE/spring-framework-reference/core.html#expressions
-     *
      * @return 表达式
      * @see com.github.zj.dreamly.simple.security.el.PreAuthorizeExpressionRoot
      */

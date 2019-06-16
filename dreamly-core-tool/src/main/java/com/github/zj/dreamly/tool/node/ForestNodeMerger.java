@@ -8,6 +8,7 @@ import java.util.List;
  * @author 苍海之南
  * @since 2019年5月20日
  */
+@SuppressWarnings("all")
 public class ForestNodeMerger {
 
 	/**

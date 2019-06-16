@@ -8,6 +8,7 @@ import java.util.List;
  *
  * @author 苍海之南
  */
+@SuppressWarnings("all")
 public class ForestNodeManager<T extends INode> {
 
 	/**
