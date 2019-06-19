@@ -8,7 +8,6 @@ import java.io.Serializable;
  * @author 苍海之南
  */
 public interface IResultCode extends Serializable {
-
 	/**
 	 * 获取消息
 	 *
