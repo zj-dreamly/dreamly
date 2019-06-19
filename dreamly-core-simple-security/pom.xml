@@ -42,7 +42,7 @@
         <dependency>
             <groupId>com.github.zj-dreamly</groupId>
             <artifactId>dreamly-starter-swagger</artifactId>
-            <version>0.0.1</version>
+            <version>${parent.version}</version>
         </dependency>
 
         <dependency>

@@ -208,5 +208,4 @@ public class ResponseEntity<T> implements Serializable {
 	public static <T> ResponseEntity<T> status(boolean flag) {
 		return flag ? success(DreamlyConstant.DEFAULT_SUCCESS_MESSAGE) : fail(DreamlyConstant.DEFAULT_FAILURE_MESSAGE);
 	}
-
 }
