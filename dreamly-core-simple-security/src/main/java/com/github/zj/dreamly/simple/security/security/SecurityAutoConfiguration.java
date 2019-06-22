@@ -36,7 +36,7 @@ public class SecurityAutoConfiguration implements WebMvcConfigurer {
      * 而此时一行相关日志都没有，定位问题不方便；
      * <p>
      * 而不过滤，则会打印类似如下的日志：
-     * c.i.com.github.zj.dreamly.security.RestfulMatchUtil  : match begins. GET /error, httpMethod = ANY, pattern = /login, methodMatch = true, pathMatches = false
+     * com.github.zj.dreamly.security.RestfulMatchUtil  : match begins. GET /error, httpMethod = ANY, pattern = /login, methodMatch = true, pathMatches = false
      * 问题定位会方便很多。
      *
      * @param registry registry

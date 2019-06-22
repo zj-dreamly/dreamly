@@ -95,6 +95,9 @@ public class SwaggerAutoConfiguration {
 	}
 
 
+	/**
+	 * 配置oauth2
+	 */
 	private OAuth securitySchema() {
 		ArrayList<AuthorizationScope> authorizationScopeList = new ArrayList<>();
 		swaggerProperties().getAuthorization().getAuthorizationScopeList().forEach(authorizationScope -> authorizationScopeList.add(new AuthorizationScope(authorizationScope.getScope(), authorizationScope.getDescription())));

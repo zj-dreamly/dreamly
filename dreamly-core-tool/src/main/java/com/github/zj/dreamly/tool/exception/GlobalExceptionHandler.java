@@ -47,30 +47,30 @@ public class GlobalExceptionHandler {
 	@ExceptionHandler(MissingServletRequestParameterException.class)
 	@ResponseStatus(HttpStatus.BAD_REQUEST)
 	public ResponseEntity handleError(MissingServletRequestParameterException e) {
-		log.warn("缺少请求参数", e.getMessage());
-		String message = String.format("缺少必要的请求参数: %s", e.getParameterName());
+		log.warn("【缺少请求参数】：{}", e.getMessage());
+		String message = String.format("【缺少必要的请求参数】: %s", e.getParameterName());
 		return ResponseEntity.fail(SystemResultCode.PARAM_MISS, message);
 	}
 
 	@ExceptionHandler(MethodArgumentTypeMismatchException.class)
 	@ResponseStatus(HttpStatus.BAD_REQUEST)
 	public ResponseEntity handleError(MethodArgumentTypeMismatchException e) {
-		log.warn("请求参数格式错误", e.getMessage());
-		String message = String.format("请求参数格式错误: %s", e.getName());
+		log.warn("【请求参数格式错误】：{}", e.getMessage());
+		String message = String.format("【请求参数格式错误】: %s", e.getName());
 		return ResponseEntity.fail(SystemResultCode.PARAM_TYPE_ERROR, message);
 	}
 
 	@ExceptionHandler(MethodArgumentNotValidException.class)
 	@ResponseStatus(HttpStatus.BAD_REQUEST)
 	public ResponseEntity handleError(MethodArgumentNotValidException e) {
-		log.warn("参数验证失败", e.getMessage());
+		log.warn("【参数验证失败】：{}", e.getMessage());
 		return handleError(e.getBindingResult());
 	}
 
 	@ExceptionHandler(BindException.class)
 	@ResponseStatus(HttpStatus.BAD_REQUEST)
 	public ResponseEntity handleError(BindException e) {
-		log.warn("参数绑定失败", e.getMessage());
+		log.warn("【参数绑定失败】：{}", e.getMessage());
 		return handleError(e.getBindingResult());
 	}
 
@@ -84,7 +84,7 @@ public class GlobalExceptionHandler {
 	@ExceptionHandler(ConstraintViolationException.class)
 	@ResponseStatus(HttpStatus.BAD_REQUEST)
 	public ResponseEntity handleError(ConstraintViolationException e) {
-		log.warn("参数验证失败", e.getMessage());
+		log.warn("【参数验证失败】：{}", e.getMessage());
 		Set<ConstraintViolation<?>> violations = e.getConstraintViolations();
 		ConstraintViolation<?> violation = violations.iterator().next();
 		String path = ((PathImpl) violation.getPropertyPath()).getLeafNode().getName();
@@ -95,49 +95,50 @@ public class GlobalExceptionHandler {
 	@ExceptionHandler(NoHandlerFoundException.class)
 	@ResponseStatus(HttpStatus.NOT_FOUND)
 	public ResponseEntity handleError(NoHandlerFoundException e) {
-		log.error("404没找到请求:{}", e.getMessage());
+		log.error("【404没找到请求】：{}", e.getMessage());
 		return ResponseEntity.fail(SystemResultCode.NOT_FOUND, e.getMessage());
 	}
 
 	@ExceptionHandler(HttpMessageNotReadableException.class)
 	@ResponseStatus(HttpStatus.BAD_REQUEST)
 	public ResponseEntity handleError(HttpMessageNotReadableException e) {
-		log.error("消息不能读取:{}", e.getMessage());
+		log.error("【消息不能读取】：{}", e.getMessage());
 		return ResponseEntity.fail(SystemResultCode.MSG_NOT_READABLE, e.getMessage());
 	}
 
 	@ExceptionHandler(HttpRequestMethodNotSupportedException.class)
 	@ResponseStatus(HttpStatus.METHOD_NOT_ALLOWED)
 	public ResponseEntity handleError(HttpRequestMethodNotSupportedException e) {
-		log.error("不支持当前请求方法:{}", e.getMessage());
+		log.error("【不支持当前请求方法】：{}", e.getMessage());
 		return ResponseEntity.fail(SystemResultCode.METHOD_NOT_SUPPORTED, e.getMessage());
 	}
 
 	@ExceptionHandler(HttpMediaTypeNotSupportedException.class)
 	@ResponseStatus(HttpStatus.UNSUPPORTED_MEDIA_TYPE)
 	public ResponseEntity handleError(HttpMediaTypeNotSupportedException e) {
-		log.error("不支持当前媒体类型:{}", e.getMessage());
+		log.error("【不支持当前媒体类型】：{}", e.getMessage());
 		return ResponseEntity.fail(SystemResultCode.MEDIA_TYPE_NOT_SUPPORTED, e.getMessage());
 	}
 
 	@ExceptionHandler(BusinessException.class)
 	@ResponseStatus(HttpStatus.BAD_REQUEST)
 	public ResponseEntity handleError(BusinessException e) {
-		log.error("业务异常", e);
+		log.error("【业务异常】：{}", e);
 		return ResponseEntity.fail(e.getResultCode(), e.getMessage());
 	}
 
 	@ExceptionHandler(SecurityException.class)
 	@ResponseStatus(HttpStatus.UNAUTHORIZED)
 	public ResponseEntity handleError(SecurityException e) {
-		log.error("认证异常", e);
+		log.error("【认证异常】：{}", e);
 		return ResponseEntity.fail(e.getResultCode(), e.getMessage());
 	}
 
 	@ExceptionHandler(Throwable.class)
 	@ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
 	public ResponseEntity handleError(Throwable e) {
-		log.error("服务器异常", e);
+		log.error("【服务器异常】：{}", e);
 		return ResponseEntity.fail(SystemResultCode.INTERNAL_SERVER_ERROR, (StrUtil.isEmpty(e.getMessage()) ? SystemResultCode.INTERNAL_SERVER_ERROR.getMessage() : e.getMessage()));
 	}
 }
+
