@@ -8,6 +8,7 @@ import org.hibernate.validator.internal.engine.path.PathImpl;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.converter.HttpMessageNotReadableException;
@@ -36,10 +37,10 @@ import java.util.Set;
  * @author 苍海之南
  */
 @Slf4j
-@Order
+@Order(Ordered.HIGHEST_PRECEDENCE)
 @Configuration
 @ConditionalOnWebApplication(type = ConditionalOnWebApplication.Type.SERVLET)
-@ConditionalOnClass({Servlet.class, DispatcherServlet.class})
+@ConditionalOnClass({ Servlet.class, DispatcherServlet.class })
 @RestControllerAdvice
 @SuppressWarnings("all")
 public class GlobalExceptionHandler {
