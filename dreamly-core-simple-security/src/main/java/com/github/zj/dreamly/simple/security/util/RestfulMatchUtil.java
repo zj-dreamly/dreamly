@@ -19,7 +19,7 @@ public class RestfulMatchUtil {
 
     /**
      * 判断request使用的请求方法与httpMethod一致且请求的路径与pattern一致
-     * 参考了spring-security中org.springframework.com.github.zj.dreamly.security.web.com.github.zj.dreamly.util.matcher.AntPathRequestMatcher#matches(javax.servlet.http.HttpServletRequest)的写法。
+     * 参考了spring-security中org.springframework.security.web.util.matcher.AntPathRequestMatcher#matches(javax.servlet.http.HttpServletRequest)的写法
      *
      * @param request    请求
      * @param httpMethod 配置的http请求方法
