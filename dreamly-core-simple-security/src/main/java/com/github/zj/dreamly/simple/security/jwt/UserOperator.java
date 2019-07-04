@@ -67,7 +67,7 @@ public class UserOperator {
         Object username = claims.get(JwtOperator.USERNAME);
 
         return User.builder()
-                .id((Long) userId)
+                .id(Long.valueOf(userId.toString()))
                 .username((String) username)
                 .roles((List<String>) roles)
                 .build();
