@@ -3,6 +3,7 @@ package com.github.zj.dreamly.simple.security.interceptor;
 import com.github.zj.dreamly.simple.security.el.PreAuthorizeExpressionRoot;
 import com.github.zj.dreamly.simple.security.spec.Spec;
 import com.github.zj.dreamly.simple.security.util.SpringElCheckUtil;
+import com.github.zj.dreamly.tool.exception.DreamlySecurityException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.expression.spel.support.StandardEvaluationContext;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
@@ -38,7 +39,7 @@ public class AuthInterceptor extends HandlerInterceptorAdapter {
                 })
                 .orElse(true);
         if (!checkResult) {
-            throw new SecurityException("Access Denied.");
+            throw new DreamlySecurityException("Access Denied.");
         }
         return true;
     }

@@ -1,6 +1,7 @@
 package com.github.zj.dreamly.simple.security.jwt;
 
 import com.github.zj.dreamly.simple.security.constants.ConstantsSecurity;
+import com.github.zj.dreamly.tool.exception.DreamlySecurityException;
 import io.jsonwebtoken.Claims;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -47,7 +48,7 @@ public class UserOperator {
             request.setAttribute(SECURITY_REQ_ATTR_USER, user);
             return user;
         } catch (Exception e) {
-            throw new SecurityException("failed to get user information");
+            throw new DreamlySecurityException("failed to get user information");
         }
     }
 
@@ -81,13 +82,13 @@ public class UserOperator {
     private String getTokenFromRequest(HttpServletRequest request) {
         String header = request.getHeader(ConstantsSecurity.AUTHORIZATION_HEADER);
         if (StringUtils.isEmpty(header)) {
-            throw new SecurityException("No header named Authorization was found");
+            throw new DreamlySecurityException("No header named Authorization was found");
         }
         if (!header.startsWith(ConstantsSecurity.BEARER)) {
-            throw new SecurityException("Token must begin with'Bearer '.");
+            throw new DreamlySecurityException("Token must begin with'Bearer '.");
         }
         if (header.length() <= SEVEN) {
-            throw new SecurityException("Token illegal, length <= 7");
+            throw new DreamlySecurityException("Token illegal, length <= 7");
         }
         return header.substring(SEVEN);
     }
@@ -100,7 +101,7 @@ public class UserOperator {
     private static HttpServletRequest getRequest() {
         RequestAttributes requestAttributes = RequestContextHolder.getRequestAttributes();
         if ((requestAttributes == null)) {
-            throw new SecurityException("requestAttributes is null");
+            throw new DreamlySecurityException("requestAttributes is null");
         }
         return ((ServletRequestAttributes) requestAttributes).getRequest();
     }

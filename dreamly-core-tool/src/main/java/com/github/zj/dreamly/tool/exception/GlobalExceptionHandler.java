@@ -128,9 +128,9 @@ public class GlobalExceptionHandler {
 		return ResponseEntity.fail(e.getResultCode(), e.getMessage());
 	}
 
-	@ExceptionHandler(SecurityException.class)
+	@ExceptionHandler(DreamlySecurityException.class)
 	@ResponseStatus(HttpStatus.UNAUTHORIZED)
-	public ResponseEntity handleError(SecurityException e) {
+	public ResponseEntity handleError(DreamlySecurityException e) {
 		log.error("【认证异常】：{}", e);
 		return ResponseEntity.fail(e.getResultCode(), e.getMessage());
 	}

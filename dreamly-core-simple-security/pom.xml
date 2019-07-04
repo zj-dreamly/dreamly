@@ -24,6 +24,12 @@
     <dependencies>
 
         <dependency>
+            <groupId>com.github.zj-dreamly</groupId>
+            <artifactId>dreamly-core-tool</artifactId>
+            <version>0.0.1</version>
+        </dependency>
+
+        <dependency>
             <groupId>io.jsonwebtoken</groupId>
             <artifactId>jjwt-impl</artifactId>
             <version>${jjwt.version}</version>

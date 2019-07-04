@@ -22,8 +22,7 @@ public class SpringElCheckUtil {
      * @return 是否通过
      */
     public static boolean check(EvaluationContext context, String expression) {
-        Boolean result = PARSER.parseExpression(expression)
-                .getValue(context, Boolean.class);
+        Boolean result = PARSER.parseExpression(expression).getValue(context, Boolean.class);
         log.info("expression = {}, eval result = {}", expression, result);
         return result != null ? result : false;
     }

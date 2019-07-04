@@ -1,6 +1,7 @@
 package com.github.zj.dreamly.simple.security.jwt;
 
 import com.github.zj.dreamly.simple.security.security.SecurityProperties;
+import com.github.zj.dreamly.tool.exception.DreamlySecurityException;
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.security.Keys;
 import lombok.RequiredArgsConstructor;
@@ -36,7 +37,7 @@ public class JwtOperator {
                     .getBody();
 
         } catch (ExpiredJwtException | UnsupportedJwtException | MalformedJwtException | io.jsonwebtoken.security.SecurityException  | IllegalArgumentException e) {
-            throw new SecurityException("Token invalided.");
+            throw new DreamlySecurityException("Token invalided.");
         }
     }
 
