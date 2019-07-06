@@ -48,7 +48,7 @@ public class GlobalExceptionHandler {
 	@ExceptionHandler(MissingServletRequestParameterException.class)
 	@ResponseStatus(HttpStatus.BAD_REQUEST)
 	public ResponseEntity handleError(MissingServletRequestParameterException e) {
-		log.warn("【缺少请求参数】：{}", e.getMessage());
+		log.warn("【缺少请求参数】：{}", e.getParameterName());
 		String message = String.format("【缺少必要的请求参数】: %s", e.getParameterName());
 		return ResponseEntity.fail(SystemResultCode.PARAM_MISS, message);
 	}
@@ -56,7 +56,7 @@ public class GlobalExceptionHandler {
 	@ExceptionHandler(MethodArgumentTypeMismatchException.class)
 	@ResponseStatus(HttpStatus.BAD_REQUEST)
 	public ResponseEntity handleError(MethodArgumentTypeMismatchException e) {
-		log.warn("【请求参数格式错误】：{}", e.getMessage());
+		log.warn("【请求参数格式错误】：{}", e.getName());
 		String message = String.format("【请求参数格式错误】: %s", e.getName());
 		return ResponseEntity.fail(SystemResultCode.PARAM_TYPE_ERROR, message);
 	}
@@ -64,14 +64,14 @@ public class GlobalExceptionHandler {
 	@ExceptionHandler(MethodArgumentNotValidException.class)
 	@ResponseStatus(HttpStatus.BAD_REQUEST)
 	public ResponseEntity handleError(MethodArgumentNotValidException e) {
-		log.warn("【参数验证失败】：{}", e.getMessage());
+		log.warn("【参数验证失败】：{}", e.getBindingResult());
 		return handleError(e.getBindingResult());
 	}
 
 	@ExceptionHandler(BindException.class)
 	@ResponseStatus(HttpStatus.BAD_REQUEST)
 	public ResponseEntity handleError(BindException e) {
-		log.warn("【参数绑定失败】：{}", e.getMessage());
+		log.warn("【参数绑定失败】：{}", e.getBindingResult());
 		return handleError(e.getBindingResult());
 	}
 
@@ -138,7 +138,8 @@ public class GlobalExceptionHandler {
 	@ExceptionHandler(Throwable.class)
 	@ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
 	public ResponseEntity handleError(Throwable e) {
-		log.error("【服务器异常】：{}", e);
+		log.error("【服务器异常】：");
+		e.printStackTrace();
 		return ResponseEntity.fail(SystemResultCode.INTERNAL_SERVER_ERROR, (StrUtil.isEmpty(e.getMessage()) ? SystemResultCode.INTERNAL_SERVER_ERROR.getMessage() : e.getMessage()));
 	}
 }
