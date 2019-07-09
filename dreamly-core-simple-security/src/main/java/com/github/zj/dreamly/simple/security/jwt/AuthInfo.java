@@ -21,6 +21,8 @@ public class AuthInfo {
 	private Long id;
 	@ApiModelProperty(value = "令牌")
 	private String accessToken;
+	@ApiModelProperty(value = "刷新token")
+	private String refreshToken;
 	@ApiModelProperty(value = "用户名")
 	private String userName;
 	@ApiModelProperty(value = "过期时间")

@@ -3,7 +3,7 @@ package com.github.zj.dreamly.simple.security.security;
 import com.github.zj.dreamly.simple.security.annotation.support.PreAuthorizeAspect;
 import com.github.zj.dreamly.simple.security.el.PreAuthorizeExpressionRoot;
 import com.github.zj.dreamly.simple.security.jwt.JwtOperator;
-import com.github.zj.dreamly.simple.security.jwt.UserOperator;
+import com.github.zj.dreamly.simple.security.jwt.JwtUserOperator;
 import com.github.zj.dreamly.simple.security.spec.Spec;
 import com.github.zj.dreamly.simple.security.spec.SpecRegistry;
 import org.springframework.boot.autoconfigure.AutoConfigureBefore;
@@ -35,14 +35,14 @@ public class SecurityConfiguration {
 
 	@Bean
 	@ConditionalOnMissingBean
-	public UserOperator userOperator(JwtOperator jwtOperator) {
-		return new UserOperator(jwtOperator);
+	public JwtUserOperator userOperator(JwtOperator jwtOperator) {
+		return new JwtUserOperator(jwtOperator);
 	}
 
 	@Bean
 	@ConditionalOnMissingBean
-	public PreAuthorizeExpressionRoot preAuthorizeExpressionRoot(UserOperator userOperator) {
-		return new PreAuthorizeExpressionRoot(userOperator);
+	public PreAuthorizeExpressionRoot preAuthorizeExpressionRoot(JwtUserOperator jwtUserOperator) {
+		return new PreAuthorizeExpressionRoot(jwtUserOperator);
 	}
 
 	@Bean

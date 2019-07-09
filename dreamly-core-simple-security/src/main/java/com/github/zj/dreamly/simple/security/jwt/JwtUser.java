@@ -14,7 +14,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class User {
+public class JwtUser {
     /**
      * id
      */
@@ -29,4 +29,9 @@ public class User {
      * 角色
      */
     private List<String> roles;
+
+	/**
+	 * 权限
+	 */
+	private List<String> permissions;
 }
