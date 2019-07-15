@@ -1,5 +1,6 @@
 package com.github.zj.dreamly.simple.security.interceptor;
 
+import cn.hutool.core.util.StrUtil;
 import com.github.zj.dreamly.simple.security.el.PreAuthorizeExpressionRoot;
 import com.github.zj.dreamly.simple.security.spec.Spec;
 import com.github.zj.dreamly.simple.security.util.SpringElCheckUtil;
@@ -22,9 +23,16 @@ import java.util.List;
 public class AuthInterceptor extends HandlerInterceptorAdapter {
     private final List<Spec> specList;
     private final PreAuthorizeExpressionRoot preAuthorizeExpressionRoot;
+	private final static String OPTIONS = "OPTIONS";
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) {
+
+		final String method = request.getMethod();
+		if (StrUtil.equalsIgnoreCase(method, OPTIONS)){
+			return true;
+		}
+
         // 当前请求的路径和定义的规则能够匹配
         Boolean checkResult = specList.stream()
                 .filter(spec -> RestfulMatchUtil.match(request, spec.getHttpMethod(), spec.getPath()))

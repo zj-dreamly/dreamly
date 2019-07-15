@@ -122,17 +122,17 @@ public class GlobalExceptionHandler {
 	}
 
 	@ExceptionHandler(BusinessException.class)
-	@ResponseStatus(HttpStatus.BAD_REQUEST)
+	@ResponseStatus(HttpStatus.OK)
 	public ResponseEntity handleError(BusinessException e) {
 		log.error("【业务异常】：{}", e.getMessage());
-		return ResponseEntity.fail(e.getResultCode(), e.getMessage());
+		return ResponseEntity.fail(e.getResultCode(), "【业务异常】：" + e.getMessage());
 	}
 
 	@ExceptionHandler(DreamlySecurityException.class)
 	@ResponseStatus(HttpStatus.UNAUTHORIZED)
 	public ResponseEntity handleError(DreamlySecurityException e) {
 		log.error("【认证异常】：{}", e.getMessage());
-		return ResponseEntity.fail(e.getResultCode(), e.getMessage());
+		return ResponseEntity.fail(e.getResultCode(), "【认证异常】：" + e.getMessage());
 	}
 
 	@ExceptionHandler(Throwable.class)
