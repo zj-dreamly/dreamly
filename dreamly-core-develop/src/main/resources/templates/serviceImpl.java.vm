@@ -62,7 +62,7 @@ public class $!{table.serviceImplName} extends $!{superServiceImplClass}<$!{tabl
      * @param $!{table.entityPath} {@link $!{entity}}
      */
     @Override
-    public void update$!{entity}($!{entity} $!{table.entityPath}){
+    public void update$!{entity}ById($!{entity} $!{table.entityPath}){
         this.updateById($!{table.entityPath});
     }
 

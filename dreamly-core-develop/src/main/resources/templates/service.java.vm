@@ -45,7 +45,7 @@ public interface $!{table.serviceName} extends $!{superServiceClass}<$!{entity}>
      *
      * @param $!{table.entityPath} {@link $!{entity}}
      */
-    void update$!{entity}($!{entity} $!{table.entityPath});
+    void update$!{entity}ById($!{entity} $!{table.entityPath});
 
     /**
      * 删除$!{table.comment}

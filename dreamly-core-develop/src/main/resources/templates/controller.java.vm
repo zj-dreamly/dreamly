@@ -43,22 +43,22 @@ public class $!{table.controllerName} {
 	private $!{table.serviceName} $!{table.entityPath}Service;
 
 	/**
-	* 获取详情数据 $!{table.comment}
+	* 获取$!{table.comment}详情
 	*/
 	@GetMapping("/{id}")
     @ApiOperationSupport(order = 1)
-	@ApiOperation(value = "详情", notes = "传入主键id")
+	@ApiOperation(value = "获取$!{table.comment}详情数据", notes = "传入主键id")
     @ApiImplicitParams({@ApiImplicitParam(name = "id", value = "用户编号", dataType = DataType.STRING, paramType = ParamType.PATH)})
-	public ResponseEntity<$!{entity}> detail(@PathVariable String id) {
+	public ResponseEntity<$!{entity}> detail(@PathVariable("id") String id) {
 		return ResponseEntity.data($!{table.entityPath}Service.get$!{entity}ById(Long.valueOf(id)));
 	}
 
 	/**
-	* 列表数据 $!{table.comment}
+	* 获取$!{table.comment}列表
 	*/
 	@GetMapping("/page")
     @ApiOperationSupport(order = 2)
-	@ApiOperation(value = "列表", notes = "传入page")
+	@ApiOperation(value = "获取$!{table.comment}列表", notes = "传入page")
     @ApiImplicitParams({
         @ApiImplicitParam(value = "当前页", name = "current", dataType = DataType.LONG, paramType = ParamType.QUERY),
         @ApiImplicitParam(value = "页面大小", name = "size", dataType = DataType.LONG, paramType = ParamType.QUERY)
@@ -68,34 +68,34 @@ public class $!{table.controllerName} {
 	}
 
 	/**
-	* 新增 $!{table.comment}
+	* 新增$!{table.comment}
 	*/
 	@PostMapping
     @ApiOperationSupport(order = 3)
-	@ApiOperation(value = "新增", notes = "传入$!{table.entityPath}")
+	@ApiOperation(value = "新增$!{table.comment}", notes = "传入$!{table.entityPath}")
 	public ResponseEntity save(@Valid @RequestBody $!{entity} $!{table.entityPath}) {
-        $!{table.entityPath}Service.save($!{table.entityPath});
+        $!{table.entityPath}Service.save$!{entity}($!{table.entityPath});
 	    return ResponseEntity.success("新增成功");
 	}
 
 	/**
-	* 修改 $!{table.comment}
+	* 修改$!{table.comment}
 	*/
 	@PutMapping
     @ApiOperationSupport(order = 4)
-	@ApiOperation(value = "修改", notes = "传入$!{table.entityPath}")
+	@ApiOperation(value = "修改$!{table.comment}", notes = "传入$!{table.entityPath}")
 	public ResponseEntity update(@Valid @RequestBody $!{entity} $!{table.entityPath}) {
-        $!{table.entityPath}Service.update$!{entity}($!{table.entityPath});
+        $!{table.entityPath}Service.update$!{entity}ById($!{table.entityPath});
         return ResponseEntity.success("修改成功");
 	}
 
 	/**
-	* 删除 $!{table.comment}
+	* 删除$!{table.comment}
 	*/
 	@DeleteMapping("/{id}")
     @ApiOperationSupport(order = 5)
-	@ApiOperation(value = "删除", notes = "传入id")
-	public ResponseEntity remove(@PathVariable String id) {
+	@ApiOperation(value = "删除$!{table.comment}", notes = "传入id")
+	public ResponseEntity remove(@PathVariable("id") String id) {
         $!{table.entityPath}Service.remove$!{entity}ById(Long.valueOf(id));
         return ResponseEntity.success("删除成功");
 	}
