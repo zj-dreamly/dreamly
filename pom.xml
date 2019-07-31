@@ -48,6 +48,7 @@
         <module>dreamly-starter-swagger</module>
         <module>dreamly-core-shiro-security</module>
         <module>dreamly-core-spring-security</module>
+        <module>dreamly-core-develop</module>
 
     </modules>
 

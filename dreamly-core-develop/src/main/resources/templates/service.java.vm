@@ -1,0 +1,57 @@
+package $!{package.Service};
+
+import $!{package.Entity}.$!{entity};
+#set($voPackage=$package.Entity.replace("entity","vo"))
+import $!{voPackage}.$!{entity}VO;
+import $!{superServiceClassPackage};
+import com.baomidou.mybatisplus.core.metadata.IPage;
+
+/**
+ * $!{table.comment} 服务类
+ *
+ * @author $!{author}
+ * @since $!{date}
+ */
+#if($!{kotlin})
+interface $!{table.serviceName} : $!{superServiceClass}<$!{entity}>
+#else
+public interface $!{table.serviceName} extends $!{superServiceClass}<$!{entity}> {
+
+    /**
+     * 根据id查询$!{table.comment}
+     *
+     * @param id {@link $!{entity}}
+     * @return {@link $!{entity}}
+     */
+    $!{entity} get$!{entity}ById(Long id);
+
+    /**
+     * 分页查询$!{table.comment}
+     *
+     * @param query {@link PageQuery}
+     * @return {@link $!{entity}}
+     */
+    IPage<$!{entity}> select$!{entity}Page(PageQuery query);
+
+    /**
+     * 新增$!{table.comment}
+     *
+     * @param $!{table.entityPath} {@link $!{entity}}
+     */
+    void save$!{entity}($!{entity} $!{table.entityPath});
+
+    /**
+     * 修改$!{table.comment}
+     *
+     * @param $!{table.entityPath} {@link $!{entity}}
+     */
+    void update$!{entity}($!{entity} $!{table.entityPath});
+
+    /**
+     * 删除$!{table.comment}
+     *
+     * @param id 主键id
+     */
+    void remove$!{entity}ById(Long id);
+}
+#end

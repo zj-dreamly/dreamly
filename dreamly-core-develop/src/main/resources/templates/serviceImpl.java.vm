@@ -1,0 +1,79 @@
+package $!{package.ServiceImpl};
+
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import $!{package.Entity}.$!{entity};
+#set($voPackage=$package.Entity.replace("entity","vo"))
+import $!{voPackage}.$!{entity}VO;
+import $!{package.Mapper}.$!{table.mapperName};
+import $!{package.Service}.$!{table.serviceName};
+import $!{superServiceImplClassPackage};
+import org.springframework.stereotype.Service;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+
+/**
+ * $!{table.comment} 服务实现类
+ *
+ * @author $!{author}
+ * @since $!{date}
+ */
+@Service
+#if($!{kotlin})
+open class $!{table.serviceImplName} : $!{superServiceImplClass}<$!{table.mapperName}, $!{entity}>(), $!{table.serviceName} {
+
+}
+#else
+public class $!{table.serviceImplName} extends $!{superServiceImplClass}<$!{table.mapperName}, $!{entity}> implements $!{table.serviceName} {
+
+    /**
+     * 根据id查询$!{table.comment}
+     *
+     * @param id {@link $!{entity}}
+     * @return {@link $!{entity}}
+     */
+    @Override
+    public $!{entity} get$!{entity}ById(Long id){
+        return this.getById(id);
+    }
+
+    /**
+     * 分页查询$!{table.comment}
+     *
+     * @param query {@link PageQuery}
+     * @return {@link $!{entity}}
+     */
+    @Override
+    public IPage<$!{entity}> select$!{entity}Page(PageQuery query){
+        return this.page(new Page<>(query.getCurrent(), query.getSize()));
+    }
+
+    /**
+     * 新增$!{table.comment}
+     *
+     * @param $!{table.entityPath} {@link $!{entity}}
+     */
+    @Override
+    public void save$!{entity}($!{entity} $!{table.entityPath}){
+        this.save($!{table.entityPath});
+    }
+
+    /**
+     * 修改$!{table.comment}
+     *
+     * @param $!{table.entityPath} {@link $!{entity}}
+     */
+    @Override
+    public void update$!{entity}($!{entity} $!{table.entityPath}){
+        this.updateById($!{table.entityPath});
+    }
+
+    /**
+     * 删除$!{table.comment}
+     *
+     * @param id 主键id
+     */
+    @Override
+    public void remove$!{entity}ById(Long id){
+        this.removeById(id);
+    }
+}
+#end

@@ -1,0 +1,103 @@
+package $!{package.Controller};
+
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperationSupport;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
+import lombok.AllArgsConstructor;
+import javax.validation.Valid;
+import org.springframework.web.bind.annotation.*;
+#if($!{superEntityClass})
+import org.springframework.web.bind.annotation.RequestParam;
+#end
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import $!{package.Entity}.$!{entity};
+#set($voPackage=$package.Entity.replace("entity","vo"))
+import $!{voPackage}.$!{entity}VO;
+#set($wrapperPackage=$package.Entity.replace("entity","wrapper"))
+import $!{wrapperPackage}.$!{entity}Wrapper;
+import $!{package.Service}.$!{table.serviceName};
+#if($!{superControllerClassPackage})
+import $!{superControllerClassPackage};
+#end
+#if(!$!{superEntityClass})
+#end
+
+/**
+ * $!{table.comment} 控制器
+ *
+ * @author $!{author}
+ * @since $!{date}
+ */
+@RestController
+@AllArgsConstructor
+@RequestMapping("#if($!{package.ModuleName})/$!{package.ModuleName}#end/$!{cfg.entityKey}")
+@Api(value = "$!{table.comment}", tags = "$!{table.comment}接口")
+@Validated
+#if($!{superControllerClass})
+public class $!{table.controllerName} extends $!{superControllerClass} {
+#else
+public class $!{table.controllerName} {
+#end
+
+	private $!{table.serviceName} $!{table.entityPath}Service;
+
+	/**
+	* 获取详情数据 $!{table.comment}
+	*/
+	@GetMapping("/{id}")
+    @ApiOperationSupport(order = 1)
+	@ApiOperation(value = "详情", notes = "传入主键id")
+    @ApiImplicitParams({@ApiImplicitParam(name = "id", value = "用户编号", dataType = DataType.STRING, paramType = ParamType.PATH)})
+	public ResponseEntity<$!{entity}> detail(@PathVariable String id) {
+		return ResponseEntity.data($!{table.entityPath}Service.get$!{entity}ById(Long.valueOf(id)));
+	}
+
+	/**
+	* 列表数据 $!{table.comment}
+	*/
+	@GetMapping("/page")
+    @ApiOperationSupport(order = 2)
+	@ApiOperation(value = "列表", notes = "传入page")
+    @ApiImplicitParams({
+        @ApiImplicitParam(value = "当前页", name = "current", dataType = DataType.LONG, paramType = ParamType.QUERY),
+        @ApiImplicitParam(value = "页面大小", name = "size", dataType = DataType.LONG, paramType = ParamType.QUERY)
+    })
+	public ResponseEntity<IPage<$!{entity}>> page(@Valid @RequestBody PageQuery query) {
+		return ResponseEntity.data($!{table.entityPath}Service.select$!{entity}Page(query));
+	}
+
+	/**
+	* 新增 $!{table.comment}
+	*/
+	@PostMapping
+    @ApiOperationSupport(order = 3)
+	@ApiOperation(value = "新增", notes = "传入$!{table.entityPath}")
+	public ResponseEntity save(@Valid @RequestBody $!{entity} $!{table.entityPath}) {
+        $!{table.entityPath}Service.save($!{table.entityPath});
+	    return ResponseEntity.success("新增成功");
+	}
+
+	/**
+	* 修改 $!{table.comment}
+	*/
+	@PutMapping
+    @ApiOperationSupport(order = 4)
+	@ApiOperation(value = "修改", notes = "传入$!{table.entityPath}")
+	public ResponseEntity update(@Valid @RequestBody $!{entity} $!{table.entityPath}) {
+        $!{table.entityPath}Service.update$!{entity}($!{table.entityPath});
+        return ResponseEntity.success("修改成功");
+	}
+
+	/**
+	* 删除 $!{table.comment}
+	*/
+	@DeleteMapping("/{id}")
+    @ApiOperationSupport(order = 5)
+	@ApiOperation(value = "删除", notes = "传入id")
+	public ResponseEntity remove(@PathVariable String id) {
+        $!{table.entityPath}Service.remove$!{entity}ById(Long.valueOf(id));
+        return ResponseEntity.success("删除成功");
+	}
+
+}
