@@ -63,7 +63,7 @@ public class $!{table.controllerName} {
         @ApiImplicitParam(value = "当前页", name = "current", dataType = DataType.LONG, paramType = ParamType.QUERY),
         @ApiImplicitParam(value = "页面大小", name = "size", dataType = DataType.LONG, paramType = ParamType.QUERY)
     })
-	public ResponseEntity<IPage<$!{entity}>> page(@Valid @RequestBody PageQuery query) {
+	public ResponseEntity<IPage<$!{entity}>> page(@Valid PageQuery query) {
 		return ResponseEntity.data($!{table.entityPath}Service.select$!{entity}Page(query));
 	}
 
