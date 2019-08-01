@@ -94,7 +94,7 @@ public class $!{table.controllerName} {
 	*/
 	@DeleteMapping("/{id}")
     @ApiOperationSupport(order = 5)
-	@ApiOperation(value = "删除$!{table.comment}", notes = "传入id")
+	@ApiOperation(value = "删除$!{table.comment}", notes = "传入主键id")
 	public ResponseEntity remove(@PathVariable("id") String id) {
         $!{table.entityPath}Service.remove$!{entity}ById(Long.valueOf(id));
         return ResponseEntity.success("删除成功");

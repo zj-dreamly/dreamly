@@ -11,6 +11,7 @@ import com.baomidou.mybatisplus.generator.config.*;
 import com.baomidou.mybatisplus.generator.config.converts.MySqlTypeConvert;
 import com.baomidou.mybatisplus.generator.config.converts.PostgreSqlTypeConvert;
 import com.baomidou.mybatisplus.generator.config.po.TableInfo;
+import com.baomidou.mybatisplus.generator.config.rules.DateType;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
@@ -99,6 +100,7 @@ public class CodeGenerator {
 		gc.setControllerName("%sController");
 		gc.setSwagger2(isSwagger2);
 		gc.setIdType(IdType.AUTO);
+		gc.setDateType(DateType.ONLY_DATE);
 		mpg.setGlobalConfig(gc);
 
 		DataSourceConfig dsc = new DataSourceConfig();
