@@ -16,7 +16,9 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
  * @author $!{author}
  * @since $!{date}
  */
+@Slf4j
 @Service
+@AllArgsConstructor
 #if($!{kotlin})
 open class $!{table.serviceImplName} : $!{superServiceImplClass}<$!{table.mapperName}, $!{entity}>(), $!{table.serviceName} {
 
@@ -42,7 +44,7 @@ public class $!{table.serviceImplName} extends $!{superServiceImplClass}<$!{tabl
      * @return {@link $!{entity}}
      */
     @Override
-    public IPage<$!{entity}> select$!{entity}Page(PageQuery query){
+    public IPage<$!{entity}> get$!{entity}Page(PageQuery query){
         return this.page(new Page<>(query.getCurrent(), query.getSize()));
     }
 

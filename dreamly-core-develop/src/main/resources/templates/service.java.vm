@@ -31,7 +31,7 @@ public interface $!{table.serviceName} extends $!{superServiceClass}<$!{entity}>
      * @param query {@link PageQuery}
      * @return {@link $!{entity}}
      */
-    IPage<$!{entity}> select$!{entity}Page(PageQuery query);
+    IPage<$!{entity}> get$!{entity}Page(PageQuery query);
 
     /**
      * 新增$!{table.comment}
