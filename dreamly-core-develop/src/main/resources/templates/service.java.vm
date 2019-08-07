@@ -20,7 +20,7 @@ public interface $!{table.serviceName} extends $!{superServiceClass}<$!{entity}>
     /**
      * 根据id查询$!{table.comment}
      *
-     * @param id {@link $!{entity}}
+     * @param id 主键id
      * @return {@link $!{entity}}
      */
     $!{entity} get$!{entity}ById(Long id);
