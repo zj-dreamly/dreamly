@@ -34,7 +34,7 @@ public class Runner {
 	/**
 	 * 需要生成的表名(两者只能取其一)
 	 */
-	private static final String[] INCLUDE_TABLES = {"market_template_url"};
+	private static final String[] INCLUDE_TABLES = {"market_consumer_info"};
 	/**
 	 * 需要排除的表名(两者只能取其一)
 	 */
