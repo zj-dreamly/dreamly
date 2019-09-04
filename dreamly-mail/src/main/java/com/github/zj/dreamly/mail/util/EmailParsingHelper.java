@@ -106,8 +106,7 @@ public class EmailParsingHelper {
 			boolean isContainerAttachment = isContainAttachment(msg);
 			log.warn("【是否包含附件】：{}", isContainerAttachment);
 			if (isContainerAttachment) {
-				//TODO 保存附件（位置写法）
-				saveAttachment(msg, "d:\\log\\" + msg.getSubject() + "_" + i + "_");
+				saveAttachment(msg, "mailpath/" + msg.getMessageID());
 			}
 			StringBuffer content = new StringBuffer(30);
 			//解析邮件正文

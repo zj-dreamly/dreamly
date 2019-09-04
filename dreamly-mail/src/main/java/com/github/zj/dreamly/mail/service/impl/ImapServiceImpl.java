@@ -7,7 +7,7 @@ import com.github.zj.dreamly.mail.entity.UniversalMail;
 import com.github.zj.dreamly.mail.enums.ProxyTypeEnum;
 import com.github.zj.dreamly.mail.exception.MailCustomException;
 import com.github.zj.dreamly.mail.service.MailService;
-import com.github.zj.dreamly.mail.util.MailItemParser;
+import com.github.zj.dreamly.mail.util.EmailParsing;
 import com.sun.mail.imap.IMAPFolder;
 import com.sun.mail.imap.IMAPMessage;
 import com.sun.mail.imap.IMAPStore;
@@ -53,7 +53,7 @@ public class ImapServiceImpl implements MailService {
 	 */
 	@Override
 	public UniversalMail parseEmail(MailItem mailItem, String localSavePath) throws MailCustomException {
-		return MailItemParser.parseMail(mailItem, localSavePath);
+		return EmailParsing.parseMail(mailItem, localSavePath);
 	}
 
 	/**

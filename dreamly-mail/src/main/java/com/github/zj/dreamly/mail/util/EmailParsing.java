@@ -43,16 +43,16 @@ import java.util.*;
  * @since: 2019-09-04 17:04
  **/
 @SuppressWarnings("all")
-public class MailItemParser {
+public class EmailParsing {
 
 	/**
 	 * 导入方式
 	 */
-	private static final String IMPORT_FOLDER = "手动导入";
+	public static final String IMPORT_FOLDER = "手动导入";
 	/**
 	 * eml文件后缀
 	 */
-	private static final String EML_SUFFIX = ".eml";
+	public static final String EML_SUFFIX = ".eml";
 
 	/**
 	 * 解析通用邮件内容
@@ -107,7 +107,7 @@ public class MailItemParser {
 	/**
 	 * 保存邮件到本地的eml中
 	 */
-	private static String saveMimiMessageAsLocalEml(MimeMessage mimeMessage, String targetDir) throws MailCustomException {
+	public static String saveMimiMessageAsLocalEml(MimeMessage mimeMessage, String targetDir) throws MailCustomException {
 		try {
 			String subject = mimeMessage.getSubject();
 			subject = StringUtils.isEmpty(subject) ? "无主题" + System.currentTimeMillis() : subject;
@@ -131,7 +131,7 @@ public class MailItemParser {
 	/**
 	 * 解析邮件附件
 	 */
-	private static List<UniversalAttachment> parseAttachment(MimeMessage mimeMessage, String targetDir) throws MailCustomException {
+	public static List<UniversalAttachment> parseAttachment(MimeMessage mimeMessage, String targetDir) throws MailCustomException {
 		try {
 			MimeMessageParser parser = new MimeMessageParser(mimeMessage).parse();
 			List<UniversalAttachment> list = new ArrayList<>();
@@ -188,7 +188,7 @@ public class MailItemParser {
 	/**
 	 * 解析mime邮件
 	 */
-	private static UniversalMail parseMimeMessage(MimeMessage mimeMessage, String targetDir) throws MailCustomException {
+	public static UniversalMail parseMimeMessage(MimeMessage mimeMessage, String targetDir) throws MailCustomException {
 		try {
 			MimeMessageParser parser = new MimeMessageParser(mimeMessage).parse();
 			javax.mail.Folder folder = mimeMessage.getFolder();
@@ -229,7 +229,7 @@ public class MailItemParser {
 	/**
 	 * 获取JSON格式的邮件地址
 	 */
-	private static String getMimeMessageAddressJson(List<Address> address) {
+	public static String getMimeMessageAddressJson(List<Address> address) {
 		List<UniversalRecipient> recipients = new ArrayList<>();
 		for (Address value : address) {
 			InternetAddress internetAddress = (InternetAddress) value;
@@ -245,7 +245,7 @@ public class MailItemParser {
 	/**
 	 * 保存到本地，必须在解析完邮件之后再保存，不然会报错，加载的头不一样了
 	 */
-	private static String saveExchangeMailAsLocalEml(EmailMessage exchangeMessage, String targetDir) throws MailCustomException {
+	public static String saveExchangeMailAsLocalEml(EmailMessage exchangeMessage, String targetDir) throws MailCustomException {
 		try {
 			File dir = new File(targetDir);
 			if (dir.exists()) {
@@ -280,7 +280,7 @@ public class MailItemParser {
 	/**
 	 * 解析Exchange附件
 	 */
-	private static List<UniversalAttachment> parseAttachment(AttachmentCollection attachments, String targetDir) {
+	public static List<UniversalAttachment> parseAttachment(AttachmentCollection attachments, String targetDir) {
 		List<UniversalAttachment> universalAttachments = new ArrayList<>();
 		List<Attachment> items = attachments.getItems();
 		File dir = new File(targetDir);
@@ -321,7 +321,7 @@ public class MailItemParser {
 	/**
 	 * 解析exchange邮件
 	 */
-	private static UniversalMail parseExchangeMail(EmailMessage message) throws MailCustomException {
+	public static UniversalMail parseExchangeMail(EmailMessage message) throws MailCustomException {
 		try {
 			message.load();
 			String subject = message.getSubject();
@@ -356,7 +356,7 @@ public class MailItemParser {
 	/**
 	 * 解析exchange地址为键值对并转换成JSON字符串
 	 */
-	private static String getExchangeAddressJson(EmailAddressCollection recipients) {
+	public static String getExchangeAddressJson(EmailAddressCollection recipients) {
 		List<EmailAddress> items = recipients.getItems();
 		List<UniversalRecipient> list = new ArrayList<>();
 		for (EmailAddress emailAddress :

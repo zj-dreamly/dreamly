@@ -6,7 +6,7 @@ import com.github.zj.dreamly.mail.entity.MailItem;
 import com.github.zj.dreamly.mail.entity.UniversalMail;
 import com.github.zj.dreamly.mail.exception.MailCustomException;
 import com.github.zj.dreamly.mail.service.MailService;
-import com.github.zj.dreamly.mail.util.MailItemParser;
+import com.github.zj.dreamly.mail.util.EmailParsing;
 import microsoft.exchange.webservices.data.core.ExchangeService;
 import microsoft.exchange.webservices.data.core.WebProxy;
 import microsoft.exchange.webservices.data.core.enumeration.property.WellKnownFolderName;
@@ -43,7 +43,7 @@ public class ExchangeServiceImpl implements MailService {
 	 */
 	@Override
 	public UniversalMail parseEmail(MailItem mailItem, String localSavePath) throws MailCustomException {
-		return MailItemParser.parseMail(mailItem, localSavePath);
+		return EmailParsing.parseMail(mailItem, localSavePath);
 	}
 
 	/**

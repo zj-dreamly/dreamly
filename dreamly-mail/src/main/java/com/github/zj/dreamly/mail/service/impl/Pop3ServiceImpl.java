@@ -7,7 +7,7 @@ import com.github.zj.dreamly.mail.entity.UniversalMail;
 import com.github.zj.dreamly.mail.enums.ProxyTypeEnum;
 import com.github.zj.dreamly.mail.exception.MailCustomException;
 import com.github.zj.dreamly.mail.service.MailService;
-import com.github.zj.dreamly.mail.util.MailItemParser;
+import com.github.zj.dreamly.mail.util.EmailParsing;
 import com.sun.mail.pop3.POP3Folder;
 import com.sun.mail.pop3.POP3Message;
 import com.sun.mail.pop3.POP3Store;
@@ -55,7 +55,7 @@ public class Pop3ServiceImpl implements MailService {
 	@Override
 	public UniversalMail parseEmail(MailItem mailItem, String localSavePath) throws MailCustomException {
 		//使用通用的邮件解析工具类解析邮件
-		return MailItemParser.parseMail(mailItem, localSavePath);
+		return EmailParsing.parseMail(mailItem, localSavePath);
 	}
 
 	/**
