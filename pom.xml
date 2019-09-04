@@ -49,6 +49,8 @@
         <module>dreamly-core-shiro-security</module>
         <module>dreamly-core-spring-security</module>
         <module>dreamly-core-develop</module>
+        <module>delay-queue</module>
+        <module>dreamly-delay-queue</module>
 
     </modules>
 

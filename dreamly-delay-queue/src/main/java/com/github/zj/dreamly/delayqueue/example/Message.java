@@ -1,4 +1,4 @@
-package com.github.zj.dreamly.tool.delayqueue.example;
+package com.github.zj.dreamly.delayqueue.example;
 
 import java.util.concurrent.Delayed;
 import java.util.concurrent.TimeUnit;

@@ -1,6 +1,6 @@
-package com.github.zj.dreamly.tool.delayqueue.simplecase.boorstrap;
+package com.github.zj.dreamly.delayqueue.simplecase.boorstrap;
 
-import com.github.zj.dreamly.tool.delayqueue.simplecase.WheelQueue;
+import com.github.zj.dreamly.delayqueue.simplecase.WheelQueue;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;

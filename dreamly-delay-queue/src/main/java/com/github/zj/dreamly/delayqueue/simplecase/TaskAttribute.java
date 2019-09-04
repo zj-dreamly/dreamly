@@ -1,4 +1,4 @@
-package com.github.zj.dreamly.tool.delayqueue.simplecase;
+package com.github.zj.dreamly.delayqueue.simplecase;
 
 import lombok.Data;
 

@@ -1,4 +1,4 @@
-package com.github.zj.dreamly.tool.delayqueue.orderexample;
+package com.github.zj.dreamly.delayqueue.orderexample;
 /**
  * 具体执行相关业务的业务类
  * @author whd

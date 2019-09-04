@@ -1,6 +1,6 @@
-package com.github.zj.dreamly.tool.delayqueue.simplecase;
+package com.github.zj.dreamly.delayqueue.simplecase;
 
-import com.github.zj.dreamly.tool.delayqueue.simplecase.util.TaskAttributeUtil;
+import com.github.zj.dreamly.delayqueue.simplecase.util.TaskAttributeUtil;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.HashMap;
