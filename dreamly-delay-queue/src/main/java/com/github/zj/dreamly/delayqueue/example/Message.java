@@ -6,8 +6,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * 消息体定义 实现Delayed接口就是实现两个方法即compareTo 和 getDelay最重要的就是getDelay方法，这个方法用来判断是否到期……
  *
- * @author whd
- * @date 2017年9月24日 下午8:57:14
+ * @author 苍海之南
  */
 public class Message implements Delayed {
 	private int id;

@@ -8,7 +8,6 @@ import com.github.zj.dreamly.mail.exception.MailCustomException;
 import com.github.zj.dreamly.mail.service.MailService;
 import com.github.zj.dreamly.mail.service.impl.Pop3ServiceImpl;
 import com.github.zj.dreamly.mail.util.EmailParsing;
-import com.github.zj.dreamly.mail.util.EmailSender;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -39,14 +38,6 @@ public class MailTest {
 			System.out.println(EmailParsing.parseMail(mailItem, MailConstant.LOCAL_SAVE_PATH));
 			return;
 		}
-
-	}
-
-	@Test
-	public void send() throws MailCustomException {
-		EmailSender.sendEmailWithAttachment("ju.zhou@synconize.com", "Lyy123456",
-			"测试", "1782920040@qq.com", "测试", null,
-			null, null, "smtp.exmail.qq.com", 465, null, null);
 
 	}
 

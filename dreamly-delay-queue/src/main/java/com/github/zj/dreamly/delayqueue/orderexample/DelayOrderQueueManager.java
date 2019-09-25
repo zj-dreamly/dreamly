@@ -10,8 +10,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * 延时队列管理类，用来添加任务、执行任务
  *
- * @author whd
- * @date 2017年9月25日 上午12:44:59
+ * @author 苍海之南
  */
 public class DelayOrderQueueManager {
 

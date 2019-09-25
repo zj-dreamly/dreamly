@@ -6,9 +6,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * 延时队列中的消息体将任务封装为消息体
  *
- * @param <T>
- * @author whd
- * @date 2017年9月25日 上午12:48:30
+ * @author 苍海之南
  */
 public class DelayOrderTask<T extends Runnable> implements Delayed {
 	private final long time;
