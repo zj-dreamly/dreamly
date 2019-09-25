@@ -1,4 +1,4 @@
-package com.github.zj.dreamly.tool.api;
+package com.github.zj.dreamly.tool.util;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.builder.ToStringBuilder;

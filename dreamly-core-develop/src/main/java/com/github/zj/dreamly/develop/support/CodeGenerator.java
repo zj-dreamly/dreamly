@@ -58,7 +58,7 @@ public class CodeGenerator {
 	/**
 	 * 需要生成的表名(两者只能取其一)
 	 */
-	private String[] includeTables = {"blade_test"};
+	private String[] includeTables = {"test"};
 	/**
 	 * 需要排除的表名(两者只能取其一)
 	 */
@@ -131,16 +131,14 @@ public class CodeGenerator {
 			strategy.setExclude(excludeTables);
 		}
 		if (hasSuperEntity) {
-			strategy.setSuperEntityClass("org.springblade.core.mp.base.BaseEntity");
+			strategy.setSuperEntityClass("com.baomidou.mybatisplus.extension.activerecord.Model");
 			strategy.setSuperEntityColumns(superEntityColumns);
-			strategy.setSuperServiceClass("org.springblade.core.mp.base.BaseService");
-			strategy.setSuperServiceImplClass("org.springblade.core.mp.base.BaseServiceImpl");
+			strategy.setSuperServiceClass("com.baomidou.mybatisplus.extension.service.IService");
+			strategy.setSuperServiceImplClass("com.baomidou.mybatisplus.extension.service.impl.ServiceImpl");
 		} else {
 			strategy.setSuperServiceClass("com.baomidou.mybatisplus.extension.service.IService");
 			strategy.setSuperServiceImplClass("com.baomidou.mybatisplus.extension.service.impl.ServiceImpl");
 		}
-		// 自定义 controller 父类
-		///strategy.setSuperControllerClass("org.springblade.core.boot.ctrl.BladeController");
 		strategy.setEntityBuilderModel(false);
 		strategy.setEntityLombokModel(true);
 		strategy.setControllerMappingHyphenStyle(true);

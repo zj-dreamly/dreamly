@@ -123,6 +123,7 @@
             </resource>
         </resources>
 
+        <!--发布中央仓库配置开始-->
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -151,8 +152,10 @@
                 </configuration>
             </plugin>
         </plugins>
+        <!--发布中央仓库配置结束-->
     </build>
 
+    <!--发布中央仓库配置开始-->
     <repositories>
         <repository>
             <id>release</id>
@@ -251,4 +254,6 @@
             </distributionManagement>
         </profile>
     </profiles>
+
+    <!--发布中央仓库配置结束-->
 </project>

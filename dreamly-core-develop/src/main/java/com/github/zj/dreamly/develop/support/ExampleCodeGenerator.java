@@ -56,10 +56,10 @@ public class ExampleCodeGenerator {
 
         // 数据源配置
         DataSourceConfig dsc = new DataSourceConfig();
-        dsc.setUrl("jdbc:mysql://106.14.142.24:8000/rittal-auto-market?useUnicode=true&useSSL=false&characterEncoding=utf8");
+        dsc.setUrl("jdbc:mysql://111.11.111.11:8000/rittal-auto-market?useUnicode=true&useSSL=false&characterEncoding=utf8");
         dsc.setDriverName("com.mysql.jdbc.Driver");
         dsc.setUsername("root");
-        dsc.setPassword("synco");
+        dsc.setPassword("root");
         mpg.setDataSource(dsc);
 
         // 包配置

@@ -27,7 +27,7 @@ public class MailTest {
 
 		MailConnectionConfig mailConnectionConfig = new MailConnectionConfig();
 		mailConnectionConfig.setEmail("ju.zhou@synconize.com");
-		mailConnectionConfig.setPassword("Lyy123456");
+		mailConnectionConfig.setPassword("123456");
 		mailConnectionConfig.setHost("smtp.exmail.qq.com");
 		mailConnectionConfig.setPort(465);
 		mailConnectionConfig.setSsl(true);
