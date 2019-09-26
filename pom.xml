@@ -54,14 +54,14 @@
     </scm>
 
     <modules>
-        <module>dreamly-core-tool</module>
-        <module>dreamly-core-jwt-security</module>
+        <module>dreamly-starter-develop</module>
+        <module>dreamly-starter-core-tool</module>
+        <module>dreamly-starter-jwt-security</module>
         <module>dreamly-starter-swagger</module>
-        <module>dreamly-core-shiro-security</module>
-        <module>dreamly-core-spring-security</module>
-        <module>dreamly-core-develop</module>
-        <module>dreamly-delay-queue</module>
-        <module>dreamly-mail</module>
+        <module>dreamly-starter-delay-queue</module>
+        <module>dreamly-starter-shiro-security</module>
+        <module>dreamly-starter-spring-security</module>
+        <module>dreamly-starter-mail</module>
 
     </modules>
 
