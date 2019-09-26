@@ -28,7 +28,7 @@ public class SecurityProperties {
         /**
          * secret
          */
-        private String secret = "yml-security-yml-security-yml-security-yml-security-yml-security-yml-security-yml-security-yml-security-yml-security";
+        private String secret = "yml-security-yml-security-yml-security-yml-security-yml-security-yml-security";
 
         /**
          * token的有效时间(秒)，默认2周

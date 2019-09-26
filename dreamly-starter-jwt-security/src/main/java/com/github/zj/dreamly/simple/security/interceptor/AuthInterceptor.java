@@ -16,6 +16,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 import java.util.Optional;
 
+import static com.github.zj.dreamly.tool.constant.DreamlyConstant.DEFAULT_UNAUTHORIZED_MESSAGE;
+
 /**
  * 授权控制拦截器
  *
@@ -56,7 +58,7 @@ public class AuthInterceptor extends HandlerInterceptorAdapter {
 			})
 			.orElse(true);
 		if (!checkResult) {
-			throw new DreamlySecurityException("Access Denied.");
+			throw new DreamlySecurityException(DEFAULT_UNAUTHORIZED_MESSAGE);
 		}
 		return true;
 	}

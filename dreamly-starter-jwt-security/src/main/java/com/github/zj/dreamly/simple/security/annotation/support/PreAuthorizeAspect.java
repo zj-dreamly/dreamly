@@ -13,6 +13,8 @@ import org.springframework.expression.spel.support.StandardEvaluationContext;
 
 import java.lang.reflect.Method;
 
+import static com.github.zj.dreamly.tool.constant.DreamlyConstant.DEFAULT_UNAUTHORIZED_MESSAGE;
+
 /**
  * 处理PreAuthorize注解的切面
  *
@@ -36,7 +38,7 @@ public class PreAuthorizeAspect {
 				expression
 			);
 			if (!check) {
-				throw new DreamlySecurityException("Access Denied.");
+				throw new DreamlySecurityException(DEFAULT_UNAUTHORIZED_MESSAGE);
 			}
 		}
 		return point.proceed();

@@ -62,28 +62,6 @@ public class ResponseEntity<T> implements Serializable {
 	}
 
 	/**
-	 * 判断返回是否为成功
-	 *
-	 * @param result Result
-	 * @return 是否成功
-	 */
-	private static boolean isSuccess(@Nullable ResponseEntity<?> result) {
-		return Optional.ofNullable(result)
-			.map(x -> ObjectUtil.equal(SystemResultCode.SUCCESS.code, x.code))
-			.orElse(Boolean.FALSE);
-	}
-
-	/**
-	 * 判断返回是否为成功
-	 *
-	 * @param result Result
-	 * @return 是否成功
-	 */
-	public static boolean isNotSuccess(@Nullable ResponseEntity<?> result) {
-		return !ResponseEntity.isSuccess(result);
-	}
-
-	/**
 	 * 返回R
 	 *
 	 * @param data 数据
