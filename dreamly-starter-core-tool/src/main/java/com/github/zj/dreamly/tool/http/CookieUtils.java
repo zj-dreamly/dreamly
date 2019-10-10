@@ -75,11 +75,13 @@ public class CookieUtils {
 		if (cookies == null || cookies.length <= 0) {
 			return null;
 		}
+
 		for (Cookie cookie : cookies) {
 			if (cookie.getName().equals(cookName)) {
 				return cookie.getValue();
 			}
 		}
+
 		return null;
 	}
 }
