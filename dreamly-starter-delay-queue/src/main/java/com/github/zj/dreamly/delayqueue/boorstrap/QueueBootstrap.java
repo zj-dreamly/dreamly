@@ -28,8 +28,7 @@ public class QueueBootstrap {
 
 	private ScheduledExecutorService scheduledExecutorService = new
 		ScheduledThreadPoolExecutor(Runtime.getRuntime().availableProcessors(),
-		new BasicThreadFactory.Builder().namingPattern("queue-sche" +
-			"dule-pool-%d").daemon(true).build());
+		new BasicThreadFactory.Builder().namingPattern("queue-schedule-pool-%d").daemon(true).build());
 
 	/**
 	 * can set some profile current is no sense
