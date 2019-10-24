@@ -5,7 +5,7 @@ package com.github.zj.dreamly.tool.constant;
  *
  * @author 苍海之南
  */
-public interface DreamlyConstant {
+public interface SystemConstant {
 	/**
 	 * 默认为空消息
 	 */
@@ -22,5 +22,8 @@ public interface DreamlyConstant {
 	 * 默认未授权消息
 	 */
 	String DEFAULT_UNAUTHORIZED_MESSAGE = "签名认证失败";
-
+	/**
+	 * 系统默认核心数
+	 */
+	int CORE_SIZE = Runtime.getRuntime().availableProcessors();
 }

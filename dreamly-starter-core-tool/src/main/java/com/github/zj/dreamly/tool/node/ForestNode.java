@@ -11,14 +11,14 @@ import lombok.EqualsAndHashCode;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @SuppressWarnings("all")
-public class ForestNode extends BaseNode {
+public class ForestNode<T> extends BaseNode {
 
 	/**
-	 * 节点内容
+	 * 节点对象
 	 */
-	private Object content;
+	private T content;
 
-	public ForestNode(Long id, Long parentId, Object content) {
+	public ForestNode(Long id, Long parentId, T content) {
 		this.id = id;
 		this.parentId = parentId;
 		this.content = content;

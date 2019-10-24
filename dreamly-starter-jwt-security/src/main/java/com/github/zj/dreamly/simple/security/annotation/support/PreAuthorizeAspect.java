@@ -13,7 +13,7 @@ import org.springframework.expression.spel.support.StandardEvaluationContext;
 
 import java.lang.reflect.Method;
 
-import static com.github.zj.dreamly.tool.constant.DreamlyConstant.DEFAULT_UNAUTHORIZED_MESSAGE;
+import static com.github.zj.dreamly.tool.constant.SystemConstant.DEFAULT_UNAUTHORIZED_MESSAGE;
 
 /**
  * 处理PreAuthorize注解的切面

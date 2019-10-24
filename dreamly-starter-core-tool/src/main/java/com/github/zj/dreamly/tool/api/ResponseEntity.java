@@ -1,18 +1,15 @@
 package com.github.zj.dreamly.tool.api;
 
-import cn.hutool.core.util.ObjectUtil;
 import cn.hutool.http.HttpStatus;
-import com.github.zj.dreamly.tool.constant.DreamlyConstant;
+import com.github.zj.dreamly.tool.constant.SystemConstant;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
-import org.springframework.lang.Nullable;
 
 import java.io.Serializable;
-import java.util.Optional;
 
 /**
  * 统一API响应结果封装
@@ -69,7 +66,7 @@ public class ResponseEntity<T> implements Serializable {
 	 * @return ResponseEntity
 	 */
 	public static <T> ResponseEntity<T> data(T data) {
-		return data(data, DreamlyConstant.DEFAULT_SUCCESS_MESSAGE);
+		return data(data, SystemConstant.DEFAULT_SUCCESS_MESSAGE);
 	}
 
 	/**
@@ -94,7 +91,7 @@ public class ResponseEntity<T> implements Serializable {
 	 * @return ResponseEntity
 	 */
 	public static <T> ResponseEntity<T> data(int code, T data, String msg) {
-		return new ResponseEntity<>(code, data, data == null ? DreamlyConstant.DEFAULT_NULL_MESSAGE : msg);
+		return new ResponseEntity<>(code, data, data == null ? SystemConstant.DEFAULT_NULL_MESSAGE : msg);
 	}
 
 	/**
@@ -184,6 +181,6 @@ public class ResponseEntity<T> implements Serializable {
 	 * @return ResponseEntity
 	 */
 	public static <T> ResponseEntity<T> status(boolean flag) {
-		return flag ? success(DreamlyConstant.DEFAULT_SUCCESS_MESSAGE) : fail(DreamlyConstant.DEFAULT_FAILURE_MESSAGE);
+		return flag ? success(SystemConstant.DEFAULT_SUCCESS_MESSAGE) : fail(SystemConstant.DEFAULT_FAILURE_MESSAGE);
 	}
 }

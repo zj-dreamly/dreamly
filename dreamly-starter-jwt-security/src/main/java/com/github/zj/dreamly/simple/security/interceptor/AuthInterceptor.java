@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 import java.util.Optional;
 
-import static com.github.zj.dreamly.tool.constant.DreamlyConstant.DEFAULT_UNAUTHORIZED_MESSAGE;
+import static com.github.zj.dreamly.tool.constant.SystemConstant.DEFAULT_UNAUTHORIZED_MESSAGE;
 
 /**
  * 授权控制拦截器
