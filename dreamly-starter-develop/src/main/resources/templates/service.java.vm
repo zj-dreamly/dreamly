@@ -1,8 +1,6 @@
 package $!{package.Service};
 
 import $!{package.Entity}.$!{entity};
-#set($voPackage=$package.Entity.replace("entity","vo"))
-import $!{voPackage}.$!{entity}VO;
 import $!{superServiceClassPackage};
 import com.baomidou.mybatisplus.core.metadata.IPage;
 
