@@ -40,7 +40,7 @@ import java.util.*;
  * <h2>EmailParsing</h2>
  *
  * @author: 苍海之南
- * @since: 2019-09-04 17:04
+ * @since: 0.0.1
  **/
 @SuppressWarnings("all")
 public class EmailParsing {

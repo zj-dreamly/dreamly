@@ -4,7 +4,7 @@ package com.github.zj.dreamly.swagger.constant;
  * <h2>ParamType</h2>
  *
  * @author: 苍海之南
- * @since: 2019-07-31 14:56
+ * @since: 0.0.3
  **/
 public interface ParamType {
 	/**

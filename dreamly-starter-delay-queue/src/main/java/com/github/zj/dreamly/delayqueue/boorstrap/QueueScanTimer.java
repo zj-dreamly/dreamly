@@ -17,7 +17,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * </h2>
  *
  * @author: 苍海之南
- * @since: 2019-08-16 09:17
+ * @since: 0.0.1
  **/
 @Slf4j
 public class QueueScanTimer extends TimerTask {

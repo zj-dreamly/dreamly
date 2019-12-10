@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
  * <h2>UniversalRecipient</h2>
  *
  * @author: 苍海之南
- * @since: 2019-09-04 17:00
+ * @since: 0.0.1
  **/
 @Data
 @AllArgsConstructor

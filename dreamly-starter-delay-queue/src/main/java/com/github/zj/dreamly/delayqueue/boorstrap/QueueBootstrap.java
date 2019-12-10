@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit;
  * <h2>QueueBootstrap</h2>
  *
  * @author: 苍海之南
- * @since: 2019-08-16 09:16
+ * @since: 0.0.1
  **/
 @Slf4j
 public class QueueBootstrap {
@@ -46,7 +46,7 @@ public class QueueBootstrap {
 	}
 
 	/**
-	 * 创建一个环形队列；并开启定时扫描队列
+	 * Create a circular queue; and enable the scheduled scan queue
 	 */
 	public WheelQueue start() {
 		log.info("scanning starting...");

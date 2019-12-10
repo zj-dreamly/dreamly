@@ -12,7 +12,7 @@ import microsoft.exchange.webservices.data.core.ExchangeService;
  * <h2>MailConnection</h2>
  *
  * @author: 苍海之南
- * @since: 2019-09-04 16:19
+ * @since: 0.0.1
  **/
 @Data
 @NoArgsConstructor

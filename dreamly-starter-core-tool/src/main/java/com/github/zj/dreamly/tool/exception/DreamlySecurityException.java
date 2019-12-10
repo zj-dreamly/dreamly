@@ -6,7 +6,7 @@ import lombok.Getter;
 
 /**
  * @author: 苍海之南
- * @since: 2019-05-20 12:19
+ * @since: 0.0.1
  **/
 public class DreamlySecurityException extends RuntimeException{
 	private static final long serialVersionUID = 2359767895161832954L;

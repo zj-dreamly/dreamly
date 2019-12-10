@@ -9,7 +9,7 @@ import lombok.EqualsAndHashCode;
  * 树型节点类
  *
  * @author 苍海之南
- * @since 2019年5月20日
+ * @since 0.0.1
  */
 @Data
 @EqualsAndHashCode(callSuper = false)

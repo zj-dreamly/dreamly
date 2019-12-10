@@ -3,6 +3,7 @@ package $!{package.Service};
 import $!{package.Entity}.$!{entity};
 import $!{superServiceClassPackage};
 import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.github.zj.dreamly.tool.util.PageQuery;
 
 /**
  * $!{table.comment} 服务类

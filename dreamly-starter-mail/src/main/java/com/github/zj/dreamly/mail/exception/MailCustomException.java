@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
  * <h2>MailPlusException</h2>
  *
  * @author: 苍海之南
- * @since: 2019-09-04 17:01
+ * @since: 0.0.1
  **/
 @NoArgsConstructor
 public class MailCustomException extends Exception {

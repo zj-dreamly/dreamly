@@ -15,7 +15,7 @@ import java.util.Properties;
  * <h2>EmailSender</h2>
  *
  * @author: 苍海之南
- * @since: 2019-09-04 17:03
+ * @since: 0.0.1
  **/
 public class EmailSender {
 	private static final String UTF8 = "UTF-8";

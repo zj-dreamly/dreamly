@@ -6,7 +6,7 @@ import lombok.Getter;
  * <h2>ProxyTypeEnum</h2>
  *
  * @author: 苍海之南
- * @since: 2019-09-04 16:58
+ * @since: 0.0.1
  **/
 @Getter
 public enum  ProxyTypeEnum {

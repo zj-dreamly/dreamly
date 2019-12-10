@@ -8,7 +8,7 @@ import java.util.Date;
  * <h2>任务属性</h2>
  *
  * @author: 苍海之南
- * @since: 2019-08-16 09:12
+ * @since: 0.0.1
  **/
 @Data
 public class TaskAttribute {

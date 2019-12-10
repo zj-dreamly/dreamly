@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
  * <h2>MailConnectionConfig</h2>
  *
  * @author: 苍海之南
- * @since: 2019-09-04 16:57
+ * @since: 0.0.1
  **/
 @Data
 @NoArgsConstructor

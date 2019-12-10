@@ -6,7 +6,7 @@ import com.github.zj.dreamly.develop.support.CodeGenerator;
  * <h2>CodeGenerator</h2>
  *
  * @author: 苍海之南
- * @since: 2019-07-25 09:59
+ * @since: 0.0.1
  **/
 public class Runner {
 
@@ -34,7 +34,7 @@ public class Runner {
 	/**
 	 * 需要生成的表名(两者只能取其一)
 	 */
-	private static final String[] INCLUDE_TABLES = {"user", "bonus_event_log"};
+	private static final String[] INCLUDE_TABLES = {"user"};
 	/**
 	 * 需要排除的表名(两者只能取其一)
 	 */

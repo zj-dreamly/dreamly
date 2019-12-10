@@ -4,7 +4,7 @@ package com.github.zj.dreamly.mail.constant;
  * <h2>MailConstant</h2>
  *
  * @author: 苍海之南
- * @since: 2019-09-04 18:10
+ * @since: 0.0.1
  **/
 public interface MailConstant {
 

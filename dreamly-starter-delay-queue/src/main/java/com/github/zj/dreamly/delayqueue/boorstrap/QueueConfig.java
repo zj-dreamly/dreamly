@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
  * <h2>QueueConfig</h2>
  *
  * @author: 苍海之南
- * @since: 2019-08-16 11:15
+ * @since: 0.0.1
  **/
 @Slf4j
 @Component
