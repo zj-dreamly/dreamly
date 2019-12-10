@@ -6,7 +6,7 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import lombok.AllArgsConstructor;
 import javax.validation.Valid;
-import com.github.zj.dreamly.user.util.PageQuery;
+import com.github.zj.dreamly.tool.util.PageQuery;
 import com.github.zj.dreamly.swagger.constant.DataType;
 import com.github.zj.dreamly.swagger.constant.ParamType;
 import org.springframework.web.bind.annotation.*;
