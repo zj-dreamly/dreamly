@@ -15,6 +15,7 @@ public class ToStringUtils {
 	 * 用于产生去掉空值属性并以换行符分割各属性键值的toString字符串
 	 *
 	 * @param obj obj
+	 * @return 返回的数据
 	 */
 	public static String toSimpleString(Object obj) {
 		String toStringResult = ToStringBuilder.reflectionToString(obj, THE_STYLE);

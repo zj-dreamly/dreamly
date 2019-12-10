@@ -178,6 +178,7 @@ public class ResponseEntity<T> implements Serializable {
 	 * 返回R
 	 *
 	 * @param flag 成功状态
+	 * @param <T>        T 泛型标记
 	 * @return ResponseEntity
 	 */
 	public static <T> ResponseEntity<T> status(boolean flag) {

@@ -24,6 +24,7 @@ public class JsonUtils {
 	 * @param str   字符串
 	 * @param clazz 需要转成想要的对象
 	 * @param <T>   返回相应对象
+	 * @return 返回相应对象
 	 */
 	public static <T> T toJavaObject(String str, Class<T> clazz) {
 		return JSON.parseObject(str, clazz);
@@ -33,6 +34,7 @@ public class JsonUtils {
 	 * 对象转json字符串，默认不执行进行日期转换
 	 *
 	 * @param obj 对象
+	 * @return 返回相应对象
 	 */
 	public static String toJsonString(Object obj) {
 
@@ -44,6 +46,7 @@ public class JsonUtils {
 	 *
 	 * @param obj           对象
 	 * @param useDateFormat 自定义时间格式
+	 * @return 返回相应对象
 	 */
 	public static String objectToJson(Object obj, boolean useDateFormat) {
 
@@ -55,6 +58,7 @@ public class JsonUtils {
 	 *
 	 * @param obj        obj
 	 * @param dateFormat dateFormat
+	 * @return 返回相应对象
 	 */
 	public static String objectToJson(Object obj, String dateFormat) {
 
@@ -68,6 +72,7 @@ public class JsonUtils {
 	 * @param obj           javabean对象
 	 * @param useDateFormat useDateFormat
 	 * @param dateFormat    dateFormat
+	 * @return 返回相应对象
 	 */
 	private static String objectToJson(Object obj, boolean useDateFormat, String dateFormat) {
 		if (useDateFormat) {
@@ -80,8 +85,10 @@ public class JsonUtils {
 	/**
 	 * json格式解析为List集合，不解决格式时间问题
 	 *
+	 * @param <T>   泛型标记
 	 * @param str   json字符串
 	 * @param clazz 要转换的对象
+	 * @return 返回相应对象
 	 */
 	public static <T> List<T> jsonTolist(String str, Class<T> clazz) {
 
