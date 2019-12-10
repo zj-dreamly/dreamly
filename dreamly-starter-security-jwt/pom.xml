@@ -13,7 +13,7 @@
     <version>${parent.version}</version>
     <packaging>jar</packaging>
 
-    <name>dreamly-starter-jwt-security</name>
+    <name>dreamly-starter-security-jwt</name>
     <description>dreamly-starter-security-jwt</description>
 
     <properties>

@@ -13,7 +13,7 @@
     <version>${parent.version}</version>
     <packaging>jar</packaging>
 
-    <name>dreamly-starter-delay-queue</name>
+    <name>dreamly-starter-queue</name>
     <description>dreamly-starter-queue</description>
 
     <dependencies>
