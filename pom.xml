@@ -8,7 +8,7 @@
 
     <groupId>com.github.zj-dreamly</groupId>
     <artifactId>dreamly-tool</artifactId>
-    <version>0.0.2</version>
+    <version>0.0.3</version>
     <name>dreamly-tool</name>
     <description>提供丰富的Java工具方法</description>
     <url>https://github.com/zj-dreamly/dreamly.git</url>
@@ -55,12 +55,12 @@
 
     <modules>
         <module>dreamly-starter-develop</module>
-        <module>dreamly-starter-core-tool</module>
-        <module>dreamly-starter-jwt-security</module>
+        <module>dreamly-starter-tool</module>
+        <module>dreamly-starter-security-jwt</module>
         <module>dreamly-starter-swagger</module>
-        <module>dreamly-starter-delay-queue</module>
-        <module>dreamly-starter-shiro-security</module>
-        <module>dreamly-starter-spring-security</module>
+        <module>dreamly-starter-queue</module>
+        <module>dreamly-starter-security-shiro</module>
+        <module>dreamly-starter-security-spring</module>
         <module>dreamly-starter-mail</module>
 
     </modules>

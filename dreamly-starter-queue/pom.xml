@@ -5,22 +5,22 @@
     <parent>
         <artifactId>dreamly-tool</artifactId>
         <groupId>com.github.zj-dreamly</groupId>
-        <version>0.0.2</version>
+        <version>0.0.3</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>dreamly-starter-delay-queue</artifactId>
+    <artifactId>dreamly-starter-queue</artifactId>
     <version>${parent.version}</version>
     <packaging>jar</packaging>
 
     <name>dreamly-starter-delay-queue</name>
-    <description>dreamly-starter-delay-queue</description>
+    <description>dreamly-starter-queue</description>
 
     <dependencies>
         <dependency>
             <groupId>com.github.zj-dreamly</groupId>
-            <artifactId>dreamly-starter-core-tool</artifactId>
-            <version>0.0.2</version>
+            <artifactId>dreamly-starter-tool</artifactId>
+            <version>0.0.3</version>
         </dependency>
     </dependencies>
 

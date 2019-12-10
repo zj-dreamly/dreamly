@@ -5,15 +5,14 @@
     <parent>
         <artifactId>dreamly-tool</artifactId>
         <groupId>com.github.zj-dreamly</groupId>
-        <version>0.0.2</version>
+        <version>0.0.3</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>dreamly-starter-core-tool</artifactId>
+    <artifactId>dreamly-starter-tool</artifactId>
     <name>${project.artifactId}</name>
     <version>${parent.version}</version>
     <packaging>jar</packaging>
-
 
     <properties>
         <hutool.version>4.5.18</hutool.version>

@@ -1,4 +1,4 @@
-package com.github.zj.dreamly.delayqueue;
+package com.github.zj.dreamly.delay;
 
 import lombok.Data;
 

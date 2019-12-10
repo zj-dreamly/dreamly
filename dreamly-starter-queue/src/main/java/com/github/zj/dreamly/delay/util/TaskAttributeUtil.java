@@ -1,8 +1,8 @@
-package com.github.zj.dreamly.delayqueue.util;
+package com.github.zj.dreamly.delay.util;
 
 
-import com.github.zj.dreamly.delayqueue.AbstractTask;
-import com.github.zj.dreamly.delayqueue.TaskAttribute;
+import com.github.zj.dreamly.delay.AbstractTask;
+import com.github.zj.dreamly.delay.TaskAttribute;
 
 import java.util.Calendar;
 import java.util.Date;
