@@ -1,7 +1,6 @@
 package com.github.zj.dreamly.tool.util;
 
 import cn.hutool.core.collection.CollectionUtil;
-import lombok.extern.slf4j.Slf4j;
 
 import java.util.*;
 import java.util.function.Function;
@@ -13,8 +12,7 @@ import java.util.stream.Collectors;
  * @author 苍海之南
  * @since 0.0.3
  */
-@Slf4j
-public class StreamUtil {
+public class StreamUtils {
 
 	/**
 	 * 简化map操作
