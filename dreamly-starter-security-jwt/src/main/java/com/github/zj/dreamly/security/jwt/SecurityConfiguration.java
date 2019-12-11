@@ -1,11 +1,11 @@
-package com.github.zj.dreamly.simple.security.security;
+package com.github.zj.dreamly.security.jwt;
 
-import com.github.zj.dreamly.simple.security.annotation.support.PreAuthorizeAspect;
-import com.github.zj.dreamly.simple.security.el.PreAuthorizeExpressionRoot;
-import com.github.zj.dreamly.simple.security.jwt.JwtOperator;
-import com.github.zj.dreamly.simple.security.jwt.JwtUserOperator;
-import com.github.zj.dreamly.simple.security.spec.Spec;
-import com.github.zj.dreamly.simple.security.spec.SpecRegistry;
+import com.github.zj.dreamly.security.jwt.annotation.support.PreAuthorizeAspect;
+import com.github.zj.dreamly.security.jwt.el.PreAuthorizeExpressionRoot;
+import com.github.zj.dreamly.security.jwt.jwt.JwtOperator;
+import com.github.zj.dreamly.security.jwt.jwt.JwtUserOperator;
+import com.github.zj.dreamly.security.jwt.spec.Spec;
+import com.github.zj.dreamly.security.jwt.spec.SpecRegistry;
 import org.springframework.boot.autoconfigure.AutoConfigureBefore;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;

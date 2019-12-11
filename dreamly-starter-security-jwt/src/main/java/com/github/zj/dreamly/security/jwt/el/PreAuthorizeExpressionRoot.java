@@ -1,7 +1,7 @@
-package com.github.zj.dreamly.simple.security.el;
+package com.github.zj.dreamly.security.jwt.el;
 
-import com.github.zj.dreamly.simple.security.jwt.JwtUser;
-import com.github.zj.dreamly.simple.security.jwt.JwtUserOperator;
+import com.github.zj.dreamly.security.jwt.jwt.JwtUserOperator;
+import com.github.zj.dreamly.security.jwt.jwt.JwtUser;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.util.CollectionUtils;

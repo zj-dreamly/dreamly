@@ -1,4 +1,4 @@
-package com.github.zj.dreamly.simple.security.constants;
+package com.github.zj.dreamly.security.jwt.constants;
 
 /**
  * 常量

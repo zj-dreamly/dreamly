@@ -1,6 +1,6 @@
-package com.github.zj.dreamly.simple.security.spec;
+package com.github.zj.dreamly.security.jwt.spec;
 
-import com.github.zj.dreamly.simple.security.enums.HttpMethod;
+import com.github.zj.dreamly.security.jwt.enums.HttpMethod;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  com.github.zj.dreamly.simple.security.security.SecurityConfiguration
+  com.github.zj.dreamly.security.jwt.SecurityAutoConfiguration

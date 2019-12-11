@@ -1,4 +1,4 @@
-package com.github.zj.dreamly.simple.security.jwt;
+package com.github.zj.dreamly.security.jwt.jwt;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;

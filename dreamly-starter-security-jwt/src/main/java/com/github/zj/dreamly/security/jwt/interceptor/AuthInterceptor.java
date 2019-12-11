@@ -1,10 +1,10 @@
-package com.github.zj.dreamly.simple.security.interceptor;
+package com.github.zj.dreamly.security.jwt.interceptor;
 
-import com.github.zj.dreamly.simple.security.annotation.PreAuthorize;
-import com.github.zj.dreamly.simple.security.el.PreAuthorizeExpressionRoot;
-import com.github.zj.dreamly.simple.security.spec.Spec;
-import com.github.zj.dreamly.simple.security.util.RestfulMatchUtil;
-import com.github.zj.dreamly.simple.security.util.SpringElCheckUtil;
+import com.github.zj.dreamly.security.jwt.annotation.PreAuthorize;
+import com.github.zj.dreamly.security.jwt.el.PreAuthorizeExpressionRoot;
+import com.github.zj.dreamly.security.jwt.spec.Spec;
+import com.github.zj.dreamly.security.jwt.util.RestfulMatchUtil;
+import com.github.zj.dreamly.security.jwt.util.SpringElCheckUtil;
 import com.github.zj.dreamly.tool.exception.DreamlySecurityException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.expression.spel.support.StandardEvaluationContext;

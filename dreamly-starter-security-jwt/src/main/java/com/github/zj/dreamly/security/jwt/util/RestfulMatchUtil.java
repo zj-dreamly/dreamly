@@ -1,6 +1,6 @@
-package com.github.zj.dreamly.simple.security.util;
+package com.github.zj.dreamly.security.jwt.util;
 
-import com.github.zj.dreamly.simple.security.enums.HttpMethod;
+import com.github.zj.dreamly.security.jwt.enums.HttpMethod;
 import lombok.experimental.UtilityClass;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.util.AntPathMatcher;

@@ -1,8 +1,8 @@
-package com.github.zj.dreamly.simple.security.jwt;
+package com.github.zj.dreamly.security.jwt.jwt;
 
 import cn.hutool.core.util.IdUtil;
-import com.github.zj.dreamly.simple.security.constants.ConstantsSecurity;
-import com.github.zj.dreamly.simple.security.security.SecurityProperties;
+import com.github.zj.dreamly.security.jwt.constants.ConstantsSecurity;
+import com.github.zj.dreamly.security.jwt.SecurityProperties;
 import com.github.zj.dreamly.tool.exception.DreamlySecurityException;
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.security.Keys;

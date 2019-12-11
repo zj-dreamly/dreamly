@@ -1,6 +1,6 @@
-package com.github.zj.dreamly.simple.security.jwt;
+package com.github.zj.dreamly.security.jwt.jwt;
 
-import com.github.zj.dreamly.simple.security.constants.ConstantsSecurity;
+import com.github.zj.dreamly.security.jwt.constants.ConstantsSecurity;
 import com.github.zj.dreamly.tool.exception.DreamlySecurityException;
 import io.jsonwebtoken.Claims;
 import lombok.AllArgsConstructor;
@@ -20,7 +20,7 @@ import java.util.List;
 @AllArgsConstructor
 public class JwtUserOperator {
 
-	private static final String SECURITY_REQ_ATTR_USER = "com.github.zj.dreamly.security-user";
+	private static final String SECURITY_REQ_ATTR_USER = "I-LOVE-YOU";
 
 	private static final int SEVEN = 7;
 

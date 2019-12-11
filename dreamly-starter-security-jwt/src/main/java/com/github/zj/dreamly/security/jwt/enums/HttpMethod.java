@@ -1,4 +1,4 @@
-package com.github.zj.dreamly.simple.security.enums;
+package com.github.zj.dreamly.security.jwt.enums;
 
 /**
  * http请求方法枚举

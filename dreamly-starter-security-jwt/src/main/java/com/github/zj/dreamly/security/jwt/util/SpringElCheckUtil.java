@@ -1,4 +1,4 @@
-package com.github.zj.dreamly.simple.security.util;
+package com.github.zj.dreamly.security.jwt.util;
 
 import lombok.experimental.UtilityClass;
 import lombok.extern.slf4j.Slf4j;

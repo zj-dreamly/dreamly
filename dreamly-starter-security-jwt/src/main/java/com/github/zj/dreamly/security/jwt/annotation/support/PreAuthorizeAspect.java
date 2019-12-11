@@ -1,8 +1,8 @@
-package com.github.zj.dreamly.simple.security.annotation.support;
+package com.github.zj.dreamly.security.jwt.annotation.support;
 
-import com.github.zj.dreamly.simple.security.annotation.PreAuthorize;
-import com.github.zj.dreamly.simple.security.el.PreAuthorizeExpressionRoot;
-import com.github.zj.dreamly.simple.security.util.SpringElCheckUtil;
+import com.github.zj.dreamly.security.jwt.annotation.PreAuthorize;
+import com.github.zj.dreamly.security.jwt.el.PreAuthorizeExpressionRoot;
+import com.github.zj.dreamly.security.jwt.util.SpringElCheckUtil;
 import com.github.zj.dreamly.tool.exception.DreamlySecurityException;
 import lombok.AllArgsConstructor;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -25,7 +25,7 @@ import static com.github.zj.dreamly.tool.constant.SystemConstant.DEFAULT_UNAUTHO
 public class PreAuthorizeAspect {
 	private final PreAuthorizeExpressionRoot preAuthorizeExpressionRoot;
 
-	@Around("@annotation(com.github.zj.dreamly.simple.security.annotation.PreAuthorize) ")
+	@Around("@annotation(com.github.zj.dreamly.security.jwt.annotation.PreAuthorize) ")
 	public Object preAuth(ProceedingJoinPoint point) throws Throwable {
 		MethodSignature signature = (MethodSignature) point.getSignature();
 		Method method = signature.getMethod();
