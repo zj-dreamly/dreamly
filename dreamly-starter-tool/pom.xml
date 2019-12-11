@@ -16,9 +16,6 @@
 
     <properties>
         <hutool.version>4.5.18</hutool.version>
-        <swagger.version>2.9.2</swagger.version>
-        <swagger.models.version>1.5.21</swagger.models.version>
-        <swagger.bootstrapui.version>1.9.0</swagger.bootstrapui.version>
         <fast.json.version>1.2.58</fast.json.version>
         <lang3.version>3.9</lang3.version>
         <commons-io.version>2.6</commons-io.version>
@@ -50,32 +47,14 @@
         </dependency>
 
         <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger2</artifactId>
-            <version>${swagger.version}</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>io.swagger</groupId>
-                    <artifactId>swagger-models</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-
-        <dependency>
-            <groupId>io.swagger</groupId>
-            <artifactId>swagger-models</artifactId>
-            <version>${swagger.models.version}</version>
-        </dependency>
-
-        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
         <dependency>
-            <groupId>com.github.xiaoymin</groupId>
-            <artifactId>swagger-bootstrap-ui</artifactId>
-            <version>${swagger.bootstrapui.version}</version>
+            <groupId>com.github.zj-dreamly</groupId>
+            <artifactId>dreamly-starter-swagger</artifactId>
+            <version>0.0.3</version>
         </dependency>
     </dependencies>
 
