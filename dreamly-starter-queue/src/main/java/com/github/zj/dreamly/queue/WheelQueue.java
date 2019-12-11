@@ -1,6 +1,6 @@
-package com.github.zj.dreamly.delay;
+package com.github.zj.dreamly.queue;
 
-import com.github.zj.dreamly.delay.util.TaskAttributeUtil;
+import com.github.zj.dreamly.queue.util.TaskAttributeUtil;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.HashMap;

@@ -1,6 +1,6 @@
-package com.github.zj.dreamly.delay.boorstrap;
+package com.github.zj.dreamly.queue.boorstrap;
 
-import com.github.zj.dreamly.delay.WheelQueue;
+import com.github.zj.dreamly.queue.WheelQueue;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
@@ -19,7 +19,7 @@ public class QueueConfig {
 
 	@Bean
 	public WheelQueue wheelQueue() {
-		log.info("the delay queue is starting init");
+		log.info("the queue queue is starting init");
 		final QueueBootstrap queueBootstrap = QueueBootstrap.getInstance();
 		return queueBootstrap.start();
 	}

@@ -1,6 +1,6 @@
-package com.github.zj.dreamly.delay.boorstrap;
+package com.github.zj.dreamly.queue.boorstrap;
 
-import com.github.zj.dreamly.delay.WheelQueue;
+import com.github.zj.dreamly.queue.WheelQueue;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.concurrent.BasicThreadFactory;
 

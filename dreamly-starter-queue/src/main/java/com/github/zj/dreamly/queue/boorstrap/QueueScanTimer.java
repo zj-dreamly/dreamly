@@ -1,8 +1,8 @@
-package com.github.zj.dreamly.delay.boorstrap;
+package com.github.zj.dreamly.queue.boorstrap;
 
-import com.github.zj.dreamly.delay.AbstractTask;
-import com.github.zj.dreamly.delay.Slot;
-import com.github.zj.dreamly.delay.WheelQueue;
+import com.github.zj.dreamly.queue.AbstractTask;
+import com.github.zj.dreamly.queue.Slot;
+import com.github.zj.dreamly.queue.WheelQueue;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.Calendar;

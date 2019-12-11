@@ -1,4 +1,4 @@
-package com.github.zj.dreamly.delay;
+package com.github.zj.dreamly.queue;
 
 import java.util.concurrent.ConcurrentLinkedQueue;
 

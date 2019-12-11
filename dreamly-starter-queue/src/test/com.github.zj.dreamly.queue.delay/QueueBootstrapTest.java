@@ -1,6 +1,6 @@
-import com.github.zj.dreamly.delay.AbstractTask;
-import com.github.zj.dreamly.delay.WheelQueue;
-import com.github.zj.dreamly.delay.boorstrap.QueueBootstrap;
+import com.github.zj.dreamly.queue.AbstractTask;
+import com.github.zj.dreamly.queue.WheelQueue;
+import com.github.zj.dreamly.queue.boorstrap.QueueBootstrap;
 
 import java.util.UUID;
 
