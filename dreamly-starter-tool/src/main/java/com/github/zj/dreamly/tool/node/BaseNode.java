@@ -31,7 +31,6 @@ public class BaseNode implements INode {
 	/**
 	 * 子孙节点
 	 */
-	@JsonInclude(JsonInclude.Include.NON_EMPTY)
 	protected List<INode> children = new ArrayList<>();
 
 }
