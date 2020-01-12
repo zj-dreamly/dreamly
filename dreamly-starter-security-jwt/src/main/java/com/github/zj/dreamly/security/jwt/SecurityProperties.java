@@ -28,7 +28,7 @@ public class SecurityProperties {
 		/**
 		 * secret
 		 */
-		private String secret = "I-Love-You-My-Lovely-Baby";
+		private String secret = "I-Love-You-My-Lovely-Baby-I-Love-You-My-Lovely-Baby-I-Love-You-My-Lovely-Baby";
 
 		/**
 		 * token的有效时间(秒)，默认2周
