@@ -238,4 +238,17 @@ public class StreamUtils {
 	public static <T> Map<Boolean, List<T>> partitioningBy(Collection<T> data, Predicate<? super T> filterFunc) {
 		return data.stream().collect(Collectors.partitioningBy(filterFunc));
 	}
+
+	/**
+	 * 分组
+	 *
+	 * @param data    要操作的数据
+	 * @param mapFunc function
+	 * @param <T>     泛型标记 入参类型
+	 * @param <R>     泛型标记 返回参数类型
+	 * @return 返回的数据
+	 */
+	public static <T, R> Map<R, List<T>> group(Collection<T> data, Function<T, R> mapFunc) {
+		return data.stream().collect(Collectors.groupingBy(mapFunc));
+	}
 }
