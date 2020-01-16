@@ -15,7 +15,7 @@
     <packaging>jar</packaging>
 
     <properties>
-        <hutool.version>4.5.18</hutool.version>
+        <hutool.version>5.1.1</hutool.version>
         <fast.json.version>1.2.58</fast.json.version>
         <lang3.version>3.9</lang3.version>
         <commons-io.version>2.6</commons-io.version>
@@ -49,12 +49,14 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+            <scope>provided</scope>
         </dependency>
 
         <dependency>
             <groupId>com.github.zj-dreamly</groupId>
             <artifactId>dreamly-starter-swagger</artifactId>
             <version>${parent.version}</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 
