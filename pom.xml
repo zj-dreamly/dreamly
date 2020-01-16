@@ -8,7 +8,7 @@
 
     <groupId>com.github.zj-dreamly</groupId>
     <artifactId>dreamly-tool</artifactId>
-    <version>0.0.4</version>
+    <version>0.0.5</version>
     <name>dreamly-tool</name>
     <description>提供丰富的Java工具方法</description>
     <url>https://github.com/zj-dreamly/dreamly.git</url>
@@ -42,7 +42,7 @@
     <developers>
         <developer>
             <name>zj-dreamly</name>
-            <email>mengleyao11.@gmail.com</email>
+            <email>ju.zhou94@gmail.com</email>
         </developer>
     </developers>
 
