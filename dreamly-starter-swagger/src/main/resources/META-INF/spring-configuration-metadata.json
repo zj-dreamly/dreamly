@@ -1,0 +1,117 @@
+{
+  "properties": [
+    {
+      "name": "swagger.authorization.auth-regex",
+      "type": "java.lang.String",
+      "description": "需要开启鉴权URL的正则",
+      "sourceType": "com.github.zj.dreamly.swagger.SwaggerProperties$Authorization",
+      "defaultValue": "^.*$"
+    },
+    {
+      "name": "swagger.authorization.authorization-scope-list",
+      "type": "java.util.List<com.github.zj.dreamly.swagger.SwaggerProperties$AuthorizationScope>",
+      "description": "鉴权作用域列表",
+      "sourceType": "com.github.zj.dreamly.swagger.SwaggerProperties$Authorization"
+    },
+    {
+      "name": "swagger.authorization.name",
+      "type": "java.lang.String",
+      "description": "鉴权策略ID，需要和SecurityReferences ID保持一致",
+      "sourceType": "com.github.zj.dreamly.swagger.SwaggerProperties$Authorization",
+      "defaultValue": ""
+    },
+    {
+      "name": "swagger.authorization.token-url-list",
+      "type": "java.util.List<java.lang.String>",
+      "sourceType": "com.github.zj.dreamly.swagger.SwaggerProperties$Authorization"
+    },
+    {
+      "name": "swagger.base-packages",
+      "type": "java.util.List<java.lang.String>",
+      "description": "swagger会解析的包路径",
+      "sourceType": "com.github.zj.dreamly.swagger.SwaggerProperties"
+    },
+    {
+      "name": "swagger.base-path",
+      "type": "java.util.List<java.lang.String>",
+      "description": "swagger会解析的url规则",
+      "sourceType": "com.github.zj.dreamly.swagger.SwaggerProperties"
+    },
+    {
+      "name": "swagger.contact.email",
+      "type": "java.lang.String",
+      "description": "联系人email",
+      "sourceType": "com.github.zj.dreamly.swagger.SwaggerProperties$Contact",
+      "defaultValue": "ju.zhou94@gmail.com"
+    },
+    {
+      "name": "swagger.contact.name",
+      "type": "java.lang.String",
+      "description": "联系人",
+      "sourceType": "com.github.zj.dreamly.swagger.SwaggerProperties$Contact",
+      "defaultValue": "zj-dreamly"
+    },
+    {
+      "name": "swagger.contact.url",
+      "type": "java.lang.String",
+      "description": "联系人url",
+      "sourceType": "com.github.zj.dreamly.swagger.SwaggerProperties$Contact",
+      "defaultValue": "https:\/\/github.com\/zj-dreamly"
+    },
+    {
+      "name": "swagger.description",
+      "type": "java.lang.String",
+      "description": "描述",
+      "sourceType": "com.github.zj.dreamly.swagger.SwaggerProperties",
+      "defaultValue": "Dreamly 接口文档系统"
+    },
+    {
+      "name": "swagger.exclude-path",
+      "type": "java.util.List<java.lang.String>",
+      "description": "在basePath基础上需要排除的url规则",
+      "sourceType": "com.github.zj.dreamly.swagger.SwaggerProperties"
+    },
+    {
+      "name": "swagger.host",
+      "type": "java.lang.String",
+      "description": "host信息",
+      "sourceType": "com.github.zj.dreamly.swagger.SwaggerProperties",
+      "defaultValue": ""
+    },
+    {
+      "name": "swagger.license",
+      "type": "java.lang.String",
+      "description": "许可证",
+      "sourceType": "com.github.zj.dreamly.swagger.SwaggerProperties",
+      "defaultValue": "Powered By Dreamly"
+    },
+    {
+      "name": "swagger.license-url",
+      "type": "java.lang.String",
+      "description": "许可证URL",
+      "sourceType": "com.github.zj.dreamly.swagger.SwaggerProperties",
+      "defaultValue": "https:\/\/github.com/zj-dreamly"
+    },
+    {
+      "name": "swagger.terms-of-service-url",
+      "type": "java.lang.String",
+      "description": "服务条款URL",
+      "sourceType": "com.github.zj.dreamly.swagger.SwaggerProperties",
+      "defaultValue": "https:\/\/github.com/zj-dreamly"
+    },
+    {
+      "name": "swagger.title",
+      "type": "java.lang.String",
+      "description": "标题",
+      "sourceType": "com.github.zj.dreamly.swagger.SwaggerProperties",
+      "defaultValue": "Dreamly 接口文档系统"
+    },
+    {
+      "name": "swagger.version",
+      "type": "java.lang.String",
+      "description": "版本",
+      "sourceType": "com.github.zj.dreamly.swagger.SwaggerProperties"
+    }
+  ],
+  "hints": []
+}
