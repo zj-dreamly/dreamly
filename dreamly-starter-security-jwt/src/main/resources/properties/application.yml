@@ -1,5 +1,3 @@
-server:
-  port: 8009
 dreamly.security:
   # 权限规则配置：表示用{http-method}方法请求的{path}路径必须具备什么{expression}
   spec-list:
