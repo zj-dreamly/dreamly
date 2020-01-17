@@ -72,7 +72,7 @@ mybatis-plus:
 swagger:
   title: Dreamly 接口文档系统
   description: Dreamly 接口文档系统
-  version: 0.0.7.RELEASE
+  version: 0.0.8.RELEASE
   license: Powered By Dreamly
   license-url: https://www.github.com/zj-dreamly
   terms-of-service-url: https://www.github.com/zj-dreamly

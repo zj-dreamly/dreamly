@@ -5,7 +5,7 @@
     <parent>
         <artifactId>dreamly-tool</artifactId>
         <groupId>com.github.zj-dreamly</groupId>
-        <version>0.0.7</version>
+        <version>0.0.8</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
