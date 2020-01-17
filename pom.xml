@@ -9,7 +9,7 @@
     <groupId>com.github.zj-dreamly</groupId>
     <artifactId>dreamly-tool</artifactId>
     <version>0.0.8</version>
-    <name>dreamly-tool</name>
+    <name>${project.artifactId}</name>
     <description>提供丰富的Java工具方法</description>
     <url>https://github.com/zj-dreamly/dreamly.git</url>
 
@@ -71,7 +71,6 @@
         <module>dreamly-starter-swagger</module>
         <module>dreamly-starter-queue</module>
         <module>dreamly-starter-mail</module>
-
     </modules>
 
     <dependencies>
