@@ -1,4 +1,4 @@
-package com.github.zj.dreamly.tool.exception;
+package com.github.zj.dreamly.tool.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

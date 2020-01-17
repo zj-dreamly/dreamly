@@ -9,9 +9,10 @@ import org.springframework.expression.spel.standard.SpelExpressionParser;
 /**
  * @author 苍海之南
  */
-@UtilityClass
 @Slf4j
+@UtilityClass
 public class SpringElCheckUtil {
+
     private static ExpressionParser PARSER = new SpelExpressionParser();
 
     /**
@@ -23,7 +24,7 @@ public class SpringElCheckUtil {
      */
     public static boolean check(EvaluationContext context, String expression) {
         Boolean result = PARSER.parseExpression(expression).getValue(context, Boolean.class);
-        log.info("expression = {}, eval result = {}", expression, result);
+        log.debug("expression = {}, eval result = {}", expression, result);
         return result != null ? result : false;
     }
 }

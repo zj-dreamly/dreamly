@@ -20,6 +20,10 @@ import java.util.List;
 @SuppressWarnings("all")
 public class SecurityProperties {
 	private Jwt jwt = new Jwt();
+
+	/**
+	 * permission list
+	 */
 	private List<Spec> specList = new ArrayList<>();
 
 	@Getter
@@ -31,12 +35,12 @@ public class SecurityProperties {
 		private String secret = "I-Love-You-My-Lovely-Baby-I-Love-You-My-Lovely-Baby-I-Love-You-My-Lovely-Baby";
 
 		/**
-		 * token的有效时间(秒)，默认2周
+		 * Token validity time (seconds), default is 2 weeks
 		 */
 		private Long expirationInSecond = 1209600L;
 
 		/**
-		 * 加签的算法，默认sha512
+		 * Signing algorithm, default sha512
 		 */
 		private SignatureAlgorithm algorithm = SignatureAlgorithm.HS512;
 	}

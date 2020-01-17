@@ -42,8 +42,8 @@ public class SecurityAutoConfiguration implements WebMvcConfigurer {
 	 */
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
-		registry.addInterceptor(
-			new AuthInterceptor(specList, preAuthorizeExpressionRoot)
-		);
+		registry.addInterceptor(new AuthInterceptor(specList,
+			preAuthorizeExpressionRoot))
+			.excludePathPatterns("/**.html", "/v2/**", "/swagger-resources/**", "/swagger-resources/**", "/webjars/**");
 	}
 }
