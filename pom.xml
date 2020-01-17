@@ -63,8 +63,6 @@
         <module>dreamly-starter-security-jwt</module>
         <module>dreamly-starter-swagger</module>
         <module>dreamly-starter-queue</module>
-        <module>dreamly-starter-security-shiro</module>
-        <module>dreamly-starter-security-spring</module>
         <module>dreamly-starter-mail</module>
 
     </modules>
