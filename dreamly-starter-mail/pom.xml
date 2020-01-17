@@ -10,24 +10,15 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>dreamly-starter-mail</artifactId>
-    <version>${parent.version}</version>
+    <name>${project.artifactId}</name>
+    <version>${dreamly-tool.version}</version>
     <packaging>jar</packaging>
-
-    <name>dreamly-starter-mail</name>
-    <description>dreamly-starter-mail</description>
-
-    <properties>
-        <ews-java-api.version>2.0</ews-java-api.version>
-        <commons-email.version>1.5</commons-email.version>
-        <emoji-java.version>4.0.0</emoji-java.version>
-        <javax.mail.version>1.6.2</javax.mail.version>
-    </properties>
 
     <dependencies>
         <dependency>
             <groupId>com.github.zj-dreamly</groupId>
             <artifactId>dreamly-starter-tool</artifactId>
-            <version>${parent.version}</version>
+            <version>${dreamly-tool.version}</version>
         </dependency>
 
         <!--exchange邮件服务-->

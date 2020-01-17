@@ -11,7 +11,7 @@
 
     <artifactId>dreamly-starter-tool</artifactId>
     <name>${project.artifactId}</name>
-    <version>${parent.version}</version>
+    <version>${dreamly-tool.version}</version>
     <packaging>jar</packaging>
 
     <dependencies>
@@ -48,7 +48,7 @@
         <dependency>
             <groupId>com.github.zj-dreamly</groupId>
             <artifactId>dreamly-starter-swagger</artifactId>
-            <version>${parent.version}</version>
+            <version>${dreamly-tool.version}</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
