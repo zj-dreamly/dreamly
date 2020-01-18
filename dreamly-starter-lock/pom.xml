@@ -9,10 +9,11 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>dreamly-starter-queue</artifactId>
+    <artifactId>dreamly-starter-lock</artifactId>
     <name>${project.artifactId}</name>
     <version>${dreamly-tool.version}</version>
     <packaging>jar</packaging>
+
 
     <dependencies>
         <dependency>
@@ -20,13 +21,5 @@
             <artifactId>dreamly-starter-tool</artifactId>
             <version>${dreamly-tool.version}</version>
         </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-            <scope>provided</scope>
-        </dependency>
     </dependencies>
-
-
 </project>
