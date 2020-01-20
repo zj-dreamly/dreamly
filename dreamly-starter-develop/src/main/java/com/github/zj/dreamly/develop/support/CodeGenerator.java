@@ -16,7 +16,6 @@ import com.baomidou.mybatisplus.generator.config.po.TableInfo;
 import com.baomidou.mybatisplus.generator.config.rules.DateType;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 import lombok.Data;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PropertiesLoaderUtils;
@@ -33,7 +32,6 @@ import java.util.Properties;
  * @author Chill
  */
 @Data
-@Slf4j
 public class CodeGenerator {
 	/**
 	 * 代码模块名称

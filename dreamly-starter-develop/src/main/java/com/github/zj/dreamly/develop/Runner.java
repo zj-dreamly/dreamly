@@ -13,11 +13,11 @@ public class Runner {
 	/**
 	 * 代码生成的模块名
 	 */
-	private static final String CODE_NAME = "form";
+	private static final String CODE_NAME = "halyard";
 	/**
 	 * 代码所在服务名
 	 */
-	private static final String SERVICE_NAME = "form";
+	private static final String SERVICE_NAME = "halyard";
 
 	/**
 	 * author
@@ -26,7 +26,7 @@ public class Runner {
 	/**
 	 * 代码生成的包名
 	 */
-	private static final String PACKAGE_NAME = "com.synco.jtdxcontacts";
+	private static final String PACKAGE_NAME = "com.synco.halyard";
 	/**
 	 * 需要去掉的表前缀
 	 */
@@ -34,7 +34,7 @@ public class Runner {
 	/**
 	 * 需要生成的表名(两者只能取其一)
 	 */
-	private static final String[] INCLUDE_TABLES = {"user", "contact"};
+	private static final String[] INCLUDE_TABLES = {"doctor"};
 	/**
 	 * 需要排除的表名(两者只能取其一)
 	 */
