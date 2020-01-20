@@ -67,7 +67,11 @@ public class $!{table.controllerName} {
 	* 新增$!{table.comment}
 	*/
 	@PostMapping
-    @ApiOperationSupport(order = 3)
+    @ApiOperationSupport(order = 3, ignoreParameters = {
+        "$!{table.entityPath}.createTime",
+        "$!{table.entityPath}.updateTime",
+        "$!{table.entityPath}.id"
+        })
 	@ApiOperation(value = "新增$!{table.comment}", notes = "传入$!{table.entityPath}")
 	public ResponseEntity save(@Valid @RequestBody $!{entity} $!{table.entityPath}) {
         $!{table.entityPath}Service.save$!{entity}($!{table.entityPath});
@@ -78,7 +82,10 @@ public class $!{table.controllerName} {
 	* 修改$!{table.comment}
 	*/
 	@PutMapping
-    @ApiOperationSupport(order = 4)
+    @ApiOperationSupport(order = 4, ignoreParameters = {
+        "$!{table.entityPath}.createTime",
+        "$!{table.entityPath}.updateTime"
+        })
 	@ApiOperation(value = "修改$!{table.comment}", notes = "传入$!{table.entityPath}")
 	public ResponseEntity update(@Valid @RequestBody $!{entity} $!{table.entityPath}) {
         $!{table.entityPath}Service.update$!{entity}ById($!{table.entityPath});
