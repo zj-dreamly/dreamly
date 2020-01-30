@@ -72,7 +72,6 @@
         <module>dreamly-starter-swagger</module>
         <module>dreamly-starter-queue</module>
         <module>dreamly-starter-mail</module>
-        <module>dreamly-starter-lock</module>
     </modules>
 
     <dependencies>
