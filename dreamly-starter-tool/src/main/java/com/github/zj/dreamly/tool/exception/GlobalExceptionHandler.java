@@ -40,7 +40,7 @@ import java.util.Set;
 @Order(Ordered.HIGHEST_PRECEDENCE)
 @Configuration
 @ConditionalOnWebApplication(type = ConditionalOnWebApplication.Type.SERVLET)
-@ConditionalOnClass({ Servlet.class, DispatcherServlet.class })
+@ConditionalOnClass({Servlet.class, DispatcherServlet.class})
 @RestControllerAdvice
 @SuppressWarnings("all")
 public class GlobalExceptionHandler {
@@ -138,7 +138,7 @@ public class GlobalExceptionHandler {
 	@ExceptionHandler(Throwable.class)
 	@ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
 	public ResponseEntity handleError(Throwable e) {
-		log.error("【服务器异常】：");
+		log.error("【服务器异常】：{}", e.getMessage());
 		e.printStackTrace();
 		return ResponseEntity.fail(SystemResultCode.INTERNAL_SERVER_ERROR, (StrUtil.isEmpty(e.getMessage()) ? SystemResultCode.INTERNAL_SERVER_ERROR.getMessage() : e.getMessage()));
 	}
