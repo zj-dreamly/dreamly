@@ -125,7 +125,7 @@ public class GlobalExceptionHandler {
 	@ResponseStatus(HttpStatus.OK)
 	public ResponseEntity handleError(BusinessException e) {
 		log.error("【业务异常】：{}", e.getMessage());
-		return ResponseEntity.fail(e.getResultCode(), "【业务异常】：" + e.getMessage());
+		return ResponseEntity.fail(e.getResultCode(), e.getMessage());
 	}
 
 	@ExceptionHandler(DreamlySecurityException.class)
