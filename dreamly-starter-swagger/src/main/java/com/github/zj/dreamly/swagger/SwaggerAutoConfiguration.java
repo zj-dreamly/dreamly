@@ -1,6 +1,5 @@
 package com.github.zj.dreamly.swagger;
 
-import com.github.xiaoymin.swaggerbootstrapui.annotations.EnableSwaggerBootstrapUI;
 import com.google.common.base.Predicate;
 import com.google.common.base.Predicates;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
@@ -27,7 +26,6 @@ import java.util.List;
  */
 @Configuration
 @EnableSwagger2
-@EnableSwaggerBootstrapUI
 @EnableConfigurationProperties(SwaggerProperties.class)
 @SuppressWarnings("all")
 public class SwaggerAutoConfiguration {
