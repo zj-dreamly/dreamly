@@ -27,7 +27,7 @@ import $!{superControllerClassPackage};
  */
 @RestController
 @AllArgsConstructor
-@RequestMapping("$!{entity}s")
+@RequestMapping("/$!{table.name}s")
 @Api(value = "$!{table.comment}", tags = "$!{table.comment}接口")
 @Validated
 #if($!{superControllerClass})
