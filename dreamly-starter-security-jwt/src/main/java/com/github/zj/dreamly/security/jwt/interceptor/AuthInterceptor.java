@@ -8,7 +8,6 @@ import com.github.zj.dreamly.security.jwt.util.RestfulMatchUtil;
 import com.github.zj.dreamly.security.jwt.util.SpringElCheckUtil;
 import com.github.zj.dreamly.tool.exception.DreamlySecurityException;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.expression.spel.support.StandardEvaluationContext;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
@@ -25,7 +24,6 @@ import static com.github.zj.dreamly.tool.constant.SystemConstant.DEFAULT_UNAUTHO
  *
  * @author 苍海之南
  */
-@Slf4j
 @RequiredArgsConstructor
 public class AuthInterceptor extends HandlerInterceptorAdapter {
 	private final List<Spec> specList;

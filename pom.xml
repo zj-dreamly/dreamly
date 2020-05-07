@@ -27,7 +27,7 @@
         <spring.cloud.version>Greenwich.RELEASE</spring.cloud.version>
         <spring.platform.version>Cairo-RELEASE</spring.platform.version>
         <spring-javaformat.version>0.0.9</spring-javaformat.version>
-        <hutool.version>5.1.1</hutool.version>
+        <hutool.version>5.3.3</hutool.version>
         <guava.version>28.2-jre</guava.version>
         <fast.json.version>1.2.58</fast.json.version>
         <lang3.version>3.9</lang3.version>
