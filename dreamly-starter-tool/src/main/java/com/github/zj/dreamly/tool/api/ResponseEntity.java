@@ -4,10 +4,8 @@ import cn.hutool.http.HttpStatus;
 import com.github.zj.dreamly.tool.constant.SystemConstant;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
 
 import java.io.Serializable;
 
@@ -16,9 +14,7 @@ import java.io.Serializable;
  *
  * @author 苍海之南
  */
-@Getter
-@Setter
-@ToString
+@Data
 @ApiModel(description = "返回信息")
 @NoArgsConstructor
 @SuppressWarnings("all")
@@ -59,7 +55,7 @@ public class ResponseEntity<T> implements Serializable {
 	}
 
 	/**
-	 * 返回R
+	 * 返回ResponseEntity
 	 *
 	 * @param data 数据
 	 * @param <T>  T 泛型标记
@@ -70,7 +66,7 @@ public class ResponseEntity<T> implements Serializable {
 	}
 
 	/**
-	 * 返回R
+	 * 返回ResponseEntity
 	 *
 	 * @param data 数据
 	 * @param msg  消息
@@ -82,7 +78,7 @@ public class ResponseEntity<T> implements Serializable {
 	}
 
 	/**
-	 * 返回R
+	 * 返回ResponseEntity
 	 *
 	 * @param code 状态码
 	 * @param data 数据
@@ -95,7 +91,7 @@ public class ResponseEntity<T> implements Serializable {
 	}
 
 	/**
-	 * 返回R
+	 * 返回ResponseEntity
 	 *
 	 * @param msg 消息
 	 * @param <T> T 泛型标记
@@ -106,7 +102,7 @@ public class ResponseEntity<T> implements Serializable {
 	}
 
 	/**
-	 * 返回R
+	 * 返回ResponseEntity
 	 *
 	 * @param resultCode 业务代码
 	 * @param <T>        T 泛型标记
@@ -117,7 +113,7 @@ public class ResponseEntity<T> implements Serializable {
 	}
 
 	/**
-	 * 返回R
+	 * 返回ResponseEntity
 	 *
 	 * @param resultCode 业务代码
 	 * @param msg        消息
@@ -129,7 +125,7 @@ public class ResponseEntity<T> implements Serializable {
 	}
 
 	/**
-	 * 返回R
+	 * 返回ResponseEntity
 	 *
 	 * @param msg 消息
 	 * @param <T> T 泛型标记
@@ -140,7 +136,7 @@ public class ResponseEntity<T> implements Serializable {
 	}
 
 	/**
-	 * 返回R
+	 * 返回ResponseEntity
 	 *
 	 * @param code 状态码
 	 * @param msg  消息
@@ -152,7 +148,7 @@ public class ResponseEntity<T> implements Serializable {
 	}
 
 	/**
-	 * 返回R
+	 * 返回ResponseEntity
 	 *
 	 * @param resultCode 业务代码
 	 * @param <T>        T 泛型标记
@@ -163,7 +159,7 @@ public class ResponseEntity<T> implements Serializable {
 	}
 
 	/**
-	 * 返回R
+	 * 返回ResponseEntity
 	 *
 	 * @param resultCode 业务代码
 	 * @param msg        消息
@@ -175,10 +171,10 @@ public class ResponseEntity<T> implements Serializable {
 	}
 
 	/**
-	 * 返回R
+	 * 返回ResponseEntity
 	 *
 	 * @param flag 成功状态
-	 * @param <T>        T 泛型标记
+	 * @param <T>  T 泛型标记
 	 * @return ResponseEntity
 	 */
 	public static <T> ResponseEntity<T> status(boolean flag) {
