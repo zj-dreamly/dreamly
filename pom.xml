@@ -18,7 +18,7 @@
         <java.version>1.8</java.version>
         <maven.plugin.version>3.8.0</maven.plugin.version>
         <JAVA_HOME>C:\Program Files\Java\jdk1.8.0_201</JAVA_HOME>
-        <knife4j.version>2.0.2</knife4j.version>
+        <knife4j.version>2.0.3</knife4j.version>
         <mybatis.plus.version>3.1.0</mybatis.plus.version>
         <velocity.version>1.7</velocity.version>
         <spring.boot.admin.version>2.1.4</spring.boot.admin.version>
