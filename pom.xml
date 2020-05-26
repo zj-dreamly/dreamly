@@ -38,7 +38,7 @@
         <javax.mail.version>1.6.2</javax.mail.version>
     </properties>
 
-    <!--发布中央仓库版本需要 -->
+    <!--发布中央仓库版本需要-->
     <licenses>
         <license>
             <name>The Apache Software License, Version 2.0</name>
