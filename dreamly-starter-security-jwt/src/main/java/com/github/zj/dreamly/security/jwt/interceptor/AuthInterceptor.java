@@ -44,7 +44,6 @@ public class AuthInterceptor extends HandlerInterceptorAdapter {
 			if (optional.isPresent() && optional.get().equals(true)) {
 				return true;
 			}
-
 		}
 
 		final String uri = request.getRequestURI();
