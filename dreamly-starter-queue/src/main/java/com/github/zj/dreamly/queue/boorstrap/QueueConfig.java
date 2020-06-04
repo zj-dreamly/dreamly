@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 /**
  * <h2>QueueConfig</h2>
  *
- * @author: 苍海之南
+ * @author: hongjian.liu
  * @since: 0.0.1
  **/
 @Slf4j

@@ -11,7 +11,7 @@ import java.util.Map;
 /**
  * <h2>任务的一些属性设置</h2>
  *
- * @author: 苍海之南
+ * @author: hongjian.liu
  * @since: 0.0.1
  **/
 public class TaskAttributeUtil {

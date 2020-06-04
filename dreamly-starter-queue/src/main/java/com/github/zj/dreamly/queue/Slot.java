@@ -5,7 +5,7 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 /**
  * <h2>槽位</h2>
  *
- * @author: 苍海之南
+ * @author: hongjian.liu
  * @since: 0.0.1
  **/
 public class Slot {

@@ -16,7 +16,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * 每秒循环一次；就类似秒针再走。
  * </h2>
  *
- * @author: 苍海之南
+ * @author: hongjian.liu
  * @since: 0.0.1
  **/
 @Slf4j
