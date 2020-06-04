@@ -20,7 +20,7 @@ import java.util.Properties;
 /**
  * <h2>Pop3ServiceImpl</h2>
  *
- * @author: 苍海之南
+ * @author: zeemoo
  * @since: 0.0.1
  **/
 public class Pop3ServiceImpl implements MailService {

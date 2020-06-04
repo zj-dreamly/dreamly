@@ -5,7 +5,7 @@ import lombok.Getter;
 /**
  * <h2>ProxyTypeEnum</h2>
  *
- * @author: 苍海之南
+ * @author: zeemoo
  * @since: 0.0.1
  **/
 @Getter

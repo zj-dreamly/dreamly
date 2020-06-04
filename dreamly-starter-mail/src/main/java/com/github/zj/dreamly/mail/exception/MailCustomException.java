@@ -5,7 +5,7 @@ import lombok.NoArgsConstructor;
 /**
  * <h2>MailPlusException</h2>
  *
- * @author: 苍海之南
+ * @author: zeemoo
  * @since: 0.0.1
  **/
 @NoArgsConstructor

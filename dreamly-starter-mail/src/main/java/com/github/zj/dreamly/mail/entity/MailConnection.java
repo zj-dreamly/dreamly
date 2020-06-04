@@ -11,7 +11,7 @@ import microsoft.exchange.webservices.data.core.ExchangeService;
 /**
  * <h2>MailConnection</h2>
  *
- * @author: 苍海之南
+ * @author: zeemoo
  * @since: 0.0.1
  **/
 @Data

@@ -3,7 +3,7 @@ package com.github.zj.dreamly.mail.constant;
 /**
  * <h2>MailConstant</h2>
  *
- * @author: 苍海之南
+ * @author: zeemoo
  * @since: 0.0.1
  **/
 public interface MailConstant {

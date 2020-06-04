@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 /**
  * <h2>UniversalAttachment</h2>
  *
- * @author: 苍海之南
+ * @author: zeemoo
  * @since: 0.0.1
  **/
 @Data
