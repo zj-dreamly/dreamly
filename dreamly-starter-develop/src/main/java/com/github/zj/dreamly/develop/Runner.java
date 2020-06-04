@@ -5,7 +5,7 @@ import com.github.zj.dreamly.develop.support.CodeGenerator;
 /**
  * <h2>CodeGenerator</h2>
  *
- * @author: 苍海之南
+ * @author: Chill
  * @since: 0.0.1
  **/
 public class Runner {
