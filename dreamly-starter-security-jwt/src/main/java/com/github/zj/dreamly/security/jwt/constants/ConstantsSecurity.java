@@ -3,7 +3,7 @@ package com.github.zj.dreamly.security.jwt.constants;
 /**
  * 常量
  *
- * @author 苍海之南
+ * @author itmuch.com
  */
 public interface ConstantsSecurity {
     /**

@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * 配置属性
  *
- * @author 苍海之南
+ * @author itmuch.com
  */
 @ConfigurationProperties(prefix = "dreamly.security")
 @Getter

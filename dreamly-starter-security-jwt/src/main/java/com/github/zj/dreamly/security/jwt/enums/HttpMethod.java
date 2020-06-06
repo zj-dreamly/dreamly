@@ -3,7 +3,7 @@ package com.github.zj.dreamly.security.jwt.enums;
 /**
  * http请求方法枚举
  *
- * @author 苍海之南
+ * @author itmuch.com
  */
 @SuppressWarnings("all")
 public enum HttpMethod {

@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author 苍海之南
+ * @author itmuch.com
  */
 @Data
 public class SpecRegistry {

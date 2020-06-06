@@ -6,7 +6,7 @@ import java.lang.annotation.*;
 
 /**
  * 用于认证、鉴权的注解
- * @author 苍海之南
+ * @author itmuch.com
  */
 @Target({ElementType.METHOD, ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)

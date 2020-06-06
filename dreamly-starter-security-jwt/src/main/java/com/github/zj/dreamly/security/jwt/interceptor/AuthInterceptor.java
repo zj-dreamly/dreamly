@@ -22,7 +22,7 @@ import static com.github.zj.dreamly.tool.constant.SystemConstant.DEFAULT_UNAUTHO
 /**
  * 授权控制拦截器
  *
- * @author 苍海之南
+ * @author itmuch.com
  */
 @RequiredArgsConstructor
 public class AuthInterceptor extends HandlerInterceptorAdapter {

@@ -18,7 +18,7 @@ import static com.github.zj.dreamly.tool.constant.SystemConstant.DEFAULT_UNAUTHO
 /**
  * 处理PreAuthorize注解的切面
  *
- * @author 苍海之南
+ * @author itmuch.com
  */
 @Aspect
 @AllArgsConstructor

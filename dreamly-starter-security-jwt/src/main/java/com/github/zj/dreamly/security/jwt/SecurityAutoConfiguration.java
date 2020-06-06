@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * 自动配置类
  *
- * @author 苍海之南
+ * @author itmuch.com
  */
 @AllArgsConstructor
 @Data
