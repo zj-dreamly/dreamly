@@ -12,7 +12,7 @@ import java.io.Serializable;
 /**
  * 统一API响应结果封装
  *
- * @author 苍海之南
+ * @author Chill
  */
 @Data
 @ApiModel(description = "返回信息")

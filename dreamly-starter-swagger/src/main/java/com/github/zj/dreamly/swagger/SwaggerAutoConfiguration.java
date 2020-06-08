@@ -22,7 +22,7 @@ import java.util.List;
 /**
  * swagger配置
  *
- * @author 苍海之南
+ * @author Chill
  */
 @Configuration
 @EnableSwagger2

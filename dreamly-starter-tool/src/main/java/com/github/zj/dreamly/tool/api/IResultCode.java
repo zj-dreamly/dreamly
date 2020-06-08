@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * 业务代码接口
  *
- * @author 苍海之南
+ * @author Chill
  */
 public interface IResultCode extends Serializable {
 	/**

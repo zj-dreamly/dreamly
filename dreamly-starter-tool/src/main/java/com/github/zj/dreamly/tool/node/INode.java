@@ -3,7 +3,7 @@ package com.github.zj.dreamly.tool.node;
 import java.util.List;
 
 /**
- * @author 苍海之南
+ * @author Chill
  */
 public interface INode {
 

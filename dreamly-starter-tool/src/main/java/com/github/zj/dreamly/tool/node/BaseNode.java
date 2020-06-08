@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * 节点基类
  *
- * @author 苍海之南
+ * @author Chill
  */
 @Data
 public class BaseNode implements INode {

@@ -8,7 +8,7 @@ import lombok.EqualsAndHashCode;
 /**
  * 树型节点类
  *
- * @author 苍海之南
+ * @author Chill
  * @since 0.0.1
  */
 @Data

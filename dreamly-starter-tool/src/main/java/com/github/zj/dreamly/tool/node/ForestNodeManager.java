@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * 森林管理类
  *
- * @author 苍海之南
+ * @author Chill
  */
 @SuppressWarnings("all")
 public class ForestNodeManager<T extends INode> {

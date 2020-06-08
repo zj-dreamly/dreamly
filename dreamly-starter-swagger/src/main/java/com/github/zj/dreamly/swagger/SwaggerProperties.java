@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * SwaggerProperties
  *
- * @author 苍海之南
+ * @author Chill
  */
 @Data
 @ConfigurationProperties("swagger")

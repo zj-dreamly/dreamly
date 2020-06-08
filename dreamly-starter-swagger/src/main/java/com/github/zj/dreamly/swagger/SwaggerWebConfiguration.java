@@ -7,7 +7,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 /**
  * swagger资源配置
  *
- * @author 苍海之南
+ * @author Chill
  */
 @Configuration
 @SuppressWarnings("all")

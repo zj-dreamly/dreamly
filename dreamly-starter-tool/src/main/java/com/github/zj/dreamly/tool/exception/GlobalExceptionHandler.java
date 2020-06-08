@@ -34,7 +34,7 @@ import java.util.Set;
 /**
  * <h2>全局的的异常拦截器</h2>
  *
- * @author 苍海之南
+ * @author Chill
  */
 @Slf4j
 @Order(Ordered.HIGHEST_PRECEDENCE)

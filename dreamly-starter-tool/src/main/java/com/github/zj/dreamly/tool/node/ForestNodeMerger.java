@@ -5,7 +5,7 @@ import java.util.List;
 /**
  * 森林节点归并类
  *
- * @author 苍海之南
+ * @author Chill
  * @since 0.0.1
  */
 @SuppressWarnings("all")
