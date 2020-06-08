@@ -46,7 +46,7 @@ import java.util.Set;
 public class GlobalExceptionHandler {
 
 	@ExceptionHandler(MissingServletRequestParameterException.class)
-	@ResponseStatus(HttpStatus.BAD_REQUEST)
+	@ResponseStatus(HttpStatus.OK)
 	public ResponseEntity handleError(MissingServletRequestParameterException e) {
 		log.warn("【缺少请求参数】：{}", e.getParameterName());
 		String message = String.format("【缺少必要的请求参数】: %s", e.getParameterName());
@@ -54,7 +54,7 @@ public class GlobalExceptionHandler {
 	}
 
 	@ExceptionHandler(MethodArgumentTypeMismatchException.class)
-	@ResponseStatus(HttpStatus.BAD_REQUEST)
+	@ResponseStatus(HttpStatus.OK)
 	public ResponseEntity handleError(MethodArgumentTypeMismatchException e) {
 		log.warn("【请求参数格式错误】：{}", e.getName());
 		String message = String.format("【请求参数格式错误】: %s", e.getName());
@@ -62,14 +62,14 @@ public class GlobalExceptionHandler {
 	}
 
 	@ExceptionHandler(MethodArgumentNotValidException.class)
-	@ResponseStatus(HttpStatus.BAD_REQUEST)
+	@ResponseStatus(HttpStatus.OK)
 	public ResponseEntity handleError(MethodArgumentNotValidException e) {
 		log.warn("【参数验证失败】：{}", e.getBindingResult());
 		return handleError(e.getBindingResult());
 	}
 
 	@ExceptionHandler(BindException.class)
-	@ResponseStatus(HttpStatus.BAD_REQUEST)
+	@ResponseStatus(HttpStatus.OK)
 	public ResponseEntity handleError(BindException e) {
 		log.warn("【参数绑定失败】：{}", e.getBindingResult());
 		return handleError(e.getBindingResult());
@@ -83,7 +83,7 @@ public class GlobalExceptionHandler {
 	}
 
 	@ExceptionHandler(ConstraintViolationException.class)
-	@ResponseStatus(HttpStatus.BAD_REQUEST)
+	@ResponseStatus(HttpStatus.OK)
 	public ResponseEntity handleError(ConstraintViolationException e) {
 		log.warn("【参数验证失败】：{}", e.getMessage());
 		Set<ConstraintViolation<?>> violations = e.getConstraintViolations();
@@ -94,28 +94,28 @@ public class GlobalExceptionHandler {
 	}
 
 	@ExceptionHandler(NoHandlerFoundException.class)
-	@ResponseStatus(HttpStatus.NOT_FOUND)
+	@ResponseStatus(HttpStatus.OK)
 	public ResponseEntity handleError(NoHandlerFoundException e) {
 		log.error("【404没找到请求】：{}", e.getMessage());
 		return ResponseEntity.fail(SystemResultCode.NOT_FOUND, e.getMessage());
 	}
 
 	@ExceptionHandler(HttpMessageNotReadableException.class)
-	@ResponseStatus(HttpStatus.BAD_REQUEST)
+	@ResponseStatus(HttpStatus.OK)
 	public ResponseEntity handleError(HttpMessageNotReadableException e) {
 		log.error("【消息不能读取】：{}", e.getMessage());
 		return ResponseEntity.fail(SystemResultCode.MSG_NOT_READABLE, e.getMessage());
 	}
 
 	@ExceptionHandler(HttpRequestMethodNotSupportedException.class)
-	@ResponseStatus(HttpStatus.METHOD_NOT_ALLOWED)
+	@ResponseStatus(HttpStatus.OK)
 	public ResponseEntity handleError(HttpRequestMethodNotSupportedException e) {
 		log.error("【不支持当前请求方法】：{}", e.getMessage());
 		return ResponseEntity.fail(SystemResultCode.METHOD_NOT_SUPPORTED, e.getMessage());
 	}
 
 	@ExceptionHandler(HttpMediaTypeNotSupportedException.class)
-	@ResponseStatus(HttpStatus.UNSUPPORTED_MEDIA_TYPE)
+	@ResponseStatus(HttpStatus.OK)
 	public ResponseEntity handleError(HttpMediaTypeNotSupportedException e) {
 		log.error("【不支持当前媒体类型】：{}", e.getMessage());
 		return ResponseEntity.fail(SystemResultCode.MEDIA_TYPE_NOT_SUPPORTED, e.getMessage());
@@ -129,14 +129,14 @@ public class GlobalExceptionHandler {
 	}
 
 	@ExceptionHandler(DreamlySecurityException.class)
-	@ResponseStatus(HttpStatus.UNAUTHORIZED)
+	@ResponseStatus(HttpStatus.OK)
 	public ResponseEntity handleError(DreamlySecurityException e) {
 		log.error("【认证异常】：{}", e.getMessage());
 		return ResponseEntity.fail(e.getResultCode(), "【认证异常】：" + e.getMessage());
 	}
 
 	@ExceptionHandler(Throwable.class)
-	@ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+	@ResponseStatus(HttpStatus.OK)
 	public ResponseEntity handleError(Throwable e) {
 		log.error("【服务器异常】：{}", e.getMessage());
 		e.printStackTrace();
