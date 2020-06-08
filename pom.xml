@@ -8,13 +8,13 @@
 
     <groupId>com.github.zj-dreamly</groupId>
     <artifactId>dreamly-tool</artifactId>
-    <version>1.0.0-beta.1</version>
+    <version>1.0.0-beta.2</version>
     <name>${project.artifactId}</name>
     <description>提供丰富的Java工具方法</description>
     <url>https://github.com/zj-dreamly/dreamly.git</url>
 
     <properties>
-        <dreamly-tool.version>1.0.0-beta.1</dreamly-tool.version>
+        <dreamly-tool.version>1.0.0-beta.2</dreamly-tool.version>
         <java.version>1.8</java.version>
         <maven.plugin.version>3.8.0</maven.plugin.version>
         <JAVA_HOME>C:\Program Files\Java\jdk1.8.0_201</JAVA_HOME>
