@@ -13,9 +13,14 @@ import org.springframework.web.filter.CorsFilter;
 public class CustomCorsConfiguration {
 	private CorsConfiguration buildConfig() {
 		CorsConfiguration corsConfiguration = new CorsConfiguration();
-		corsConfiguration.addAllowedOrigin("*");
-		corsConfiguration.addAllowedHeader("*");
-		corsConfiguration.addAllowedMethod("*");
+		// 设置允许的请求地址
+		corsConfiguration.addAllowedOrigin(CorsConfiguration.ALL);
+		// 设置允许的请求头
+		corsConfiguration.addAllowedHeader(CorsConfiguration.ALL);
+		// 设置允许的请求方法
+		corsConfiguration.addAllowedMethod(CorsConfiguration.ALL);
+		// 设置缓存时间（即直接接受请求，无需再发送opinion）
+		corsConfiguration.setMaxAge(7200L);
 		return corsConfiguration;
 	}
 
