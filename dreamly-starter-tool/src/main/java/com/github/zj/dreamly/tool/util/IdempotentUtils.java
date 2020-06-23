@@ -8,7 +8,7 @@ import org.apache.commons.lang3.StringUtils;
 import java.util.concurrent.TimeUnit;
 
 /**
- * <h2>LockUtils</h2>
+ * <h2>IdempotentUtils</h2>
  * <p>
  * 使用场景：
  * <p>
@@ -22,7 +22,7 @@ import java.util.concurrent.TimeUnit;
  **/
 
 @Slf4j
-public class LockUtils {
+public class IdempotentUtils {
 
     private static Cache<String, Thread> threadMap;
 
