@@ -26,15 +26,15 @@ public class Runner {
 	/**
 	 * 代码生成的包名
 	 */
-	private static final String PACKAGE_NAME = "com.synco.fluke";
+	private static final String PACKAGE_NAME = "com.synco.ormco";
 	/**
 	 * 需要去掉的表前缀
 	 */
-	private static final String[] TABLE_PREFIX = {};
+	private static final String[] TABLE_PREFIX = {""};
 	/**
 	 * 需要生成的表名(两者只能取其一)
 	 */
-	private static final String[] INCLUDE_TABLES = {"comment_report"};
+	private static final String[] INCLUDE_TABLES = {"player", "referee", "illness_case", "illness_evaluate"};
 	/**
 	 * 需要排除的表名(两者只能取其一)
 	 */

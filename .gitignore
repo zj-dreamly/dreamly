@@ -2,6 +2,7 @@
 target
 
 logs
+*.code.properties
 
 # windows #
 Thumbs.db
