@@ -26,7 +26,7 @@ public class Runner {
 	/**
 	 * 代码生成的包名
 	 */
-	private static final String PACKAGE_NAME = "com.synco.ormco";
+	private static final String PACKAGE_NAME = "com.synco";
 	/**
 	 * 需要去掉的表前缀
 	 */
@@ -34,7 +34,10 @@ public class Runner {
 	/**
 	 * 需要生成的表名(两者只能取其一)
 	 */
-	private static final String[] INCLUDE_TABLES = {"player", "referee", "illness_case", "illness_evaluate"};
+	private static final String[] INCLUDE_TABLES = {"code" , "course" , "course_user" , "datasource" ,
+		"dept" , "dict" , "live_message" , "log_error" , "menu" , "notice" , "param" , "role" ,
+		"role_menu" , "user" , "user_profile" , "user_profile_value"};
+
 	/**
 	 * 需要排除的表名(两者只能取其一)
 	 */
@@ -46,7 +49,7 @@ public class Runner {
 	/**
 	 * 基础业务字段
 	 */
-	private static final String[] SUPER_ENTITY_COLUMNS = {"id", "create_time", "update_time"};
+	private static final String[] SUPER_ENTITY_COLUMNS = {"id" , "create_time" , "update_time"};
 
 	public static void main(String[] args) {
 		CodeGenerator generator = new CodeGenerator();

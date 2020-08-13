@@ -76,6 +76,22 @@ public class $!{entity} implements Serializable {
 #elseif($!{field.convert})
 	@TableField("$!{field.name}")
 #end
+## 创建时间
+#if("create_time"==$!{field.name})
+@TableField(fill = FieldFill.INSERT)
+#end
+## 更新时间
+#if("update_time"==$!{field.name})
+@TableField(fill = FieldFill.INSERT_UPDATE)
+#end
+## 创建人
+#if("create_user"==$!{field.name})
+@TableField(fill = FieldFill.INSERT)
+#end
+## 更新人
+#if("update_user"==$!{field.name})
+@TableField(fill = FieldFill.INSERT_UPDATE)
+#end
 ## 乐观锁注解
 #if($!{versionFieldName}==$!{field.name})
 	@Version
