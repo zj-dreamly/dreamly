@@ -1,5 +1,6 @@
 package com.github.zj.dreamly.swagger;
 
+import com.github.xiaoymin.knife4j.spring.annotations.EnableKnife4j;
 import com.google.common.base.Predicate;
 import com.google.common.base.Predicates;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
@@ -26,6 +27,7 @@ import java.util.List;
  */
 @Configuration
 @EnableSwagger2
+@EnableKnife4j
 @EnableConfigurationProperties(SwaggerProperties.class)
 @SuppressWarnings("all")
 public class SwaggerAutoConfiguration {

@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.github.zj.dreamly.oss.configuration.AliossConfiguration,\
+  com.github.zj.dreamly.oss.configuration.QiniuConfiguration

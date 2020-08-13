@@ -8,27 +8,29 @@
 
     <groupId>com.github.zj-dreamly</groupId>
     <artifactId>dreamly-tool</artifactId>
-    <version>1.0.0-beta.2</version>
+    <version>1.0.0-beta.3</version>
     <name>${project.artifactId}</name>
     <description>提供丰富的Java工具方法</description>
     <url>https://github.com/zj-dreamly/dreamly.git</url>
 
     <properties>
-        <dreamly-tool.version>1.0.0-beta.2</dreamly-tool.version>
+        <dreamly-tool.version>1.0.0-beta.3</dreamly-tool.version>
         <java.version>1.8</java.version>
         <maven.plugin.version>3.8.0</maven.plugin.version>
         <JAVA_HOME>C:\Program Files\Java\jdk1.8.0_201</JAVA_HOME>
-        <knife4j.version>2.0.3</knife4j.version>
-        <mybatis.plus.version>3.1.0</mybatis.plus.version>
+        <knife4j.version>2.0.4</knife4j.version>
+        <mybatis.plus.version>3.3.2</mybatis.plus.version>
         <velocity.version>1.7</velocity.version>
-        <spring.boot.admin.version>2.1.4</spring.boot.admin.version>
+        <spring.boot.admin.version>2.3.2</spring.boot.admin.version>
         <alibaba.cloud.version>0.9.0.RELEASE</alibaba.cloud.version>
+        <aliyun-sdk-oss.version>3.1.0</aliyun-sdk-oss.version>
+        <qiniu-java-sdk.version>7.2.18</qiniu-java-sdk.version>
         <spring.boot.version>2.1.4.RELEASE</spring.boot.version>
         <spring.cloud.version>Greenwich.RELEASE</spring.cloud.version>
         <spring.platform.version>Cairo-RELEASE</spring.platform.version>
         <hutool.version>5.3.3</hutool.version>
         <guava.version>28.2-jre</guava.version>
-        <fast.json.version>1.2.58</fast.json.version>
+        <fast.json.version>1.2.73</fast.json.version>
         <lang3.version>3.9</lang3.version>
         <commons-io.version>2.6</commons-io.version>
         <jjwt.version>0.10.5</jjwt.version>
@@ -69,6 +71,7 @@
         <module>dreamly-starter-swagger</module>
         <module>dreamly-starter-queue</module>
         <module>dreamly-starter-mail</module>
+        <module>dreamly-starter-oss</module>
     </modules>
 
     <dependencies>
