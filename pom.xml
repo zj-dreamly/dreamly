@@ -72,6 +72,7 @@
         <module>dreamly-starter-queue</module>
         <module>dreamly-starter-mail</module>
         <module>dreamly-starter-oss</module>
+        <module>dreamly-starter-im</module>
     </modules>
 
     <dependencies>
