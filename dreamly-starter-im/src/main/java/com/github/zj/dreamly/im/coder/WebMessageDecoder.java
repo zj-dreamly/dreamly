@@ -15,76 +15,74 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class WebMessageDecoder extends SimpleChannelInboundHandler<Object> {
 
-    private final static String URI = "ws://localhost:%d";
+	private final static String URI = "ws://localhost:%d";
 
-    private static final ConcurrentHashMap<String, WebSocketServerHandshaker> handShakerMap = new ConcurrentHashMap<>();
+	private static final ConcurrentHashMap<String, WebSocketServerHandshaker> handShakerMap = new ConcurrentHashMap<>();
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(WebMessageDecoder.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(WebMessageDecoder.class);
 
-    @Override
-    protected void channelRead0(ChannelHandlerContext ctx, Object msg) throws InvalidProtocolBufferException {
+	@Override
+	protected void channelRead0(ChannelHandlerContext ctx, Object msg) throws InvalidProtocolBufferException {
 
-        if (msg instanceof FullHttpRequest) {
-            handleHandshakeRequest(ctx, (FullHttpRequest) msg);
-        }
-        if (msg instanceof WebSocketFrame) {
-            handlerWebSocketFrame(ctx, (WebSocketFrame) msg);
-        }
-    }
+		if (msg instanceof FullHttpRequest) {
+			handleHandshakeRequest(ctx, (FullHttpRequest) msg);
+		}
+		if (msg instanceof WebSocketFrame) {
+			handlerWebSocketFrame(ctx, (WebSocketFrame) msg);
+		}
+	}
 
-    private void handleHandshakeRequest(ChannelHandlerContext ctx, FullHttpRequest req) {
+	private void handleHandshakeRequest(ChannelHandlerContext ctx, FullHttpRequest req) {
 
-        int port = ((InetSocketAddress)ctx.channel().localAddress()).getPort();
+		int port = ((InetSocketAddress) ctx.channel().localAddress()).getPort();
 
-        WebSocketServerHandshakerFactory wsFactory = new WebSocketServerHandshakerFactory(String.format(URI,port), null, false);
+		WebSocketServerHandshakerFactory wsFactory = new WebSocketServerHandshakerFactory(String.format(URI, port), null, false);
 
-        WebSocketServerHandshaker handShaker = wsFactory.newHandshaker(req);
+		WebSocketServerHandshaker handShaker = wsFactory.newHandshaker(req);
 
-        handShakerMap.put(ctx.channel().id().asLongText(), handShaker);
+		handShakerMap.put(ctx.channel().id().asLongText(), handShaker);
 
-        handShaker.handshake(ctx.channel(), req);
-    }
+		handShaker.handshake(ctx.channel(), req);
+	}
 
+	private void handlerWebSocketFrame(ChannelHandlerContext ctx, WebSocketFrame frame) throws InvalidProtocolBufferException {
 
+		if (frame instanceof CloseWebSocketFrame) {
+			handlerCloseWebSocketFrame(ctx, (CloseWebSocketFrame) frame);
+			return;
+		}
+		if (frame instanceof PingWebSocketFrame) {
+			handlerPingWebSocketFrame(ctx, (PingWebSocketFrame) frame);
+			return;
+		}
 
-    private void handlerWebSocketFrame(ChannelHandlerContext ctx, WebSocketFrame frame) throws InvalidProtocolBufferException {
+		handlerBinaryWebSocketFrame(ctx, (BinaryWebSocketFrame) frame);
+	}
 
-        if (frame instanceof CloseWebSocketFrame) {
-            handlerCloseWebSocketFrame(ctx, (CloseWebSocketFrame) frame);
-            return;
-        }
-        if (frame instanceof PingWebSocketFrame) {
-            handlerPingWebSocketFrame(ctx, (PingWebSocketFrame) frame);
-            return;
-        }
+	private void handlerCloseWebSocketFrame(ChannelHandlerContext ctx, CloseWebSocketFrame frame) {
+		WebSocketServerHandshaker handShaker = handShakerMap.get(ctx.channel().id().asLongText());
+		handShaker.close(ctx.channel(), frame.retain());
+	}
 
-        handlerBinaryWebSocketFrame(ctx, (BinaryWebSocketFrame) frame);
-    }
+	private void handlerPingWebSocketFrame(ChannelHandlerContext ctx, PingWebSocketFrame frame) {
+		ctx.channel().write(new PongWebSocketFrame(frame.content().retain()));
+	}
 
-    private void handlerCloseWebSocketFrame(ChannelHandlerContext ctx, CloseWebSocketFrame frame){
-        WebSocketServerHandshaker handShaker = handShakerMap.get(ctx.channel().id().asLongText());
-        handShaker.close(ctx.channel(), frame.retain());
-    }
+	private void handlerBinaryWebSocketFrame(ChannelHandlerContext ctx, BinaryWebSocketFrame frame) throws InvalidProtocolBufferException {
+		byte[] data = new byte[frame.content().readableBytes()];
+		frame.content().readBytes(data);
 
-    private void handlerPingWebSocketFrame(ChannelHandlerContext ctx, PingWebSocketFrame frame){
-        ctx.channel().write(new PongWebSocketFrame(frame.content().retain()));
-    }
+		SentBodyProto.Model bodyProto = SentBodyProto.Model.parseFrom(data);
+		SentBody body = new SentBody();
+		body.setKey(bodyProto.getKey());
+		body.setTimestamp(bodyProto.getTimestamp());
+		body.putAll(bodyProto.getDataMap());
+		ctx.fireChannelRead(body);
+	}
 
-    private void handlerBinaryWebSocketFrame(ChannelHandlerContext ctx, BinaryWebSocketFrame frame) throws InvalidProtocolBufferException {
-        byte[] data = new byte[frame.content().readableBytes()];
-        frame.content().readBytes(data);
-
-        SentBodyProto.Model bodyProto = SentBodyProto.Model.parseFrom(data);
-        SentBody body = new SentBody();
-        body.setKey(bodyProto.getKey());
-        body.setTimestamp(bodyProto.getTimestamp());
-        body.putAll(bodyProto.getDataMap());
-        ctx.fireChannelRead(body);
-    }
-
-    @Override
-    public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause){
-        ctx.close();
-        LOGGER.warn("Exception caught",cause);
-    }
+	@Override
+	public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) {
+		ctx.close();
+		LOGGER.warn("Exception caught", cause);
+	}
 }
