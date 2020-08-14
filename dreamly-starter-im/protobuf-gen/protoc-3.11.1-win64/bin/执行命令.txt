@@ -1,0 +1,3 @@
+如果proto描述文件在当前目录，要以"./"开始
+
+protoc ./Session.proto --java_out=./

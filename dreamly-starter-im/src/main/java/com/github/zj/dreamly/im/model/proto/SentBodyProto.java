@@ -15,7 +15,7 @@ public final class SentBodyProto {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   public interface ModelOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.farsunset.cim.sdk.server.model.proto.Model)
+      // @@protoc_insertion_point(interface_extends:com.github.zj.dreamly.im.model.proto.Model)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -71,11 +71,11 @@ public final class SentBodyProto {
 		String key);
   }
   /**
-   * Protobuf type {@code com.farsunset.cim.sdk.server.model.proto.Model}
+   * Protobuf type {@code com.github.zj.dreamly.im.model.proto.Model}
    */
   public  static final class Model extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:com.farsunset.cim.sdk.server.model.proto.Model)
+      // @@protoc_insertion_point(message_implements:com.github.zj.dreamly.im.model.proto.Model)
       ModelOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use Model.newBuilder() to construct.
@@ -162,7 +162,7 @@ public final class SentBodyProto {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return SentBodyProto.internal_static_com_farsunset_cim_sdk_server_model_proto_Model_descriptor;
+      return SentBodyProto.internal_static_com_github_zj_dreamly_im_model_proto_Model_descriptor;
     }
 
     @SuppressWarnings({"rawtypes"})
@@ -180,7 +180,7 @@ public final class SentBodyProto {
     @Override
     protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return SentBodyProto.internal_static_com_farsunset_cim_sdk_server_model_proto_Model_fieldAccessorTable
+      return SentBodyProto.internal_static_com_github_zj_dreamly_im_model_proto_Model_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               Model.class, Builder.class);
     }
@@ -237,7 +237,7 @@ public final class SentBodyProto {
           String, String> defaultEntry =
               com.google.protobuf.MapEntry
               .<String, String>newDefaultInstance(
-                  SentBodyProto.internal_static_com_farsunset_cim_sdk_server_model_proto_Model_DataEntry_descriptor,
+                  SentBodyProto.internal_static_com_github_zj_dreamly_im_model_proto_Model_DataEntry_descriptor,
                   com.google.protobuf.WireFormat.FieldType.STRING,
                   "",
                   com.google.protobuf.WireFormat.FieldType.STRING,
@@ -496,15 +496,15 @@ public final class SentBodyProto {
       return builder;
     }
     /**
-     * Protobuf type {@code com.farsunset.cim.sdk.server.model.proto.Model}
+     * Protobuf type {@code com.github.zj.dreamly.im.model.proto.Model}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.farsunset.cim.sdk.server.model.proto.Model)
+        // @@protoc_insertion_point(builder_implements:com.github.zj.dreamly.im.model.proto.Model)
         ModelOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return SentBodyProto.internal_static_com_farsunset_cim_sdk_server_model_proto_Model_descriptor;
+        return SentBodyProto.internal_static_com_github_zj_dreamly_im_model_proto_Model_descriptor;
       }
 
       @SuppressWarnings({"rawtypes"})
@@ -532,12 +532,12 @@ public final class SentBodyProto {
       @Override
       protected FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return SentBodyProto.internal_static_com_farsunset_cim_sdk_server_model_proto_Model_fieldAccessorTable
+        return SentBodyProto.internal_static_com_github_zj_dreamly_im_model_proto_Model_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 Model.class, Builder.class);
       }
 
-      // Construct using com.farsunset.cim.sdk.server.model.proto.SentBodyProto.Model.newBuilder()
+      // Construct using com.github.zj.dreamly.im.model.proto.SentBodyProto.Model.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -566,7 +566,7 @@ public final class SentBodyProto {
       @Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return SentBodyProto.internal_static_com_farsunset_cim_sdk_server_model_proto_Model_descriptor;
+        return SentBodyProto.internal_static_com_github_zj_dreamly_im_model_proto_Model_descriptor;
       }
 
       @Override
@@ -919,10 +919,10 @@ public final class SentBodyProto {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:com.farsunset.cim.sdk.server.model.proto.Model)
+      // @@protoc_insertion_point(builder_scope:com.github.zj.dreamly.im.model.proto.Model)
     }
 
-    // @@protoc_insertion_point(class_scope:com.farsunset.cim.sdk.server.model.proto.Model)
+    // @@protoc_insertion_point(class_scope:com.github.zj.dreamly.im.model.proto.Model)
     private static final Model DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new Model();
@@ -960,15 +960,15 @@ public final class SentBodyProto {
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_farsunset_cim_sdk_server_model_proto_Model_descriptor;
+    internal_static_com_github_zj_dreamly_im_model_proto_Model_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_farsunset_cim_sdk_server_model_proto_Model_fieldAccessorTable;
+      internal_static_com_github_zj_dreamly_im_model_proto_Model_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_farsunset_cim_sdk_server_model_proto_Model_DataEntry_descriptor;
+    internal_static_com_github_zj_dreamly_im_model_proto_Model_DataEntry_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_farsunset_cim_sdk_server_model_proto_Model_DataEntry_fieldAccessorTable;
+      internal_static_com_github_zj_dreamly_im_model_proto_Model_DataEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -978,29 +978,28 @@ public final class SentBodyProto {
       descriptor;
   static {
     String[] descriptorData = {
-      "\n\016SentBody.proto\022(com.farsunset.cim.sdk." +
-      "server.model.proto\"\235\001\n\005Model\022\013\n\003key\030\001 \001(" +
-      "\t\022\021\n\ttimestamp\030\002 \001(\003\022G\n\004data\030\003 \003(\01329.com" +
-      ".farsunset.cim.sdk.server.model.proto.Mo" +
-      "del.DataEntry\032+\n\tDataEntry\022\013\n\003key\030\001 \001(\t\022" +
-      "\r\n\005value\030\002 \001(\t:\0028\001B\017B\rSentBodyProtob\006pro" +
-      "to3"
+      "\n\016SentBody.proto\022$com.github.zj.dreamly." +
+      "im.model.proto\"\231\001\n\005Model\022\013\n\003key\030\001 \001(\t\022\021\n" +
+      "\ttimestamp\030\002 \001(\003\022C\n\004data\030\003 \003(\01325.com.git" +
+      "hub.zj.dreamly.im.model.proto.Model.Data" +
+      "Entry\032+\n\tDataEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value" +
+      "\030\002 \001(\t:\0028\001B\017B\rSentBodyProtob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
-    internal_static_com_farsunset_cim_sdk_server_model_proto_Model_descriptor =
+    internal_static_com_github_zj_dreamly_im_model_proto_Model_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_com_farsunset_cim_sdk_server_model_proto_Model_fieldAccessorTable = new
+    internal_static_com_github_zj_dreamly_im_model_proto_Model_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_farsunset_cim_sdk_server_model_proto_Model_descriptor,
+        internal_static_com_github_zj_dreamly_im_model_proto_Model_descriptor,
         new String[] { "Key", "Timestamp", "Data", });
-    internal_static_com_farsunset_cim_sdk_server_model_proto_Model_DataEntry_descriptor =
-      internal_static_com_farsunset_cim_sdk_server_model_proto_Model_descriptor.getNestedTypes().get(0);
-    internal_static_com_farsunset_cim_sdk_server_model_proto_Model_DataEntry_fieldAccessorTable = new
+    internal_static_com_github_zj_dreamly_im_model_proto_Model_DataEntry_descriptor =
+      internal_static_com_github_zj_dreamly_im_model_proto_Model_descriptor.getNestedTypes().get(0);
+    internal_static_com_github_zj_dreamly_im_model_proto_Model_DataEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_farsunset_cim_sdk_server_model_proto_Model_DataEntry_descriptor,
+        internal_static_com_github_zj_dreamly_im_model_proto_Model_DataEntry_descriptor,
         new String[] { "Key", "Value", });
   }
 
