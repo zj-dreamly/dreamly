@@ -35,7 +35,7 @@ public abstract class BaseEntityWrapper<E, V> {
      * @param pages 分页
      * @return Page V
      */
-    public IPage<V> pageVO(IPage<E> pages) {
+    public IPage<V> pageVo(IPage<E> pages) {
         List<V> records = listVo(pages.getRecords());
         IPage<V> pageVo = new Page<>(pages.getCurrent(), pages.getSize(), pages.getTotal());
         pageVo.setRecords(records);
