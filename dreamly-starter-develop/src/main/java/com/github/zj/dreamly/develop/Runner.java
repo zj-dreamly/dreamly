@@ -26,7 +26,7 @@ public class Runner {
 	/**
 	 * 代码生成的包名
 	 */
-	private static final String PACKAGE_NAME = "com.synco";
+	private static final String PACKAGE_NAME = "com.synco.im";
 	/**
 	 * 需要去掉的表前缀
 	 */
@@ -34,9 +34,7 @@ public class Runner {
 	/**
 	 * 需要生成的表名(两者只能取其一)
 	 */
-	private static final String[] INCLUDE_TABLES = {"code" , "course" , "course_user" , "datasource" ,
-		"dept" , "dict" , "live_message" , "log_error" , "menu" , "notice" , "param" , "role" ,
-		"role_menu" , "user" , "user_profile" , "user_profile_value"};
+	private static final String[] INCLUDE_TABLES = {"chat_room_log"};
 
 	/**
 	 * 需要排除的表名(两者只能取其一)
