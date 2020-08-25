@@ -34,7 +34,7 @@ public interface INode extends Serializable {
 	 *
 	 * @return Boolean
 	 */
-	default Boolean getHasChildren() {
+	default boolean getHasChildren() {
 		return false;
 	}
 

@@ -40,13 +40,13 @@ public class BaseNode implements INode {
 	 * 是否有子孙节点
 	 */
 	@JsonInclude(JsonInclude.Include.NON_EMPTY)
-	private boolean hasChildren;
+	private boolean hasChildren = this.getHasChildren();
 
 	/**
 	 * 是否有子孙节点
 	 */
 	@Override
-	public Boolean getHasChildren() {
+	public boolean getHasChildren() {
 		if (children.size() > 0) {
 			return true;
 		} else {
