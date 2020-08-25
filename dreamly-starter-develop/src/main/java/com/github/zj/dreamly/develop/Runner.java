@@ -26,7 +26,7 @@ public class Runner {
 	/**
 	 * 代码生成的包名
 	 */
-	private static final String PACKAGE_NAME = "com.synco.im";
+	private static final String PACKAGE_NAME = "com.synco.edusoho";
 	/**
 	 * 需要去掉的表前缀
 	 */
@@ -34,7 +34,7 @@ public class Runner {
 	/**
 	 * 需要生成的表名(两者只能取其一)
 	 */
-	private static final String[] INCLUDE_TABLES = {"chat_room_log"};
+	private static final String[] INCLUDE_TABLES = {"edusoho_course_task"};
 
 	/**
 	 * 需要排除的表名(两者只能取其一)

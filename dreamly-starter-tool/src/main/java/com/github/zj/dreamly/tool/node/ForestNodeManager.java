@@ -33,7 +33,7 @@ public class ForestNodeManager<T extends INode> {
 	 */
 	public INode getTreeNodeAT(Long id) {
 		for (INode forestNode : list) {
-			if (forestNode.getId().longValue() == id.longValue()) {
+			if (forestNode.getId().longValue() == id) {
 				return forestNode;
 			}
 		}
@@ -43,7 +43,7 @@ public class ForestNodeManager<T extends INode> {
 	/**
 	 * 增加父节点ID
 	 *
-	 * @param parentId 父节点id
+	 * @param parentId 父节点ID
 	 */
 	public void addParentId(Long parentId) {
 		parentIds.add(parentId);
