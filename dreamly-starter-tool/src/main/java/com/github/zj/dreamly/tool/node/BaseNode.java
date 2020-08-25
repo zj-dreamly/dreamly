@@ -40,7 +40,7 @@ public class BaseNode implements INode {
 	 * 是否有子孙节点
 	 */
 	@JsonInclude(JsonInclude.Include.NON_EMPTY)
-	private Boolean hasChildren;
+	private boolean hasChildren;
 
 	/**
 	 * 是否有子孙节点
