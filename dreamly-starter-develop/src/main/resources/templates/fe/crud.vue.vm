@@ -31,7 +31,7 @@
 </template>
 
 <script>
-    import {getPage, getDetail, add, update, remove} from "@/api/$!{cfg.servicePackage}/$!{cfg.entityKey}";
+    import {add, getDetail, getPage, remove, update} from "@/api/";
     import {mapGetters} from "vuex";
 
     export default {
@@ -184,10 +184,10 @@
                 this.selectionList = [];
                 this.$refs.crud.toggleSelection();
             },
-            currentChange(currentPage){
+            currentChange(currentPage) {
                 this.page.currentPage = currentPage;
             },
-            sizeChange(pageSize){
+            sizeChange(pageSize) {
                 this.page.pageSize = pageSize;
             },
             onLoad(page, params = {}) {
