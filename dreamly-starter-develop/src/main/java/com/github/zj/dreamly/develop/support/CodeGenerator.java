@@ -3,13 +3,11 @@ package com.github.zj.dreamly.develop.support;
 import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.annotation.DbType;
 import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import com.baomidou.mybatisplus.generator.AutoGenerator;
 import com.baomidou.mybatisplus.generator.InjectionConfig;
-import com.baomidou.mybatisplus.generator.config.DataSourceConfig;
-import com.baomidou.mybatisplus.generator.config.GlobalConfig;
-import com.baomidou.mybatisplus.generator.config.PackageConfig;
-import com.baomidou.mybatisplus.generator.config.StrategyConfig;
+import com.baomidou.mybatisplus.generator.config.*;
 import com.baomidou.mybatisplus.generator.config.converts.MySqlTypeConvert;
 import com.baomidou.mybatisplus.generator.config.converts.PostgreSqlTypeConvert;
 import com.baomidou.mybatisplus.generator.config.po.TableInfo;
@@ -22,9 +20,7 @@ import org.springframework.core.io.support.PropertiesLoaderUtils;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Properties;
+import java.util.*;
 
 /**
  * 代码生成器配置类
@@ -38,49 +34,53 @@ public class CodeGenerator {
 	 */
 	private String codeName;
 	/**
-	 * 代码所在服务名
-	 */
-	private String serviceName = "system";
-	/**
 	 * 作者名
 	 */
 	private String author = "苍海之南";
 	/**
 	 * 代码生成的包名
 	 */
-	private String packageName = "dreamly";
+	private String packageName = StrUtil.EMPTY;
 	/**
 	 * 代码后端生成的地址
 	 */
 	private String packageDir;
 	/**
-	 * 需要去掉的表前缀
+	 * 代码前端生成的地址
 	 */
-	private String[] tablePrefix = {""};
+	private String packageWebDir;
 	/**
 	 * 需要生成的表名(两者只能取其一)
 	 */
-	private String[] includeTables = {"test"};
+	private String[] includeTables = {};
 	/**
 	 * 需要排除的表名(两者只能取其一)
 	 */
 	private String[] excludeTables = {};
 	/**
-	 * 是否包含基础业务字段
-	 */
-	private Boolean hasSuperEntity = Boolean.FALSE;
-	/**
 	 * 基础业务字段
 	 */
-	private String[] superEntityColumns = {"id", "create_time", "create_user", "create_dept", "update_time", "update_user", "status", "is_deleted"};
-	/**
-	 * 租户字段
-	 */
-	private String tenantColumn = "tenant_id";
+	private String[] superEntityColumns = {};
 	/**
 	 * 是否启用swagger
 	 */
 	private Boolean isSwagger2 = Boolean.TRUE;
+	/**
+	 * 数据库驱动名
+	 */
+	private String driverName;
+	/**
+	 * 数据库链接地址
+	 */
+	private String url;
+	/**
+	 * 数据库用户名
+	 */
+	private String username;
+	/**
+	 * 数据库密码
+	 */
+	private String password;
 
 	public void run() {
 		Properties props = getProperties();
@@ -114,32 +114,26 @@ public class CodeGenerator {
 			dsc.setDbType(DbType.POSTGRE_SQL);
 			dsc.setTypeConvert(new PostgreSqlTypeConvert());
 		}
-		dsc.setUrl(props.getProperty("spring.datasource.url"));
+		dsc.setUrl(StrUtil.isEmpty(this.url) ? props.getProperty("spring.datasource.url") : this.url);
 		dsc.setDriverName(driverName);
-		dsc.setUsername(props.getProperty("spring.datasource.username"));
-		dsc.setPassword(props.getProperty("spring.datasource.password"));
+		dsc.setUsername(StrUtil.isEmpty(this.username) ? props.getProperty("spring.datasource.username") : this.username);
+		dsc.setPassword(StrUtil.isEmpty(this.password) ? props.getProperty("spring.datasource.password") : this.password);
 		mpg.setDataSource(dsc);
 		// 策略配置
 		StrategyConfig strategy = new StrategyConfig();
 		strategy.setNaming(NamingStrategy.underline_to_camel);
 		strategy.setColumnNaming(NamingStrategy.underline_to_camel);
-		strategy.setTablePrefix(tablePrefix);
 		if (includeTables.length > 0) {
 			strategy.setInclude(includeTables);
 		}
 		if (excludeTables.length > 0) {
 			strategy.setExclude(excludeTables);
 		}
-		if (hasSuperEntity) {
-			strategy.setSuperEntityClass("com.baomidou.mybatisplus.extension.activerecord.Model");
-			strategy.setSuperEntityColumns(superEntityColumns);
-			strategy.setSuperServiceClass("com.baomidou.mybatisplus.extension.service.IService");
-			strategy.setSuperServiceImplClass("com.baomidou.mybatisplus.extension.service.impl.ServiceImpl");
-		} else {
-			strategy.setSuperServiceClass("com.baomidou.mybatisplus.extension.service.IService");
-			strategy.setSuperServiceImplClass("com.baomidou.mybatisplus.extension.service.impl.ServiceImpl");
-		}
-		strategy.setEntityBuilderModel(false);
+
+		strategy.setSuperServiceClass("com.baomidou.mybatisplus.extension.service.IService");
+		strategy.setSuperServiceImplClass("com.baomidou.mybatisplus.extension.service.impl.ServiceImpl");
+
+		strategy.setChainModel(false);
 		strategy.setEntityLombokModel(true);
 		strategy.setControllerMappingHyphenStyle(true);
 		mpg.setStrategy(strategy);
@@ -155,19 +149,51 @@ public class CodeGenerator {
 	}
 
 	private InjectionConfig getInjectionConfig() {
-		String servicePackage = serviceName.split("-").length > 1 ? serviceName.split("-")[1] : serviceName;
+
 		// 自定义配置
 		Map<String, Object> map = new HashMap<>(16);
-		return new InjectionConfig() {
+		InjectionConfig cfg = new InjectionConfig() {
 			@Override
 			public void initMap() {
 				map.put("codeName", codeName);
-				map.put("serviceName", serviceName);
-				map.put("servicePackage", servicePackage);
-				map.put("tenantColumn", tenantColumn);
 				this.setMap(map);
 			}
 		};
+		List<FileOutConfig> focList = new ArrayList<>();
+		focList.add(new FileOutConfig("/templates/sql/menu.sql.vm") {
+			@Override
+			public String outputFile(TableInfo tableInfo) {
+				map.put("entityKey", (tableInfo.getEntityName().toLowerCase()));
+				map.put("menuId", IdWorker.getId());
+				map.put("addMenuId", IdWorker.getId());
+				map.put("editMenuId", IdWorker.getId());
+				map.put("removeMenuId", IdWorker.getId());
+				map.put("viewMenuId", IdWorker.getId());
+				return getOutputDir() + "/" + "/sql/" + tableInfo.getEntityName().toLowerCase() + ".menu.mysql";
+			}
+		});
+
+		// 前端代码生成
+		if (StrUtil.isNotBlank(packageWebDir)) {
+
+			focList.add(new FileOutConfig("/templates/fe/api.js.vm") {
+				@Override
+				public String outputFile(TableInfo tableInfo) {
+					return getOutputWebDir() +
+						"/api" + "/".toLowerCase() + "/" + tableInfo.getEntityName().toLowerCase() + ".js";
+				}
+			});
+
+			focList.add(new FileOutConfig("/templates/fe/crud.vue.vm") {
+				@Override
+				public String outputFile(TableInfo tableInfo) {
+					return getOutputWebDir() + "/views" + "/".toLowerCase() +
+						"/" + tableInfo.getEntityName().toLowerCase() + ".vue";
+				}
+			});
+		}
+		cfg.setFileOutConfigList(focList);
+		return cfg;
 	}
 
 	/**
@@ -193,7 +219,18 @@ public class CodeGenerator {
 	 * @return outputDir
 	 */
 	private String getOutputDir() {
-		return (StrUtil.isBlank(packageDir) ? System.getProperty("user.dir") + "/dreamly-ops/dreamly-develop" : packageDir) + "/src/main/java";
+		return (StrUtil.isBlank(packageDir) ? System.getProperty("user.dir") + "/dreamly-ops/dreamly-develop" : packageDir) +
+			"/src/main/java";
+	}
+
+	/**
+	 * 生成到Web项目中
+	 *
+	 * @return outputDir
+	 */
+	public String getOutputWebDir() {
+		return (StrUtil.isBlank(packageWebDir) ? System.getProperty("user.dir") : packageWebDir) +
+			"/src";
 	}
 
 	/**
