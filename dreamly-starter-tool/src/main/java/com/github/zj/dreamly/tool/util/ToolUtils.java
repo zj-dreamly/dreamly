@@ -22,4 +22,18 @@ public class ToolUtils {
 		int dotIndex = fileName.lastIndexOf('.');
 		return (dotIndex == -1) ? "" : fileName.substring(dotIndex + 1);
 	}
+
+	/**
+	 * 创建StringBuilder对象
+	 *
+	 * @param sb   初始StringBuilder
+	 * @param strs 初始字符串列表
+	 * @return StringBuilder对象
+	 */
+	public static StringBuilder appendBuilder(StringBuilder sb, CharSequence... strs) {
+		for (CharSequence str : strs) {
+			sb.append(str);
+		}
+		return sb;
+	}
 }
