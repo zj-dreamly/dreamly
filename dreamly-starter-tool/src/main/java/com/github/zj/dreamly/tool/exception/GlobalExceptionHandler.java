@@ -6,6 +6,7 @@ import com.github.zj.dreamly.tool.api.SystemResultCode;
 import lombok.extern.slf4j.Slf4j;
 import org.hibernate.validator.internal.engine.path.PathImpl;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.Ordered;
@@ -37,10 +38,11 @@ import java.util.Set;
  * @author Chill
  */
 @Slf4j
-@Order(Ordered.HIGHEST_PRECEDENCE)
+@Order(Ordered.LOWEST_PRECEDENCE)
 @Configuration
 @ConditionalOnWebApplication(type = ConditionalOnWebApplication.Type.SERVLET)
 @ConditionalOnClass({Servlet.class, DispatcherServlet.class})
+@ConditionalOnMissingBean(GlobalExceptionHandler.class)
 @RestControllerAdvice
 @SuppressWarnings("all")
 public class GlobalExceptionHandler {
