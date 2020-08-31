@@ -103,8 +103,8 @@ public class $!{table.controllerName} {
         "$!{table.entityPath}.id"
     })
     @ApiOperation(value = "新增或修改$!{table.comment}", notes = "传入$!{table.entityPath}")
-    public ResponseEntity save(@Valid @RequestBody $!{entity} $!{table.entityPath}) {
-        $!{table.entityPath}Service.saveOrUpdate$!{entity}($!{table.entityPath});
+    public ResponseEntity submit(@Valid @RequestBody $!{entity} $!{table.entityPath}) {
+        $!{table.entityPath}Service.saveOrUpdate($!{table.entityPath});
         return ResponseEntity.success("提交成功");
     }
 
@@ -122,10 +122,10 @@ public class $!{table.controllerName} {
     /**
      * 批量删除$!{table.comment}
      */
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/remove")
     @ApiOperationSupport(order = 5)
     @ApiOperation(value = "批量删除$!{table.comment}", notes = "传入主键ids")
-    public ResponseEntity remove(@RequestParam("ids") String ids) {
+    public ResponseEntity removeByIds(@RequestParam("ids") String ids) {
         $!{table.entityPath}Service.removeByIds(Arrays.asList(StrUtil.split(ids, StrUtil.COMMA)));
         return ResponseEntity.success("批量删除成功");
     }
