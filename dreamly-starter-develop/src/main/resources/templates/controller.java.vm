@@ -122,7 +122,7 @@ public class $!{table.controllerName} {
     /**
      * 批量删除$!{table.comment}
      */
-    @DeleteMapping("/remove")
+    @PostMapping("/remove")
     @ApiOperationSupport(order = 5)
     @ApiOperation(value = "批量删除$!{table.comment}", notes = "传入主键ids")
     public ResponseEntity removeByIds(@RequestParam("ids") String ids) {
