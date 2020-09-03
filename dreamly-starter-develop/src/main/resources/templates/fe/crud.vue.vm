@@ -31,7 +31,7 @@
 </template>
 
 <script>
-    import {add, getDetail, getPage, remove, update} from "@/api/";
+    import {add, getDetail, getPage, remove, update} from "@/api/$!{cfg.entityKey}";
     import {mapGetters} from "vuex";
 
     export default {
