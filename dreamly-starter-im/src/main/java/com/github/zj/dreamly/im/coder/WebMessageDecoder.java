@@ -7,12 +7,15 @@ import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import io.netty.handler.codec.http.FullHttpRequest;
 import io.netty.handler.codec.http.websocketx.*;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import sun.rmi.runtime.Log;
 
 import java.net.InetSocketAddress;
 import java.util.concurrent.ConcurrentHashMap;
 
+@Slf4j
 public class WebMessageDecoder extends SimpleChannelInboundHandler<Object> {
 
 	private final static String URI = "ws://localhost:%d";
@@ -25,10 +28,20 @@ public class WebMessageDecoder extends SimpleChannelInboundHandler<Object> {
 	protected void channelRead0(ChannelHandlerContext ctx, Object msg) throws InvalidProtocolBufferException {
 
 		if (msg instanceof FullHttpRequest) {
-			handleHandshakeRequest(ctx, (FullHttpRequest) msg);
+			try {
+				handleHandshakeRequest(ctx, (FullHttpRequest) msg);
+			}catch (Exception e){
+				log.error("illegal Request, the error message: {}", e.getMessage());
+			}
+
 		}
 		if (msg instanceof WebSocketFrame) {
-			handlerWebSocketFrame(ctx, (WebSocketFrame) msg);
+			try {
+				handlerWebSocketFrame(ctx, (WebSocketFrame) msg);
+			}catch (Exception e){
+				log.error("illegal Request, the error message: {}", e.getMessage());
+			}
+
 		}
 	}
 
@@ -42,7 +55,12 @@ public class WebMessageDecoder extends SimpleChannelInboundHandler<Object> {
 
 		handShakerMap.put(ctx.channel().id().asLongText(), handShaker);
 
-		handShaker.handshake(ctx.channel(), req);
+		try {
+			handShaker.handshake(ctx.channel(), req);
+		}catch (Exception e){
+			log.error("illegal Request, the error message: {}", e.getMessage());
+		}
+
 	}
 
 	private void handlerWebSocketFrame(ChannelHandlerContext ctx, WebSocketFrame frame) throws InvalidProtocolBufferException {
