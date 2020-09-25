@@ -35,14 +35,14 @@ public class QueueScanTimer extends TimerTask {
 	/**
 	 * 处理每个槽位的线程，循环到这个槽位，立即丢到一个线程去处理，然后继续循环队列。
 	 */
-	private ThreadPoolExecutor slotPool = new ThreadPoolExecutor(10, 10,
+	private ThreadPoolExecutor slotPool = new ThreadPoolExecutor(10, Integer.MAX_VALUE,
 		0L, TimeUnit.MILLISECONDS,
 		new LinkedBlockingQueue<>(), slotThreadFactory);
 
 	/**
 	 * 处理每一个槽位中task集合的线程， 集合中的每个任务一个线程
 	 */
-	private ThreadPoolExecutor taskPool = new ThreadPoolExecutor(10, 10,
+	private ThreadPoolExecutor taskPool = new ThreadPoolExecutor(10, Integer.MAX_VALUE,
 		0L, TimeUnit.MILLISECONDS,
 		new LinkedBlockingQueue<>(), taskThreadFactory);
 

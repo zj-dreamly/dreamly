@@ -30,8 +30,7 @@ public class WheelQueue {
 	/**
 	 * 任务Id对应的槽位等任务属性
 	 */
-	private final Map<String, TaskAttribute> taskSlotMapping = new HashMap<>(1000,
-		1F);
+	private Map<String, TaskAttribute> taskSlotMapping = new HashMap<>();
 
 	{
 		for (int i = 0; i < DEFULT_QUEUE_SIZE; i++) {
