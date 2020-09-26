@@ -3,7 +3,7 @@ package com.github.zj.dreamly.oss.model;
 import lombok.Data;
 
 /**
- * BladeFile
+ * DreamlyFile
  *
  * @author Chill
  */
