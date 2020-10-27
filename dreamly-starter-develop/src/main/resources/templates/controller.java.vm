@@ -7,6 +7,7 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import lombok.AllArgsConstructor;
 import javax.validation.Valid;
+import java.util.Arrays;
 import com.github.zj.dreamly.tool.util.PageQuery;
 import com.github.zj.dreamly.swagger.constant.DataType;
 import com.github.zj.dreamly.swagger.constant.ParamType;
@@ -74,7 +75,7 @@ public class $!{table.controllerName} {
         "$!{table.entityPath}.id"
         })
 	@ApiOperation(value = "新增$!{table.comment}", notes = "传入$!{table.entityPath}")
-	public ResponseEntity save(@Valid @RequestBody $!{entity} $!{table.entityPath}) {
+	public ResponseEntity<String> save(@Valid @RequestBody $!{entity} $!{table.entityPath}) {
         $!{table.entityPath}Service.save$!{entity}($!{table.entityPath});
 	    return ResponseEntity.success("新增成功");
 	}
@@ -88,7 +89,7 @@ public class $!{table.controllerName} {
         "$!{table.entityPath}.updateTime"
         })
 	@ApiOperation(value = "修改$!{table.comment}", notes = "传入$!{table.entityPath}")
-	public ResponseEntity update(@Valid @RequestBody $!{entity} $!{table.entityPath}) {
+	public ResponseEntity<String> update(@Valid @RequestBody $!{entity} $!{table.entityPath}) {
         $!{table.entityPath}Service.update$!{entity}ById($!{table.entityPath});
         return ResponseEntity.success("修改成功");
 	}
@@ -103,7 +104,7 @@ public class $!{table.controllerName} {
         "$!{table.entityPath}.id"
     })
     @ApiOperation(value = "新增或修改$!{table.comment}", notes = "传入$!{table.entityPath}")
-    public ResponseEntity submit(@Valid @RequestBody $!{entity} $!{table.entityPath}) {
+    public ResponseEntity<String> submit(@Valid @RequestBody $!{entity} $!{table.entityPath}) {
         $!{table.entityPath}Service.saveOrUpdate($!{table.entityPath});
         return ResponseEntity.success("提交成功");
     }
@@ -114,7 +115,7 @@ public class $!{table.controllerName} {
 	@DeleteMapping("/{id}")
     @ApiOperationSupport(order = 5)
 	@ApiOperation(value = "删除$!{table.comment}", notes = "传入主键id")
-	public ResponseEntity remove(@PathVariable("id") String id) {
+	public ResponseEntity<String> remove(@PathVariable("id") String id) {
         $!{table.entityPath}Service.remove$!{entity}ById(Long.valueOf(id));
         return ResponseEntity.success("删除成功");
 	}
@@ -125,7 +126,7 @@ public class $!{table.controllerName} {
     @PostMapping("/remove")
     @ApiOperationSupport(order = 5)
     @ApiOperation(value = "批量删除$!{table.comment}", notes = "传入主键ids")
-    public ResponseEntity removeByIds(@RequestParam("ids") String ids) {
+    public ResponseEntity<String> removeByIds(@RequestParam("ids") String ids) {
         $!{table.entityPath}Service.removeByIds(Arrays.asList(StrUtil.split(ids, StrUtil.COMMA)));
         return ResponseEntity.success("批量删除成功");
     }
