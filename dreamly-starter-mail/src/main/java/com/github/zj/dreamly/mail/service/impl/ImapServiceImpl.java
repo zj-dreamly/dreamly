@@ -52,7 +52,8 @@ public class ImapServiceImpl implements MailService {
 	 * @param localSavePath 本地存储路径
 	 */
 	@Override
-	public UniversalMail parseEmail(MailItem mailItem, String localSavePath) throws MailCustomException {
+	public UniversalMail parseEmail(MailItem mailItem, String localSavePath)
+		throws MailCustomException {
 		return EmailParsing.parseMail(mailItem, localSavePath);
 	}
 
@@ -63,7 +64,8 @@ public class ImapServiceImpl implements MailService {
 	 * @param existUids 已同步的邮件uid
 	 */
 	@Override
-	public List<MailItem> listAll(MailConnection mailConnection, List<String> existUids) throws MailCustomException {
+	public List<MailItem> listAll(MailConnection mailConnection, List<String> existUids)
+		throws MailCustomException {
 		IMAPStore imapStore = mailConnection.getImapStore();
 		try {
 			Folder defaultFolder = imapStore.getDefaultFolder();
@@ -87,8 +89,8 @@ public class ImapServiceImpl implements MailService {
 			return mailItems;
 		} catch (MessagingException e) {
 			e.printStackTrace();
-			throw new MailCustomException(String.format("【IMAP服务】打开文件夹/获取邮件列表失败，错误信息【%s】",
-				e.getMessage()));
+			throw new MailCustomException(String.format
+				("【IMAP服务】打开文件夹/获取邮件列表失败，错误信息【%s】", e.getMessage()));
 		}
 	}
 
@@ -99,7 +101,8 @@ public class ImapServiceImpl implements MailService {
 	 * @param existUids  已同步下来的邮件uid
 	 * @param imapFolder 有邮件的文件夹
 	 */
-	private boolean listGmailMessageFolder(List<MailItem> target, List<String> existUids, IMAPFolder imapFolder) throws MessagingException {
+	private boolean listGmailMessageFolder(List<MailItem> target, List<String> existUids,
+										   IMAPFolder imapFolder) throws MessagingException {
 		Folder[] list = imapFolder.list();
 		boolean flag = false;
 		for (Folder folder :
@@ -119,7 +122,8 @@ public class ImapServiceImpl implements MailService {
 	 * @param existUids  已同步下来的邮件uid
 	 * @param imapFolder 有邮件的文件夹
 	 */
-	private boolean listFolderMessage(List<MailItem> target, List<String> existUids, IMAPFolder imapFolder) throws MessagingException {
+	private boolean listFolderMessage(List<MailItem> target, List<String> existUids,
+									  IMAPFolder imapFolder) throws MessagingException {
 		boolean flag = false;
 		imapFolder.open(Folder.READ_ONLY);
 		Message[] messages = imapFolder.getMessages();
@@ -143,7 +147,8 @@ public class ImapServiceImpl implements MailService {
 	 * @return 返回连接
 	 */
 	@Override
-	public MailConnection createConn(MailConnectionConfig mailConnectionConfig, boolean proxy) throws MailCustomException {
+	public MailConnection createConn(MailConnectionConfig mailConnectionConfig, boolean proxy)
+		throws MailCustomException {
 		//构建Session Properties
 		Properties properties = new Properties();
 		properties.put(PROPS_HOST, mailConnectionConfig.getHost());

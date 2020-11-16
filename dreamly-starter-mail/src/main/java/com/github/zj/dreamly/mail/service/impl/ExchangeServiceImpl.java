@@ -50,7 +50,8 @@ public class ExchangeServiceImpl implements MailService {
 	 * 列举需要被同步的邮件
 	 */
 	@Override
-	public List<MailItem> listAll(MailConnection mailConnection, List<String> existUids) throws MailCustomException {
+	public List<MailItem> listAll(MailConnection mailConnection, List<String> existUids)
+		throws MailCustomException {
 		ExchangeService exchangeService = mailConnection.getExchangeService();
 		try {
 			Folder msgFolderRoot = Folder.bind(exchangeService, WellKnownFolderName.MsgFolderRoot);
@@ -83,10 +84,11 @@ public class ExchangeServiceImpl implements MailService {
 						e.printStackTrace();
 						continue;
 					}
-					ArrayList<Item> itemList = items.getItems();
+					List<Item> itemList = items.getItems();
 					for (Item item :
 						itemList) {
-						if (item instanceof EmailMessage && !existUids.contains(item.getId().getUniqueId())) {
+						if (item instanceof EmailMessage &&
+							!existUids.contains(item.getId().getUniqueId())) {
 							EmailMessage message = (EmailMessage) item;
 							mailItems.add(MailItem.builder().exchangeMessage(message).build());
 						}
@@ -115,7 +117,8 @@ public class ExchangeServiceImpl implements MailService {
 	 * @return 返回连接
 	 */
 	@Override
-	public MailConnection createConn(MailConnectionConfig mailConnectionConfig, boolean proxy) throws MailCustomException {
+	public MailConnection createConn(MailConnectionConfig mailConnectionConfig, boolean proxy)
+		throws MailCustomException {
 		ExchangeService service = new ExchangeService();
 		//配置代理
 		if (proxy) {

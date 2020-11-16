@@ -8,8 +8,10 @@ import com.github.zj.dreamly.mail.exception.MailCustomException;
 import com.github.zj.dreamly.mail.service.MailService;
 import com.github.zj.dreamly.mail.service.impl.Pop3ServiceImpl;
 import com.github.zj.dreamly.mail.util.EmailParsing;
+import com.github.zj.dreamly.mail.util.EmailSender;
 import org.junit.Test;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,7 +28,7 @@ public class MailTest {
 		MailService mailService = new Pop3ServiceImpl();
 
 		MailConnectionConfig mailConnectionConfig = new MailConnectionConfig();
-		mailConnectionConfig.setEmail("ju.zhou@synconize.com");
+		mailConnectionConfig.setEmail("xxx@synconize.com");
 		mailConnectionConfig.setPassword("123456");
 		mailConnectionConfig.setHost("smtp.exmail.qq.com");
 		mailConnectionConfig.setPort(465);
@@ -39,9 +41,5 @@ public class MailTest {
 			return;
 		}
 
-	}
-
-	@Test
-	public void received() throws Exception {
 	}
 }

@@ -65,7 +65,8 @@ public class Pop3ServiceImpl implements MailService {
 	 * @param existUids 已存在的邮件uid
 	 */
 	@Override
-	public List<MailItem> listAll(MailConnection mailConnection, List<String> existUids) throws MailCustomException {
+	public List<MailItem> listAll(MailConnection mailConnection, List<String> existUids)
+		throws MailCustomException {
 		POP3Store pop3Store = mailConnection.getPop3Store();
 		try {
 			//获取文件夹，POP3只能获取收件箱的邮件
@@ -89,8 +90,8 @@ public class Pop3ServiceImpl implements MailService {
 			return mailItems;
 		} catch (MessagingException e) {
 			e.printStackTrace();
-			throw new MailCustomException(String.format("【POP3服务】打开文件夹/获取邮件列表失败，错误信息【%s】",
-				e.getMessage()));
+			throw new MailCustomException(String.format
+				("【POP3服务】打开文件夹/获取邮件列表失败，错误信息【%s】", e.getMessage()));
 		}
 	}
 
