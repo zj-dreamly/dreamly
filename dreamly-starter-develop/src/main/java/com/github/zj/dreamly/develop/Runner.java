@@ -21,15 +21,15 @@ public class Runner {
 	/**
 	 * 代码生成的包名
 	 */
-	private static final String PACKAGE_NAME = "com.synco.thermofisher";
+	private static final String PACKAGE_NAME = "com.synco.modular.blbt";
 	/**
 	 * 需要去掉的表前缀
 	 */
-	private static final String[] TABLE_PREFIX = {""};
+	private static final String[] TABLE_PREFIX = {"blbt_"};
 	/**
 	 * 需要生成的表名(两者只能取其一)
 	 */
-	private static final String[] INCLUDE_TABLES = {"mail_template"};
+	private static final String[] INCLUDE_TABLES = {"blbt_order", "blbt_product", "blbt_sku"};
 
 	/**
 	 * 需要排除的表名(两者只能取其一)
@@ -47,7 +47,7 @@ public class Runner {
 		generator.setPackageName(PACKAGE_NAME);
 		generator.setIncludeTables(INCLUDE_TABLES);
 		generator.setExcludeTables(EXCLUDE_TABLES);
-		generator.setSuperEntityColumns(SUPER_ENTITY_COLUMNS);
+		generator.setTablePrefix(TABLE_PREFIX);
 		generator.run();
 	}
 }

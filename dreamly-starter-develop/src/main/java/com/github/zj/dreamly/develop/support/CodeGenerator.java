@@ -73,9 +73,9 @@ public class CodeGenerator {
 	 */
 	private String[] excludeTables = {};
 	/**
-	 * 基础业务字段
+	 * 需要去掉的表前缀
 	 */
-	private String[] superEntityColumns = {};
+	private String[] tablePrefix = {};
 	/**
 	 * 是否启用swagger
 	 */
@@ -138,6 +138,7 @@ public class CodeGenerator {
 		StrategyConfig strategy = new StrategyConfig();
 		strategy.setNaming(NamingStrategy.underline_to_camel);
 		strategy.setColumnNaming(NamingStrategy.underline_to_camel);
+		strategy.setTablePrefix(tablePrefix);
 		if (includeTables.length > 0) {
 			strategy.setInclude(includeTables);
 		}
