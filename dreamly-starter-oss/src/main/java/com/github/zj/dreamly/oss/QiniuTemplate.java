@@ -43,11 +43,16 @@ import java.util.List;
  */
 @AllArgsConstructor
 public class QiniuTemplate {
-	private Auth auth;
-	private UploadManager uploadManager;
-	private BucketManager bucketManager;
-	private OssProperties ossProperties;
-	private OssRule ossRule;
+
+	private final Auth auth;
+
+	private final UploadManager uploadManager;
+
+	private final BucketManager bucketManager;
+
+	private final OssProperties ossProperties;
+
+	private final OssRule ossRule;
 
 	@SneakyThrows
 	public void makeBucket(String bucketName) {

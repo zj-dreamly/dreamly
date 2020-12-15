@@ -29,7 +29,7 @@ public class Runner {
 	/**
 	 * 需要生成的表名(两者只能取其一)
 	 */
-	private static final String[] INCLUDE_TABLES = {"blbt_order", "blbt_product", "blbt_sku"};
+	private static final String[] INCLUDE_TABLES = {"blbt_order"};
 
 	/**
 	 * 需要排除的表名(两者只能取其一)

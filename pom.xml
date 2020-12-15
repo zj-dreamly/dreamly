@@ -24,6 +24,8 @@
         <spring.boot.admin.version>2.3.2</spring.boot.admin.version>
         <alibaba.cloud.version>0.9.0.RELEASE</alibaba.cloud.version>
         <aliyun-sdk-oss.version>3.1.0</aliyun-sdk-oss.version>
+        <aliyun-java-sdk-core>4.4.6</aliyun-java-sdk-core>
+        <aliyun-java-sdk-ecs>4.17.6</aliyun-java-sdk-ecs>
         <qiniu-java-sdk.version>7.2.18</qiniu-java-sdk.version>
         <spring.boot.version>2.1.4.RELEASE</spring.boot.version>
         <spring.cloud.version>Greenwich.RELEASE</spring.cloud.version>
@@ -38,6 +40,8 @@
         <commons-email.version>1.5</commons-email.version>
         <emoji-java.version>4.0.0</emoji-java.version>
         <javax.mail.version>1.6.2</javax.mail.version>
+        <tencentcloud-sdk-java.version>3.1.57</tencentcloud-sdk-java.version>
+
     </properties>
 
     <!--发布中央仓库版本需要-->
@@ -73,6 +77,7 @@
         <module>dreamly-starter-mail</module>
         <module>dreamly-starter-oss</module>
         <module>dreamly-starter-im</module>
+        <module>dreamly-starter-sms</module>
     </modules>
 
     <dependencies>

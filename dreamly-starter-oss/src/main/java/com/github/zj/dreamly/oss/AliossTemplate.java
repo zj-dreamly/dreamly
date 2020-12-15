@@ -46,9 +46,12 @@ import java.util.Map;
  */
 @AllArgsConstructor
 public class AliossTemplate {
-	private OSSClient ossClient;
-	private OssProperties ossProperties;
-	private OssRule ossRule;
+
+	private final OSSClient ossClient;
+
+	private final OssProperties ossProperties;
+
+	private final OssRule ossRule;
 
 	@SneakyThrows
 	public void makeBucket(String bucketName) {
@@ -234,7 +237,7 @@ public class AliossTemplate {
 	 */
 	public String getUploadToken(String bucketName) {
 		// 默认过期时间2小时
-		return getUploadToken(bucketName, ossProperties.getArgs().get("expireTime" , 3600L));
+		return getUploadToken(bucketName, ossProperties.getArgs().get("expireTime", 3600L));
 	}
 
 	/**
@@ -250,7 +253,7 @@ public class AliossTemplate {
 		PolicyConditions policyConds = new PolicyConditions();
 		// 默认大小限制100M
 		policyConds.addConditionItem(PolicyConditions.COND_CONTENT_LENGTH_RANGE, 0,
-			ossProperties.getArgs().get("contentLengthRange" , 104857600));
+			ossProperties.getArgs().get("contentLengthRange", 104857600));
 		policyConds.addConditionItem(MatchMode.StartWith, PolicyConditions.COND_KEY, baseDir);
 
 		String postPolicy = ossClient.generatePostPolicy(expiration, policyConds);
@@ -259,12 +262,12 @@ public class AliossTemplate {
 		String postSignature = ossClient.calculatePostSignature(postPolicy);
 
 		Map<String, String> respMap = new LinkedHashMap<>(16);
-		respMap.put("accessid" , ossProperties.getAccessKey());
-		respMap.put("policy" , encodedPolicy);
-		respMap.put("signature" , postSignature);
-		respMap.put("dir" , baseDir);
-		respMap.put("host" , getOssHost(bucketName));
-		respMap.put("expire" , String.valueOf(expireEndTime / 1000));
+		respMap.put("accessid", ossProperties.getAccessKey());
+		respMap.put("policy", encodedPolicy);
+		respMap.put("signature", postSignature);
+		respMap.put("dir", baseDir);
+		respMap.put("host", getOssHost(bucketName));
+		respMap.put("expire", String.valueOf(expireEndTime / 1000));
 		return JsonUtils.toJsonString(respMap);
 	}
 
