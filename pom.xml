@@ -25,7 +25,7 @@
         <alibaba.cloud.version>0.9.0.RELEASE</alibaba.cloud.version>
         <aliyun-sdk-oss.version>3.1.0</aliyun-sdk-oss.version>
         <aliyun-java-sdk-core>4.4.6</aliyun-java-sdk-core>
-        <aliyun-java-sdk-ecs>4.17.6</aliyun-java-sdk-ecs>
+        <aliyun-java-sdk-ecs>4.2.0</aliyun-java-sdk-ecs>
         <qiniu-java-sdk.version>7.2.18</qiniu-java-sdk.version>
         <spring.boot.version>2.1.4.RELEASE</spring.boot.version>
         <spring.cloud.version>Greenwich.RELEASE</spring.cloud.version>

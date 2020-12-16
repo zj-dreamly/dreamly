@@ -16,7 +16,7 @@
         <dependency>
             <groupId>com.tencentcloudapi</groupId>
             <artifactId>tencentcloud-sdk-java</artifactId>
-            <version>3.1.57</version>
+            <version>${tencentcloud-sdk-java.version}</version>
             <scope>provided</scope>
         </dependency>
 
