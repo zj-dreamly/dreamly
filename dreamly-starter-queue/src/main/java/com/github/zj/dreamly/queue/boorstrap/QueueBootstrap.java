@@ -7,6 +7,7 @@ import org.apache.commons.lang3.concurrent.BasicThreadFactory;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeMap;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
@@ -20,20 +21,20 @@ import java.util.concurrent.TimeUnit;
 @Slf4j
 public class QueueBootstrap {
 
-	private static QueueBootstrap queueBootstrap = new QueueBootstrap();
+	private static final QueueBootstrap QUEUE_BOOTSTRAP = new QueueBootstrap();
 
 	public static QueueBootstrap getInstance() {
-		return queueBootstrap;
+		return QUEUE_BOOTSTRAP;
 	}
 
-	private ScheduledExecutorService scheduledExecutorService = new
+	private final ScheduledExecutorService scheduledExecutorService = new
 		ScheduledThreadPoolExecutor(Runtime.getRuntime().availableProcessors(),
 		new BasicThreadFactory.Builder().namingPattern("queue-schedule-pool-%d").daemon(true).build());
 
 	/**
 	 * can set some profile current is no sense
 	 */
-	private volatile Map<String, Object> options = new HashMap<String, Object>();
+	private volatile Map<String, Object> options = new ConcurrentHashMap<>();
 
 	/**
 	 * Returns the options
@@ -65,9 +66,7 @@ public class QueueBootstrap {
 	 */
 	public void shutdown() {
 		// 只停止扫描队列。已运行的任务暂不停止。
-		if (scheduledExecutorService != null) {
-			scheduledExecutorService.shutdown();
-		}
+		scheduledExecutorService.shutdown();
 	}
 
 	/**
@@ -120,19 +119,14 @@ public class QueueBootstrap {
 	 * @param value  value
 	 * @return QueueBootstrap
 	 */
-	@SuppressWarnings("all")
 	public QueueBootstrap option(String option, String value) {
 		if (option == null) {
 			throw new NullPointerException("option");
 		}
 		if (value == null) {
-			synchronized (options) {
-				options.remove(option);
-			}
+			options.remove(option);
 		} else {
-			synchronized (options) {
-				options.put(option, value);
-			}
+			options.put(option, value);
 		}
 		return this;
 	}

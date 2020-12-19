@@ -12,7 +12,7 @@ public class Slot {
 	/**
 	 * 用来存放任务。也可更加时间情况使用其他容器存放，如：ConcurrentSkipListSet,Set, Map
 	 */
-	private ConcurrentLinkedQueue<AbstractTask> tasks = new ConcurrentLinkedQueue<>();
+	private final ConcurrentLinkedQueue<AbstractTask> tasks = new ConcurrentLinkedQueue<>();
 
 	public ConcurrentLinkedQueue<AbstractTask> getTasks() {
 		return tasks;

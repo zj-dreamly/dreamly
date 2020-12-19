@@ -35,7 +35,7 @@ public class QueueBootstrapTest {
 			public void run() {
 				System.out.println("the task is running");
 			}
-		}, 20);
+		}, 20000);
 
 		try {
 			Thread.currentThread().join();

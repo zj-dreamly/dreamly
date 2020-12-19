@@ -28,7 +28,8 @@ public class TaskAttributeUtil {
 	 * @param taskSlotMapping taskSlotMapping
 	 * @return 返回所在槽位索引
 	 */
-	public static int setAttribute(int secondsLater, AbstractTask task, Map<String, TaskAttribute> taskSlotMapping) {
+	public static int setAttribute(int secondsLater, AbstractTask task,
+								   Map<String, TaskAttribute> taskSlotMapping) {
 		TaskAttribute taskAttribute = new TaskAttribute();
 		Calendar calendar = Calendar.getInstance();
 		//把当前时间的分钟和秒加起来

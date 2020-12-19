@@ -15,25 +15,25 @@ import java.util.Map;
 @Slf4j
 public class WheelQueue {
 
-	private static WheelQueue wheelQueue = new WheelQueue();
+	private static final WheelQueue WHEEL_QUEUE = new WheelQueue();
 
 	public static WheelQueue getInstance() {
-		return wheelQueue;
+		return WHEEL_QUEUE;
 	}
 
-	private static final int DEFULT_QUEUE_SIZE = 3600;
+	private static final int DEFAULT_QUEUE_SIZE = 3600;
 
 	/**
 	 * 建立一个有3600个槽位的环形队列； 每秒轮询一个槽位，3600个就是3600秒=1小时
 	 */
-	private final Slot[] slotQueue = new Slot[DEFULT_QUEUE_SIZE];
+	private final Slot[] slotQueue = new Slot[DEFAULT_QUEUE_SIZE];
 	/**
 	 * 任务Id对应的槽位等任务属性
 	 */
-	private Map<String, TaskAttribute> taskSlotMapping = new HashMap<>();
+	private final Map<String, TaskAttribute> taskSlotMapping = new HashMap<>();
 
 	{
-		for (int i = 0; i < DEFULT_QUEUE_SIZE; i++) {
+		for (int i = 0; i < DEFAULT_QUEUE_SIZE; i++) {
 			this.slotQueue[i] = new Slot();
 		}
 	}

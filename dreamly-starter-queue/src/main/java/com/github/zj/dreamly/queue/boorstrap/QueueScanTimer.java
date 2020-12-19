@@ -24,27 +24,27 @@ public class QueueScanTimer extends TimerTask {
 	/**
 	 * 环形队列
 	 */
-	private WheelQueue queue;
+	private final WheelQueue queue;
 
-	private static ThreadFactory slotThreadFactory =
+	private static final ThreadFactory SLOT_THREAD_FACTORY =
 		new MyDefaultThreadFactory("slotThreadGroup");
 
-	private static ThreadFactory taskThreadFactory =
+	private static final ThreadFactory TASK_THREAD_FACTORY =
 		new MyDefaultThreadFactory("taskThreadGroup");
 
 	/**
 	 * 处理每个槽位的线程，循环到这个槽位，立即丢到一个线程去处理，然后继续循环队列。
 	 */
-	private ThreadPoolExecutor slotPool = new ThreadPoolExecutor(10, Integer.MAX_VALUE,
+	private final ThreadPoolExecutor slotPool = new ThreadPoolExecutor(10, Integer.MAX_VALUE,
 		0L, TimeUnit.MILLISECONDS,
-		new LinkedBlockingQueue<>(), slotThreadFactory);
+		new LinkedBlockingQueue<>(), SLOT_THREAD_FACTORY);
 
 	/**
 	 * 处理每一个槽位中task集合的线程， 集合中的每个任务一个线程
 	 */
-	private ThreadPoolExecutor taskPool = new ThreadPoolExecutor(10, Integer.MAX_VALUE,
+	private final ThreadPoolExecutor taskPool = new ThreadPoolExecutor(10, Integer.MAX_VALUE,
 		0L, TimeUnit.MILLISECONDS,
-		new LinkedBlockingQueue<>(), taskThreadFactory);
+		new LinkedBlockingQueue<>(), TASK_THREAD_FACTORY);
 
 	public QueueScanTimer(WheelQueue queue) {
 		super();
@@ -77,7 +77,7 @@ public class QueueScanTimer extends TimerTask {
 	 * @author hongjian.liu
 	 */
 	final class SlotTask implements Runnable {
-		ConcurrentLinkedQueue<AbstractTask> tasks;
+		private final ConcurrentLinkedQueue<AbstractTask> tasks;
 		int currentSecond;
 
 		private SlotTask(ConcurrentLinkedQueue<AbstractTask> tasks, int currentSecond) {
@@ -137,8 +137,8 @@ public class QueueScanTimer extends TimerTask {
 		}
 
 		@Override
-		public Thread newThread(Runnable r) {
-			Thread t = new Thread(group, r,
+		public Thread newThread(Runnable runnable) {
+			Thread t = new Thread(group, runnable,
 				namePrefix + threadNumber.getAndIncrement(),
 				0);
 			if (t.isDaemon()) {
