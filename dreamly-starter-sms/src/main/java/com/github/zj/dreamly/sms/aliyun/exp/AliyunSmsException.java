@@ -6,7 +6,6 @@ import lombok.Getter;
  * 短信发送异常
  *
  * @author fengshuonan
- * @date 2018-07-06-下午3:00
  */
 @Getter
 public class AliyunSmsException extends RuntimeException {

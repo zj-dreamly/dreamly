@@ -6,7 +6,6 @@ import java.util.Map;
  * 短信发送服务
  *
  * @author fengshuonan
- * @date 2018-07-06-下午2:14
  */
 public interface SmsSender {
 
@@ -19,8 +18,7 @@ public interface SmsSender {
      * @param templateCode 模板号码
      * @param params       模板里参数的集合
      * @author fengshuonan
-     * @date 2018/7/6 下午2:32
+	 * @return 发送结果
      */
     String sendSms(String phone, String templateCode, Map<String, Object> params);
-
 }

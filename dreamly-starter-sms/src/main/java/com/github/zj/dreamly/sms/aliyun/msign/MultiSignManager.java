@@ -4,7 +4,6 @@ package com.github.zj.dreamly.sms.aliyun.msign;
  * 多个签名的缓存管理，为了打破一个签名发送次数的限制
  *
  * @author fengshuonan
- * @date 2018-09-21-上午10:47
  */
 public interface MultiSignManager {
 
@@ -15,7 +14,6 @@ public interface MultiSignManager {
      * @param signName 发送短信用的签名，是一个以逗号隔开的字符串
      * @return 签名
      * @author fengshuonan
-     * @date 2018/9/21 上午10:51
      */
     String getSign(String phone, String signName);
 

@@ -6,7 +6,6 @@ import lombok.Data;
  * 阿里云oss相关配置
  *
  * @author fengshuonan
- * @date 2018-06-27-下午1:20
  */
 @Data
 public class AliyunSmsProperties {
