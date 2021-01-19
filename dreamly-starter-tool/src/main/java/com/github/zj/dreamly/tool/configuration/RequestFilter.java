@@ -1,6 +1,11 @@
 package com.github.zj.dreamly.tool.configuration;
 
+import com.github.zj.dreamly.tool.properties.CorsProperties;
+import com.github.zj.dreamly.tool.properties.RequestProperties;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
@@ -21,8 +26,9 @@ import java.io.IOException;
  * @since: 2019-09-19 10:27
  **/
 @Slf4j
-@Component
-@Order(Ordered.HIGHEST_PRECEDENCE)
+@Configuration
+@ConditionalOnProperty(value = "dreamly.tool.request.enabled", havingValue = "true")
+@EnableConfigurationProperties({RequestProperties.class})
 public class RequestFilter extends GenericFilterBean {
 
     private static final String PREFIX = "/webjars";

@@ -1,4 +1,5 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
   com.github.zj.dreamly.tool.exception.GlobalExceptionHandler,\
   com.github.zj.dreamly.tool.configuration.CustomCorsConfiguration,\
+  com.github.zj.dreamly.tool.configuration.RequestFilter,\
   com.github.zj.dreamly.tool.configuration.SpringUtil
