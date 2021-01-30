@@ -1,4 +1,4 @@
-java tools.
+java tools. 仓库最新版本 1.0.0-beta.6
 
 ### dreamly-starter-develop
 代码生成器组件，可生成基本的CRUD代码
@@ -27,4 +27,4 @@ im组件，用于即时通讯，整合cim
 ### dreamly-starter-tool
 各种工具类
 
-已发布中央仓库
+已发布中央仓库，文档抽个时间完善
