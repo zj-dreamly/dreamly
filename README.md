@@ -15,6 +15,15 @@ java tools.
 ### dreamly-starter-swagger
 文档组件，集成knife4j
 
+### dreamly-starter-im
+im组件，用于即时通讯，整合cim
+
+### dreamly-starter-sms
+短信组件，用于短信发送，状态接收，整合阿里云sms
+
+### dreamly-starter-oss
+-存储组件，用于文件存储，整合阿里云，七牛云
+
 ### dreamly-starter-tool
 各种工具类
 
