@@ -21,15 +21,15 @@ public class Runner {
 	/**
 	 * 代码生成的包名
 	 */
-	private static final String PACKAGE_NAME = "com.synco.modular.blbt";
+	private static final String PACKAGE_NAME = "com.synco.ormco";
 	/**
 	 * 需要去掉的表前缀
 	 */
-	private static final String[] TABLE_PREFIX = {"blbt_"};
+	private static final String[] TABLE_PREFIX = {""};
 	/**
 	 * 需要生成的表名(两者只能取其一)
 	 */
-	private static final String[] INCLUDE_TABLES = {"blbt_order"};
+	private static final String[] INCLUDE_TABLES = {"video_comment"};
 
 	/**
 	 * 需要排除的表名(两者只能取其一)
