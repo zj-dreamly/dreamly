@@ -251,4 +251,22 @@ public class StreamUtils {
 	public static <T, R> Map<R, List<T>> group(Collection<T> data, Function<T, R> mapFunc) {
 		return data.stream().collect(Collectors.groupingBy(mapFunc));
 	}
+
+	/**
+	 * 根据条件去重
+	 *
+	 * @param data         要操作的数据
+	 * @param keyExtractor function
+	 * @param <T>          泛型标记 入参类型
+	 * @return 返回的数据
+	 */
+	public static <T> List<T> distinct(Collection<T> data, Function<? super T, Object> keyExtractor) {
+		return data.stream().filter(distinctByKey(keyExtractor)).collect(Collectors.toList());
+	}
+
+	private static <T> Predicate<T> distinctByKey(Function<? super T, Object> keyExtractor) {
+		Map<Object, Boolean> seen = new HashMap<>();
+		return t -> seen.putIfAbsent(keyExtractor.apply(t), Boolean.TRUE) == null;
+	}
 }
+
