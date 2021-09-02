@@ -33,7 +33,7 @@ public class FillDataUtil {
 		return newList;
 	}
 
-	private static <T> T doFill(List<T> list, Predicate<? super T> filterFunc, T defaultData) {
+	public static <T> T doFill(List<T> list, Predicate<? super T> filterFunc, T defaultData) {
 		List<T> filterList = list.stream()
 			.filter(filterFunc)
 			.collect(Collectors.toList());
